@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:infrakunafoni/screens/question/home.dart';
 import 'package:infrakunafoni/screens/question/questions_screen.dart';
 import 'package:infrakunafoni/widgets/result_box.dart';
 
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Infra Kunafoni',
       debugShowCheckedModeBanner: false,
-      home: ResultBox(result: 2, questionLength: 8),
+      home: Accueil(),
     );
   }
 }

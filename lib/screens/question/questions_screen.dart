@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:cupertino_icons/cupertino_icons.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:infrakunafoni/extensions/extension.dart';
+import 'package:infrakunafoni/screens/question/result_screen.dart';
 
 import '../../constants.dart';
 import '../../models/question_model.dart';
@@ -105,6 +107,15 @@ class _QuetionsScreenState extends State<QuestionsScreen> {
     Navigator.pop(context);
   }
 
+  void startToIndex(int i) {
+    setState(() {
+      index = i;
+      isPressed = false;
+      isAlreadySelected = false;
+    });
+    Navigator.pop(context);
+  }
+
   Color choixCouleur(bool isPressed, bool index) {
     if(isPressed) {
       if(index) {
@@ -127,7 +138,7 @@ class _QuetionsScreenState extends State<QuestionsScreen> {
           false,
           // this will disable the dissmis function on clicking outside of box
           builder: (ctx) =>
-              ResultBox(
+              ResultScreen(
                 result: score, // total points the user got
                 questionLength: questionLength, // out of how many questions
                 onPressed: startOver,
@@ -140,11 +151,16 @@ class _QuetionsScreenState extends State<QuestionsScreen> {
           isAlreadySelected = false;
         });
       } else {
-        ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+        Fluttertoast.showToast(
+          msg: 'Choississez une réponse svp !',
+          textColor: Colors.white,
+          backgroundColor: background
+        );
+        /*ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
           content: Text('Choississez une réponse svp !'),
           behavior: SnackBarBehavior.floating,
           margin: EdgeInsets.symmetric(vertical: 20.0),
-        ));
+        ));*/
       }
     }
   }
@@ -177,8 +193,18 @@ class _QuetionsScreenState extends State<QuestionsScreen> {
                 style: soustitre(Colors.white),
               ),
               Text('Q. ${(index+1).toString().padLeft(2,'0')}', style: soustitre(Colors.white)),
-              const Icon(
-                Icons.menu_rounded,
+              GestureDetector(
+                onTap: () {
+                  showDialog(context: context, builder: (ctx) => ResultScreen(
+                    result: score,
+                    questionLength: _questions.length,
+                    onPressed: () => startToIndex(index),
+                  )
+                  );
+                },
+                child: const Icon(
+                  Icons.menu_rounded,
+                ),
               )
             ],
           ),

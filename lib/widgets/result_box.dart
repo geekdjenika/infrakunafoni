@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:infrakunafoni/widgets/main_button.dart';
 
 import '../constants.dart';
 
@@ -63,17 +64,160 @@ class ResultBox extends StatelessWidget {
                         : result < questionLength / 2
                         ? incorrect // when the result is less than half
                         : correct,
-                    child: Icon(
-                        result == questionLength / 2
-                            ? CupertinoIcons.gobackward_45
-                            : result < questionLength / 2
-                            ? CupertinoIcons.gobackward_minus
-                            : CupertinoIcons.wand_rays_inverse
+                    child: GestureDetector(
+                      onTap: onPressed,
+                      child: Icon(
+                          result == questionLength / 2
+                              ? CupertinoIcons.gobackward_45
+                              : result < questionLength / 2
+                              ? CupertinoIcons.gobackward_minus
+                              : CupertinoIcons.wand_rays_inverse
+                      ),
                     )
                   // when the result is more than half
                 ),
               ],
             ),
+            const SizedBox(height: 20),
+            Wrap(
+              alignment: WrapAlignment.spaceAround,
+              direction: Axis.horizontal,
+              children: [
+                Container(
+                  margin: const EdgeInsets.all(20.0),
+                  height: 65,
+                  width: 65,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: background,
+                  ),
+                  child: Center(
+                    child: Text(
+                      '$questionLength',
+                      style: soustitre(Colors.white),
+                    ),
+                  ),
+                ),
+                Container(
+                  margin: const EdgeInsets.all(20.0),
+                  height: 65,
+                  width: 65,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: background,
+                  ),
+                  child: Center(
+                    child: Text(
+                      '$questionLength',
+                      style: soustitre(Colors.white),
+                    ),
+                  ),
+                ),
+                Container(
+                  margin: const EdgeInsets.all(20.0),
+                  height: 65,
+                  width: 65,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: background,
+                  ),
+                  child: Center(
+                    child: Text(
+                      '$questionLength',
+                      style: soustitre(Colors.white),
+                    ),
+                  ),
+                ),
+                Container(
+                  margin: const EdgeInsets.all(20.0),
+                  height: 65,
+                  width: 65,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: background,
+                  ),
+                  child: Center(
+                    child: Text(
+                      '$questionLength',
+                      style: soustitre(Colors.white),
+                    ),
+                  ),
+                ),
+                Container(
+                  margin: const EdgeInsets.all(20.0),
+                  height: 65,
+                  width: 65,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: background,
+                  ),
+                  child: Center(
+                    child: Text(
+                      '$questionLength',
+                      style: soustitre(Colors.white),
+                    ),
+                  ),
+                ),
+                Container(
+                  margin: const EdgeInsets.all(20.0),
+                  height: 65,
+                  width: 65,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: background,
+                  ),
+                  child: Center(
+                    child: Text(
+                      '$questionLength',
+                      style: soustitre(Colors.white),
+                    ),
+                  ),
+                ),
+                Container(
+                  margin: const EdgeInsets.all(20.0),
+                  height: 65,
+                  width: 65,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: background,
+                  ),
+                  child: Center(
+                    child: Text(
+                      '$questionLength',
+                      style: soustitre(Colors.white),
+                    ),
+                  ),
+                ),
+                Container(
+                  margin: const EdgeInsets.all(20.0),
+                  height: 65,
+                  width: 65,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: background,
+                  ),
+                  child: Center(
+                    child: Text(
+                      '$questionLength',
+                      style: soustitre(Colors.white),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            Expanded(
+              child: Align(
+                alignment: FractionalOffset.bottomCenter,
+                child: GestureDetector(
+                  onTap: () => {},
+                  child: const Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 60.0),
+                    child: MainButton(texte: 'Terminer'),
+                  ),
+                ),
+              ),
+            )
+
           ],
         ),
       ),

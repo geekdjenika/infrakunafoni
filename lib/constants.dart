@@ -33,3 +33,10 @@ TextStyle soustitregras(Color? color) {
       color: color
   );
 }
+TextStyle texticon(Color? color) {
+  return GoogleFonts.montserrat(
+      fontSize: 8.0,
+      fontWeight: FontWeight.bold,
+      color: color
+  );
+}
