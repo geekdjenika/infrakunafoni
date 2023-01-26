@@ -1,0 +1,66 @@
+[
+  {
+    "id": 1,
+    "question": "Infraction ?",
+    "reponse": "Oui",
+    "mauvaisesReponses": [
+      {
+        "id": 1,
+        "reponse": "arret"
+      },
+      {
+        "id": 2,
+        "reponse": "non"
+      },
+      {
+        "id": 3,
+        "reponse": "autorise"
+      }
+    ],
+    "utilisateur": {
+      "id": 1,
+      "username": "geekdjenika",
+      "email": "djenikaa@gmail.com",
+      "password": "$2a$10$siPqgU78ibjN2z611KW9MOYK8z4XfLUWJGltGUqeuNePKQXP349su",
+      "image": "profil.png",
+      "roles": [
+        {
+          "id": 1,
+          "name": "ADMIN"
+        }
+      ]
+    }
+  },
+  {
+    "id": 2,
+    "question": "Infraction ?",
+    "reponse": "Oui",
+    "mauvaisesReponses": [
+      {
+        "id": 4,
+        "reponse": "manger "
+      },
+      {
+        "id": 5,
+        "reponse": "non travail"
+      },
+      {
+        "id": 6,
+        "reponse": "autorise le sifflet"
+      }
+    ],
+    "utilisateur": {
+      "id": 1,
+      "username": "geekdjenika",
+      "email": "djenikaa@gmail.com",
+      "password": "$2a$10$siPqgU78ibjN2z611KW9MOYK8z4XfLUWJGltGUqeuNePKQXP349su",
+      "image": "profil.png",
+      "roles": [
+        {
+          "id": 1,
+          "name": "ADMIN"
+        }
+      ]
+    }
+  }
+]

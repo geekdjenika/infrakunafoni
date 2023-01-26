@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:infrakunafoni/screens/question/home.dart';
-import 'package:infrakunafoni/screens/question/questions_screen.dart';
-import 'package:infrakunafoni/widgets/result_box.dart';
+import 'package:infrakunafoni/screens/home.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,7 +10,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       title: 'Infra Kunafoni',
       debugShowCheckedModeBanner: false,
       home: Accueil(),

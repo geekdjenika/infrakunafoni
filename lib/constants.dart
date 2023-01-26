@@ -40,3 +40,7 @@ TextStyle texticon(Color? color) {
       color: color
   );
 }
+
+int selectedPageIndex = 1;
+
+bool useindex = false;

@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../question/home.dart';
+import '../home.dart';
 
 class Splash extends StatefulWidget {
   const Splash({Key? key}) : super(key: key);

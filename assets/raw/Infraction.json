@@ -1,0 +1,44 @@
+{
+  "id": 1,
+  "description": "Arrêt non autorisé",
+  "reference": "Article 16 Arrêté interministériel 2492 du 11/12/2002",
+  "amendes": [
+    {
+      "id": 2,
+      "categorie": {
+        "id": 2,
+        "categorie": "Véhicules légers"
+      },
+      "montant": {
+        "id": 1,
+        "montant": 2000,
+        "devise": "FCFA"
+      }
+    },
+    {
+      "id": 1,
+      "categorie": {
+        "id": 1,
+        "categorie": "Gros porteurs"
+      },
+      "montant": {
+        "id": 2,
+        "montant": 3000,
+        "devise": "FCFA"
+      }
+    }
+  ],
+  "utilisateur": {
+    "id": 1,
+    "username": "geekdjenika",
+    "email": "djenikaa@gmail.com",
+    "password": "$2a$10$siPqgU78ibjN2z611KW9MOYK8z4XfLUWJGltGUqeuNePKQXP349su",
+    "image": "profil.png",
+    "roles": [
+      {
+        "id": 1,
+        "name": "ADMIN"
+      }
+    ]
+  }
+}

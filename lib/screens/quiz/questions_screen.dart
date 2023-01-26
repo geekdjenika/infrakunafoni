@@ -1,16 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:cupertino_icons/cupertino_icons.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:infrakunafoni/extensions/extension.dart';
-import 'package:infrakunafoni/screens/question/result_screen.dart';
+import 'package:infrakunafoni/screens/quiz/result_screen.dart';
 
 import '../../constants.dart';
 import '../../models/question_model.dart';
 import '../../widgets/next_button.dart';
 import '../../widgets/option_card.dart';
 import '../../widgets/question_widget.dart';
-import '../../widgets/result_box.dart';
 
 class QuestionsScreen extends StatefulWidget {
   const QuestionsScreen({Key? key}) : super(key: key);
