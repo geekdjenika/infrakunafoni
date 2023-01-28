@@ -44,7 +44,7 @@ class _InfractionScreenState extends State<InfractionScreen> {
                   ClipRRect(
                     borderRadius: BorderRadius.only(topLeft: Radius.circular(18),topRight: Radius.circular(18)),
                     child: Image.asset(
-                      "assets/images/vl.png",
+                      "assets/img/vl.png",
                       width: MediaQuery.of(context).size.width * 0.43,
                       height: MediaQuery.of(context).size.height * 0.22,
                       fit: BoxFit.cover,
@@ -100,7 +100,7 @@ class _InfractionScreenState extends State<InfractionScreen> {
                   ClipRRect(
                     borderRadius: BorderRadius.only(topLeft: Radius.circular(18),topRight: Radius.circular(18)),
                     child: Image.asset(
-                      "assets/images/motos.jpg",
+                      "assets/img/motos.jpg",
                       width: MediaQuery.of(context).size.width * 0.43,
                       height: MediaQuery.of(context).size.height * 0.22,
                       fit: BoxFit.cover,
@@ -156,7 +156,7 @@ class _InfractionScreenState extends State<InfractionScreen> {
                   ClipRRect(
                     borderRadius: BorderRadius.only(topLeft: Radius.circular(18),topRight: Radius.circular(18)),
                     child: Image.asset(
-                      "assets/images/gp.png",
+                      "assets/img/gp.png",
                       width: MediaQuery.of(context).size.width * 0.43,
                       height: MediaQuery.of(context).size.height * 0.22,
                       fit: BoxFit.cover,
@@ -212,7 +212,7 @@ class _InfractionScreenState extends State<InfractionScreen> {
                   ClipRRect(
                     borderRadius: BorderRadius.only(topLeft: Radius.circular(18),topRight: Radius.circular(18)),
                     child: Image.asset(
-                      "assets/images/generale.png",
+                      "assets/img/generale.png",
                       width: MediaQuery.of(context).size.width * 0.43,
                       height: MediaQuery.of(context).size.height * 0.22,
                       fit: BoxFit.cover,

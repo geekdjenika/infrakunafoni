@@ -48,10 +48,10 @@ class _AccueilState extends State<Accueil> {
     InfractionScreen(),
     AmendeScreen(),
     QuizScreen(),
-    InfractionList(categorie: 'Gros porteurs', infractions: [],),
-    InfractionList(categorie: 'Véhicules légers', infractions: [],),
-    InfractionList(categorie: 'Générales', infractions: [],),
-    InfractionList(categorie: 'Motos', infractions: [],),
+    InfractionList(categorie: 'Gros porteurs'),
+    InfractionList(categorie: 'Véhicules légers'),
+    InfractionList(categorie: 'Générales'),
+    InfractionList(categorie: 'Motos'),
 
   ];
   int curveindex = 1;
@@ -88,7 +88,7 @@ class _AccueilState extends State<Accueil> {
             expandedHeight: MediaQuery.of(context).size.height * 0.25,
             flexibleSpace: FlexibleSpaceBar(
               background: Image.asset(
-                "assets/images/appbar.png",
+                "assets/img/appbar.png",
                // width: double.maxFinite,
                 fit: BoxFit.cover,
               ),

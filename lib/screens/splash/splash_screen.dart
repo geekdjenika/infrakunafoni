@@ -24,10 +24,8 @@ class _SplashState extends State<Splash> {
   }
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        child: Center(
-            child: Image.asset("assets/images/logo_l.png")
-        ),
+      body: Center(
+          child: Image.asset("assets/img/logo_xl.png")
       ),
     );
   }

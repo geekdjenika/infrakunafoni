@@ -1,0 +1,173 @@
+[
+  {
+    "id": 2,
+    "description": "Arrêt gênant la circulation",
+    "reference": "Article 16 Arrêté interministériel 2492 du 11/12/2002",
+    "vocals": [
+      {
+        "id": 2,
+        "vocal": "Infraction2.m4a",
+        "langue": {
+          "id": 1,
+          "label": "bm"
+        }
+      }
+    ],
+    "amendes": [
+      {
+        "id": 3,
+        "categorie": {
+          "id": 1,
+          "categorie": "Gros porteurs"
+        },
+        "montant": {
+          "id": 2,
+          "montant": 3000,
+          "devise": "FCFA"
+        },
+        "vocals": []
+      },
+      {
+        "id": 4,
+        "categorie": {
+          "id": 2,
+          "categorie": "Véhicules légers"
+        },
+        "montant": {
+          "id": 1,
+          "montant": 2000,
+          "devise": "FCFA"
+        },
+        "vocals": []
+      }
+    ],
+    "utilisateur": {
+      "id": 1,
+      "username": "geekdjenika",
+      "email": "djenikaa@gmail.com",
+      "password": "$2a$10$gI4Q2cmR7o6QMGSqGn1qz.13Hv4v2J94OhrqlD1OWQLIYk5.wDJk2",
+      "image": "profil.png",
+      "notifications": [],
+      "roles": [
+        {
+          "id": 1,
+          "name": "ADMIN"
+        }
+      ]
+    }
+  },
+  {
+    "id": 3,
+    "description": "Dépassement défectueux",
+    "reference": "Article 9-14-110 Arrêté interministériel 2492 du 11/12/2002",
+    "vocals": [
+      {
+        "id": 3,
+        "vocal": "Infraction2.m4a",
+        "langue": {
+          "id": 1,
+          "label": "bm"
+        }
+      }
+    ],
+    "amendes": [
+      {
+        "id": 5,
+        "categorie": {
+          "id": 1,
+          "categorie": "Gros porteurs"
+        },
+        "montant": {
+          "id": 2,
+          "montant": 3000,
+          "devise": "FCFA"
+        },
+        "vocals": []
+      },
+      {
+        "id": 6,
+        "categorie": {
+          "id": 2,
+          "categorie": "Véhicules légers"
+        },
+        "montant": {
+          "id": 1,
+          "montant": 2000,
+          "devise": "FCFA"
+        },
+        "vocals": []
+      }
+    ],
+    "utilisateur": {
+      "id": 1,
+      "username": "geekdjenika",
+      "email": "djenikaa@gmail.com",
+      "password": "$2a$10$gI4Q2cmR7o6QMGSqGn1qz.13Hv4v2J94OhrqlD1OWQLIYk5.wDJk2",
+      "image": "profil.png",
+      "notifications": [],
+      "roles": [
+        {
+          "id": 1,
+          "name": "ADMIN"
+        }
+      ]
+    }
+  },
+  {
+    "id": 4,
+    "description": "Non respect de la priorité",
+    "reference": "Article 110 Arrêté interministériel 2492 du 11/12/2002",
+    "vocals": [
+      {
+        "id": 4,
+        "vocal": "Infraction2.m4a",
+        "langue": {
+          "id": 1,
+          "label": "bm"
+        }
+      }
+    ],
+    "amendes": [
+      {
+        "id": 7,
+        "categorie": {
+          "id": 1,
+          "categorie": "Gros porteurs"
+        },
+        "montant": {
+          "id": 2,
+          "montant": 3000,
+          "devise": "FCFA"
+        },
+        "vocals": []
+      },
+      {
+        "id": 8,
+        "categorie": {
+          "id": 2,
+          "categorie": "Véhicules légers"
+        },
+        "montant": {
+          "id": 1,
+          "montant": 2000,
+          "devise": "FCFA"
+        },
+        "vocals": []
+      }
+    ],
+    "utilisateur": {
+      "id": 1,
+      "username": "geekdjenika",
+      "email": "djenikaa@gmail.com",
+      "password": "$2a$10$gI4Q2cmR7o6QMGSqGn1qz.13Hv4v2J94OhrqlD1OWQLIYk5.wDJk2",
+      "image": "profil.png",
+      "notifications": [],
+      "roles": [
+        {
+          "id": 1,
+          "name": "ADMIN"
+        }
+      ]
+    }
+  }
+]
