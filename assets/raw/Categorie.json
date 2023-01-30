@@ -1,0 +1,243 @@
+[
+  {
+    "id": 1,
+    "categorie": "Gros porteurs",
+    "amendes": [
+      {
+        "id": 2,
+        "montant": {
+          "id": 2,
+          "montant": 3000,
+          "devise": "FCFA"
+        },
+        "vocals": [],
+        "infractions": [
+          {
+            "id": 1,
+            "description": "Arrêt non autorisé",
+            "reference": "Article 16 Arrêté interministériel 2492 du 11/12/2002",
+            "vocals": [],
+            "utilisateur": {
+              "id": 1,
+              "username": "geekdjenika",
+              "email": "djenikaa@gmail.com",
+              "password": "$2a$10$JYFQA0A7P29XjzH//bp.Bup2pt4d67Jay2H.772zidxP86Ai2Xmmi",
+              "image": "profil.png",
+              "notifications": [],
+              "roles": [
+                {
+                  "id": 1,
+                  "name": "ADMIN"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "montant": {
+          "id": 4,
+          "montant": 6500,
+          "devise": "FCFA"
+        },
+        "vocals": [],
+        "infractions": [
+          {
+            "id": 21,
+            "description": "Visité Technique - Assurance Périmée",
+            "reference": "Articles 112 - 108 Arrêté interministériel 2492 du 11/12/2002",
+            "vocals": [],
+            "utilisateur": {
+              "id": 1,
+              "username": "geekdjenika",
+              "email": "djenikaa@gmail.com",
+              "password": "$2a$10$JYFQA0A7P29XjzH//bp.Bup2pt4d67Jay2H.772zidxP86Ai2Xmmi",
+              "image": "profil.png",
+              "notifications": [],
+              "roles": [
+                {
+                  "id": 1,
+                  "name": "ADMIN"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "categorie": "Véhicules légers",
+    "amendes": [
+      {
+        "id": 1,
+        "montant": {
+          "id": 1,
+          "montant": 2000,
+          "devise": "FCFA"
+        },
+        "vocals": [],
+        "infractions": [
+          {
+            "id": 1,
+            "description": "Arrêt non autorisé",
+            "reference": "Article 16 Arrêté interministériel 2492 du 11/12/2002",
+            "vocals": [],
+            "utilisateur": {
+              "id": 1,
+              "username": "geekdjenika",
+              "email": "djenikaa@gmail.com",
+              "password": "$2a$10$JYFQA0A7P29XjzH//bp.Bup2pt4d67Jay2H.772zidxP86Ai2Xmmi",
+              "image": "profil.png",
+              "notifications": [],
+              "roles": [
+                {
+                  "id": 1,
+                  "name": "ADMIN"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "montant": {
+          "id": 3,
+          "montant": 6000,
+          "devise": "FCFA"
+        },
+        "vocals": [],
+        "infractions": [
+          {
+            "id": 21,
+            "description": "Visité Technique - Assurance Périmée",
+            "reference": "Articles 112 - 108 Arrêté interministériel 2492 du 11/12/2002",
+            "vocals": [],
+            "utilisateur": {
+              "id": 1,
+              "username": "geekdjenika",
+              "email": "djenikaa@gmail.com",
+              "password": "$2a$10$JYFQA0A7P29XjzH//bp.Bup2pt4d67Jay2H.772zidxP86Ai2Xmmi",
+              "image": "profil.png",
+              "notifications": [],
+              "roles": [
+                {
+                  "id": 1,
+                  "name": "ADMIN"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "categorie": "Motos",
+    "amendes": [
+      {
+        "id": 7,
+        "montant": {
+          "id": 7,
+          "montant": 300,
+          "devise": "FCFA"
+        },
+        "vocals": [],
+        "infractions": [
+          {
+            "id": 31,
+            "description": "Pneumatiques en mauvais état",
+            "reference": "Article 117 du Décret n° 1999-134 du 26 mai 1999",
+            "vocals": [],
+            "utilisateur": {
+              "id": 1,
+              "username": "geekdjenika",
+              "email": "djenikaa@gmail.com",
+              "password": "$2a$10$JYFQA0A7P29XjzH//bp.Bup2pt4d67Jay2H.772zidxP86Ai2Xmmi",
+              "image": "profil.png",
+              "notifications": [],
+              "roles": [
+                {
+                  "id": 1,
+                  "name": "ADMIN"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "categorie": "Générales",
+    "amendes": [
+      {
+        "id": 5,
+        "montant": {
+          "id": 5,
+          "montant": 10000,
+          "devise": "FCFA"
+        },
+        "vocals": [],
+        "infractions": [
+          {
+            "id": 26,
+            "description": "Non respect de l’arrêté municipal régissant la circulation des gros porteurs (itinéraires-horaires)",
+            "reference": "Arrêté municipal n° 39/MDB du 16/08/2007",
+            "vocals": [],
+            "utilisateur": {
+              "id": 1,
+              "username": "geekdjenika",
+              "email": "djenikaa@gmail.com",
+              "password": "$2a$10$JYFQA0A7P29XjzH//bp.Bup2pt4d67Jay2H.772zidxP86Ai2Xmmi",
+              "image": "profil.png",
+              "notifications": [],
+              "roles": [
+                {
+                  "id": 1,
+                  "name": "ADMIN"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "montant": {
+          "id": 6,
+          "montant": 15000,
+          "devise": "FCFA"
+        },
+        "vocals": [],
+        "infractions": [
+          {
+            "id": 27,
+            "description": "-Occupation anarchique du domaine public",
+            "reference": "Arrêté municipal n° 114/MDB du 09/08/2001",
+            "vocals": [],
+            "utilisateur": {
+              "id": 1,
+              "username": "geekdjenika",
+              "email": "djenikaa@gmail.com",
+              "password": "$2a$10$JYFQA0A7P29XjzH//bp.Bup2pt4d67Jay2H.772zidxP86Ai2Xmmi",
+              "image": "profil.png",
+              "notifications": [],
+              "roles": [
+                {
+                  "id": 1,
+                  "name": "ADMIN"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

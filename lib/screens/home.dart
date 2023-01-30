@@ -2,15 +2,11 @@ import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:infrakunafoni/constants.dart';
-import 'package:infrakunafoni/models/infraction_model.dart';
 import 'package:infrakunafoni/screens/conseil/conseil_screen.dart';
 import 'package:infrakunafoni/screens/infraction/amende_screen.dart';
 import 'package:infrakunafoni/screens/infraction/infraction_screen.dart';
 import 'package:infrakunafoni/screens/quiz/quiz_screen.dart';
 
-import '../models/amende_model.dart';
-import '../models/categorie_model.dart';
-import '../models/montant_model.dart';
 import 'infraction/infraction_list.dart';
 
 class Accueil extends StatefulWidget {
@@ -21,38 +17,13 @@ class Accueil extends StatefulWidget {
 }
 
 class _AccueilState extends State<Accueil> {
-  List<Infraction> infractiongp = [
-    Infraction(
-      id: 1,
-      description: "Arrêt non autorisé",
-      reference: "Article 16 Arrêté interministériel 2492 du 11/12/2002",
-      vocals: [],
-      amendes: [
-        Amende(
-          id: 1,
-          categorie: Categorie(id: 1,categorie: "Véhicules légers",),
-          montant: Montant(id: 1, montant: 2000, devise: "FCFA"),
-          vocals: []
-        ),
-        Amende(
-            id: 2,
-            categorie: Categorie(id: 2,categorie: "Gros porteurs",),
-            montant: Montant(id: 2, montant: 3000, devise: "FCFA"),
-            vocals: []
-        ),
-      ],
-    )
-  ];
-  static const List<Widget> _pages = [
-    ConseilScreen(),
-    InfractionScreen(),
-    AmendeScreen(),
-    QuizScreen(),
-    InfractionList(categorie: 'Gros porteurs'),
-    InfractionList(categorie: 'Véhicules légers'),
-    InfractionList(categorie: 'Générales'),
-    InfractionList(categorie: 'Motos'),
 
+  static final List<Widget> _pages = [
+    const ConseilScreen(),
+    const InfractionScreen(),
+    const AmendeScreen(),
+    const QuizScreen(),
+    InfractionList(infractions: infractions),
   ];
   int curveindex = 1;
 
@@ -185,6 +156,7 @@ class _AccueilState extends State<Accueil> {
         onTap: (index) {
           setState(() {
             useindex = false;
+            infractions = [];
             curveindex = index;
           });
         },

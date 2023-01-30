@@ -1,10 +1,6 @@
 [
   {
     "id": 1,
-    "categorie": {
-      "id": 2,
-      "categorie": "Véhicules légers"
-    },
     "montant": {
       "id": 1,
       "montant": 2000,
@@ -19,14 +15,32 @@
           "label": "bm"
         }
       }
+    ],
+    "infractions": [
+      {
+        "id": 1,
+        "description": "Arrêt non autorisé",
+        "reference": "Article 16 Arrêté interministériel 2492 du 11/12/2002",
+        "vocals": [],
+        "utilisateur": {
+          "id": 1,
+          "username": "geekdjenika",
+          "email": "djenikaa@gmail.com",
+          "password": "$2a$10$JYFQA0A7P29XjzH//bp.Bup2pt4d67Jay2H.772zidxP86Ai2Xmmi",
+          "image": "profil.png",
+          "notifications": [],
+          "roles": [
+            {
+              "id": 1,
+              "name": "ADMIN"
+            }
+          ]
+        }
+      }
     ]
   },
   {
     "id": 2,
-    "categorie": {
-      "id": 1,
-      "categorie": "Gros porteurs"
-    },
     "montant": {
       "id": 2,
       "montant": 3000,
@@ -41,36 +55,32 @@
           "label": "bm"
         }
       }
-    ]
-  },
-  {
-    "id": 3,
-    "categorie": {
-      "id": 4,
-      "categorie": "Générales"
-    },
-    "montant": {
-      "id": 2,
-      "montant": 3000,
-      "devise": "FCFA"
-    },
-    "vocals": [
+    ],
+    "infractions": [
       {
-        "id": 3,
-        "vocal": "3000F bm.m4a",
-        "langue": {
+        "id": 1,
+        "description": "Arrêt non autorisé",
+        "reference": "Article 16 Arrêté interministériel 2492 du 11/12/2002",
+        "vocals": [],
+        "utilisateur": {
           "id": 1,
-          "label": "bm"
+          "username": "geekdjenika",
+          "email": "djenikaa@gmail.com",
+          "password": "$2a$10$JYFQA0A7P29XjzH//bp.Bup2pt4d67Jay2H.772zidxP86Ai2Xmmi",
+          "image": "profil.png",
+          "notifications": [],
+          "roles": [
+            {
+              "id": 1,
+              "name": "ADMIN"
+            }
+          ]
         }
       }
     ]
   },
   {
-    "id": 4,
-    "categorie": {
-      "id": 2,
-      "categorie": "Véhicules légers"
-    },
+    "id": 3,
     "montant": {
       "id": 3,
       "montant": 6000,
@@ -78,21 +88,39 @@
     },
     "vocals": [
       {
-        "id": 4,
+        "id": 3,
         "vocal": "6000F bm.m4a",
         "langue": {
           "id": 1,
           "label": "bm"
         }
       }
+    ],
+    "infractions": [
+      {
+        "id": 21,
+        "description": "Visité Technique - Assurance Périmée",
+        "reference": "Articles 112 - 108 Arrêté interministériel 2492 du 11/12/2002",
+        "vocals": [],
+        "utilisateur": {
+          "id": 1,
+          "username": "geekdjenika",
+          "email": "djenikaa@gmail.com",
+          "password": "$2a$10$JYFQA0A7P29XjzH//bp.Bup2pt4d67Jay2H.772zidxP86Ai2Xmmi",
+          "image": "profil.png",
+          "notifications": [],
+          "roles": [
+            {
+              "id": 1,
+              "name": "ADMIN"
+            }
+          ]
+        }
+      }
     ]
   },
   {
-    "id": 5,
-    "categorie": {
-      "id": 1,
-      "categorie": "Gros porteurs"
-    },
+    "id": 4,
     "montant": {
       "id": 4,
       "montant": 6500,
@@ -100,21 +128,39 @@
     },
     "vocals": [
       {
-        "id": 5,
+        "id": 4,
         "vocal": "6500F bm.m4a",
         "langue": {
           "id": 1,
           "label": "bm"
         }
       }
+    ],
+    "infractions": [
+      {
+        "id": 21,
+        "description": "Visité Technique - Assurance Périmée",
+        "reference": "Articles 112 - 108 Arrêté interministériel 2492 du 11/12/2002",
+        "vocals": [],
+        "utilisateur": {
+          "id": 1,
+          "username": "geekdjenika",
+          "email": "djenikaa@gmail.com",
+          "password": "$2a$10$JYFQA0A7P29XjzH//bp.Bup2pt4d67Jay2H.772zidxP86Ai2Xmmi",
+          "image": "profil.png",
+          "notifications": [],
+          "roles": [
+            {
+              "id": 1,
+              "name": "ADMIN"
+            }
+          ]
+        }
+      }
     ]
   },
   {
-    "id": 6,
-    "categorie": {
-      "id": 4,
-      "categorie": "Générales"
-    },
+    "id": 5,
     "montant": {
       "id": 5,
       "montant": 10000,
@@ -122,21 +168,39 @@
     },
     "vocals": [
       {
-        "id": 6,
+        "id": 5,
         "vocal": "10000F bm.m4a",
         "langue": {
           "id": 1,
           "label": "bm"
         }
       }
+    ],
+    "infractions": [
+      {
+        "id": 26,
+        "description": "Non respect de l’arrêté municipal régissant la circulation des gros porteurs (itinéraires-horaires)",
+        "reference": "Arrêté municipal n° 39/MDB du 16/08/2007",
+        "vocals": [],
+        "utilisateur": {
+          "id": 1,
+          "username": "geekdjenika",
+          "email": "djenikaa@gmail.com",
+          "password": "$2a$10$JYFQA0A7P29XjzH//bp.Bup2pt4d67Jay2H.772zidxP86Ai2Xmmi",
+          "image": "profil.png",
+          "notifications": [],
+          "roles": [
+            {
+              "id": 1,
+              "name": "ADMIN"
+            }
+          ]
+        }
+      }
     ]
   },
   {
-    "id": 7,
-    "categorie": {
-      "id": 4,
-      "categorie": "Générales"
-    },
+    "id": 6,
     "montant": {
       "id": 6,
       "montant": 15000,
@@ -144,21 +208,39 @@
     },
     "vocals": [
       {
-        "id": 7,
+        "id": 6,
         "vocal": "15000F bm.m4a",
         "langue": {
           "id": 1,
           "label": "bm"
         }
       }
+    ],
+    "infractions": [
+      {
+        "id": 27,
+        "description": "-Occupation anarchique du domaine public",
+        "reference": "Arrêté municipal n° 114/MDB du 09/08/2001",
+        "vocals": [],
+        "utilisateur": {
+          "id": 1,
+          "username": "geekdjenika",
+          "email": "djenikaa@gmail.com",
+          "password": "$2a$10$JYFQA0A7P29XjzH//bp.Bup2pt4d67Jay2H.772zidxP86Ai2Xmmi",
+          "image": "profil.png",
+          "notifications": [],
+          "roles": [
+            {
+              "id": 1,
+              "name": "ADMIN"
+            }
+          ]
+        }
+      }
     ]
   },
   {
-    "id": 8,
-    "categorie": {
-      "id": 3,
-      "categorie": "Motos"
-    },
+    "id": 7,
     "montant": {
       "id": 7,
       "montant": 300,
@@ -166,165 +248,33 @@
     },
     "vocals": [
       {
-        "id": 8,
+        "id": 7,
         "vocal": "300F bm.m4a",
         "langue": {
           "id": 1,
           "label": "bm"
         }
       }
-    ]
-  },
-  {
-    "id": 9,
-    "categorie": {
-      "id": 4,
-      "categorie": "Générales"
-    },
-    "montant": {
-      "id": 8,
-      "montant": 500,
-      "devise": "FCFA"
-    },
-    "vocals": [
+    ],
+    "infractions": [
       {
-        "id": 9,
-        "vocal": "500F bm.m4a",
-        "langue": {
+        "id": 31,
+        "description": "Pneumatiques en mauvais état",
+        "reference": "Article 117 du Décret n° 1999-134 du 26 mai 1999",
+        "vocals": [],
+        "utilisateur": {
           "id": 1,
-          "label": "bm"
-        }
-      }
-    ]
-  },
-  {
-    "id": 10,
-    "categorie": {
-      "id": 2,
-      "categorie": "Véhicules légers"
-    },
-    "montant": {
-      "id": 9,
-      "montant": 2500,
-      "devise": "FCFA"
-    },
-    "vocals": [
-      {
-        "id": 10,
-        "vocal": "2500F bm.m4a",
-        "langue": {
-          "id": 1,
-          "label": "bm"
-        }
-      }
-    ]
-  },
-  {
-    "id": 11,
-    "categorie": {
-      "id": 4,
-      "categorie": "Générales"
-    },
-    "montant": {
-      "id": 10,
-      "montant": 20000,
-      "devise": "FCFA"
-    },
-    "vocals": [
-      {
-        "id": 11,
-        "vocal": "20000F bm.m4a",
-        "langue": {
-          "id": 1,
-          "label": "bm"
-        }
-      }
-    ]
-  },
-  {
-    "id": 12,
-    "categorie": {
-      "id": 4,
-      "categorie": "Générales"
-    },
-    "montant": {
-      "id": 11,
-      "montant": 200000,
-      "devise": "FCFA"
-    },
-    "vocals": [
-      {
-        "id": 12,
-        "vocal": "200000F bm.m4a",
-        "langue": {
-          "id": 1,
-          "label": "bm"
-        }
-      }
-    ]
-  },
-  {
-    "id": 13,
-    "categorie": {
-      "id": 4,
-      "categorie": "Générales"
-    },
-    "montant": {
-      "id": 12,
-      "montant": 25000,
-      "devise": "FCFA"
-    },
-    "vocals": [
-      {
-        "id": 13,
-        "vocal": "250000F bm.m4a",
-        "langue": {
-          "id": 1,
-          "label": "bm"
-        }
-      }
-    ]
-  },
-  {
-    "id": 14,
-    "categorie": {
-      "id": 4,
-      "categorie": "Générales"
-    },
-    "montant": {
-      "id": 13,
-      "montant": 500000,
-      "devise": "FCFA"
-    },
-    "vocals": [
-      {
-        "id": 14,
-        "vocal": "500000F bm.m4a",
-        "langue": {
-          "id": 1,
-          "label": "bm"
-        }
-      }
-    ]
-  },
-  {
-    "id": 15,
-    "categorie": {
-      "id": 4,
-      "categorie": "Générales"
-    },
-    "montant": {
-      "id": 14,
-      "montant": 250000,
-      "devise": "FCFA"
-    },
-    "vocals": [
-      {
-        "id": 15,
-        "vocal": "250000F bm.m4a",
-        "langue": {
-          "id": 1,
-          "label": "bm"
+          "username": "geekdjenika",
+          "email": "djenikaa@gmail.com",
+          "password": "$2a$10$JYFQA0A7P29XjzH//bp.Bup2pt4d67Jay2H.772zidxP86Ai2Xmmi",
+          "image": "profil.png",
+          "notifications": [],
+          "roles": [
+            {
+              "id": 1,
+              "name": "ADMIN"
+            }
+          ]
         }
       }
     ]

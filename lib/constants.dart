@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:infrakunafoni/extensions/extension.dart';
+import 'package:infrakunafoni/models/infraction_model.dart';
 
 Color correct = '#3F72AF'.toColor();
 Color incorrect = '#E3001B'.toColor();
@@ -44,5 +45,8 @@ TextStyle texticon(Color? color) {
 int selectedPageIndex = 1;
 
 bool useindex = false;
+
+List<Infraction> infractions = [];
+
 
 

@@ -9,9 +9,9 @@ import 'package:infrakunafoni/models/infraction_model.dart';
 import '../../widgets/list_card.dart';
 
 class InfractionList extends StatefulWidget {
-  const InfractionList({Key? key, required this.categorie}) : super(key: key);
+  const InfractionList({Key? key, required this.infractions}) : super(key: key);
 
-  final String categorie;
+  final List<Infraction> infractions;
 
   @override
   State<InfractionList> createState() => _InfractionListState();
@@ -19,49 +19,12 @@ class InfractionList extends StatefulWidget {
 
 class _InfractionListState extends State<InfractionList> {
 
-  Future<List<Infraction>> readJson() async {
-    final String response = widget.categorie == 'Gros porteurs'
-        ? await rootBundle.loadString('assets/raw/Infractiongp.json')
-        : widget.categorie == 'Véhicules légers'
-        ? await rootBundle.loadString('assets/raw/Infractionvl.json')
-        : widget.categorie == 'Générales'
-        ? await rootBundle.loadString('assets/raw/Infractiongnrl.json')
-        : await rootBundle.loadString('assets/raw/Infractionmto.json');
-
-    final list = await json.decode(response) as List<dynamic>;
-
-    return list.map((e) => Infraction.fromJson(e)).toList(growable: true);
-  }
-
-  int index = 0;
 
   @override
   Widget build(BuildContext context) {
-    return FutureBuilder(
-      future: readJson(),
-      builder: (context, data) {
-        if(data.hasError) {
-          return Center(child: Text('${data.error}', style: titregras(Colors.black),),);
-        } else if(data.hasData) {
-          var liste = data.data as List<Infraction>;
-          return Column(
+    return Column(
             children: [
-              ClipRRect(
-                borderRadius: const BorderRadius.all(Radius.circular(8.0)),
-                child: Image.asset(
-                  widget.categorie == 'Gros porteurs'
-                      ? "assets/img/gp.png"
-                      : widget.categorie == 'Véhicules légers'
-                      ? "assets/img/vl.png"
-                      : widget.categorie == 'Générales'
-                      ? "assets/img/generale.png"
-                      : "assets/img/motos.jpg",
-                  height: MediaQuery.of(context).size.height / 5.5,
-                  width: double.infinity,
-                  fit: BoxFit.cover,
-                ),
-              ),
-              for(int i = 0; i < liste.length; i++)
+              for(int i = 0; i < infractions.length; i++)
                 ListCard(
                   listTile: ListTile(
                     leading: CircleAvatar(
@@ -74,11 +37,11 @@ class _InfractionListState extends State<InfractionList> {
                       ),
                     ),
                     title: Text(
-                      '${liste[i].description}',
+                      '${infractions[i].description}',
                       style: soustitregras(Colors.white),
                     ),
                     subtitle: Text(
-                      '${liste[i].reference}',
+                      '${infractions[i].reference}',
                       style: soustitre(Colors.white),
                     ),
                     trailing: const Icon(
@@ -90,11 +53,7 @@ class _InfractionListState extends State<InfractionList> {
                 ),
               SizedBox(height: MediaQuery.of(context).size.height * 0.35,)
             ],
-          );
-        } else {
-          return Center(child: CircularProgressIndicator(),);
-        }
-      },
+
     );
   }
 }

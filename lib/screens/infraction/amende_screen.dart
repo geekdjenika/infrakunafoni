@@ -26,7 +26,7 @@ class _AmendeScreenState extends State<AmendeScreen> {
     return list.map((e) => Amende.fromJson(e)).toList(growable: true);
   }
 
-  ScrollController _controller = new ScrollController();
+  final ScrollController _controller = ScrollController();
 
   //final AudioCache _player = AudioCache(prefix: 'assets/aud');
   final _player = AudioPlayer();
@@ -44,7 +44,7 @@ class _AmendeScreenState extends State<AmendeScreen> {
             controller: _controller,
             scrollDirection: Axis.vertical,
             shrinkWrap: true,
-            itemCount: liste == null ? 0 : liste.length,
+            itemCount: liste.length,
             itemBuilder: (context, index) {
               return ListCard(
                 listTile: ListTile(
@@ -62,7 +62,7 @@ class _AmendeScreenState extends State<AmendeScreen> {
                     style: soustitregras(Colors.white),
                   ),
                   subtitle: Text(
-                    '${liste[index].categorie?.categorie}',
+                    'Nombre d\'infraction : ${liste[index].infractions?.length}',
                     style: soustitre(Colors.white),
                   ),
                   trailing: InkWell(
@@ -70,7 +70,7 @@ class _AmendeScreenState extends State<AmendeScreen> {
                       await _player.setAsset('assets/aud/${liste[index].vocals?[0].vocal}');
                       _player.play();
                     },
-                    child: Icon(
+                    child: const Icon(
                       CupertinoIcons.speaker_2_fill,
                       color: Colors.white,
                       size: 20,
