@@ -10,7 +10,8 @@ import '../../widgets/option_card.dart';
 import '../../widgets/question_widget.dart';
 
 class QuestionsScreen extends StatefulWidget {
-  const QuestionsScreen({Key? key}) : super(key: key);
+  const QuestionsScreen({Key? key, required this.questions}) : super(key: key);
+  final List<Question> questions;
 
   @override
   State<QuestionsScreen> createState() => _QuetionsScreenState();
@@ -18,7 +19,9 @@ class QuestionsScreen extends StatefulWidget {
 
 class _QuetionsScreenState extends State<QuestionsScreen> {
 
-  final List<Question> _questions = [
+
+
+  /*final List<Question> _questions = [
     Question(id: 1,
         question: "Laquelle de ces asertions est une infraction?",
         options: {
@@ -83,7 +86,7 @@ class _QuetionsScreenState extends State<QuestionsScreen> {
           'S\'arrêter veut': true,
           'Se moto': false,
         })
-  ];
+  ];*/
 
   int index = 0;
 
@@ -92,6 +95,7 @@ class _QuetionsScreenState extends State<QuestionsScreen> {
   bool isPressed = false;
 
   bool isAlreadySelected = false;
+
 
   // create a function to start over
   void startOver() {
@@ -162,127 +166,126 @@ class _QuetionsScreenState extends State<QuestionsScreen> {
     }
   }
 
-    void checkAnswerAndUpdate(bool value) {
-      if (isAlreadySelected) {
-        return;
-      } else {
-        if (value == true) {
-          score++;
-        }
-        setState(() {
-          isPressed = true;
-          isAlreadySelected = true;
-        });
+  void checkAnswerAndUpdate(bool value) {
+    if (isAlreadySelected) {
+      return;
+    } else {
+      if (value == true) {
+        score++;
       }
+      setState(() {
+        isPressed = true;
+        isAlreadySelected = true;
+      });
     }
+  }
 
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: background,
 
-    @override
-    Widget build(BuildContext context) {
-      return Scaffold(
+      appBar: AppBar(
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text(
+                'Score: $score',
+              style: soustitre(Colors.white),
+            ),
+            Text('Q. ${(index+1).toString().padLeft(2,'0')}', style: soustitre(Colors.white)),
+            GestureDetector(
+              onTap: () {
+                showDialog(context: context, builder: (ctx) => ResultScreen(
+                  result: score,
+                  questionLength: widget.questions.length,
+                  onPressed: () => startToIndex(index),
+                )
+                );
+              },
+              child: const Icon(
+                Icons.menu_rounded,
+              ),
+            )
+          ],
+        ),
         backgroundColor: background,
-        appBar: AppBar(
-          title: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
-                  'Score: $score',
-                style: soustitre(Colors.white),
-              ),
-              Text('Q. ${(index+1).toString().padLeft(2,'0')}', style: soustitre(Colors.white)),
+        shadowColor: Colors.transparent,
+        /*actions: const [
+          Padding(
+            padding: EdgeInsets.all(18.0),
+            child:
+          ),
+        ],*/
+      ),
+      body: Container(
+        width: double.infinity,
+        height: MediaQuery.of(context).size.height * 0.85,
+        padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 40),
+        decoration: BoxDecoration(
+          color: neutral,
+          borderRadius: BorderRadius.circular(30),
+        ),
+        child: Column(
+          children: [
+            // add the questionWIdget here
+            QuestionWidget(
+              indexAction: index, // currently at 0.
+              question: widget.questions[index]
+                  .question, // means the first question in the list.
+              totalQuestions:
+              widget.questions.length, // total length of the list
+            ),
+            //const Divider(color: Colors.white),
+            // add some space
+            const SizedBox(height: 25.0),
+            for (int i = 0;
+            i < widget.questions[index].options.length;
+            i++)
               GestureDetector(
-                onTap: () {
-                  showDialog(context: context, builder: (ctx) => ResultScreen(
-                    result: score,
-                    questionLength: _questions.length,
-                    onPressed: () => startToIndex(index),
-                  )
-                  );
-                },
-                child: const Icon(
-                  Icons.menu_rounded,
+                onTap: () =>
+                    checkAnswerAndUpdate(
+                        widget.questions[index].options.values.toList()[i]),
+                child: OptionCard(
+                  option: widget.questions[index].options.keys.toList()[i],
+                  color: isPressed
+                      ? widget.questions[index]
+                      .options
+                      .values
+                      .toList()[i] ==
+                      true
+                      ? correct
+                      : incorrect
+                      : Colors.white
                 ),
-              )
-            ],
-          ),
-          backgroundColor: background,
-          shadowColor: Colors.transparent,
-          /*actions: const [
-            Padding(
-              padding: EdgeInsets.all(18.0),
-              child:
-            ),
-          ],*/
-        ),
-        body: Container(
-          width: double.infinity,
-          height: MediaQuery.of(context).size.height * 0.85,
-          padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 40),
-          decoration: BoxDecoration(
-            color: neutral,
-            borderRadius: BorderRadius.circular(30),
-          ),
-          child: Column(
-            children: [
-              // add the questionWIdget here
-              QuestionWidget(
-                indexAction: index, // currently at 0.
-                question: _questions[index]
-                    .question, // means the first question in the list.
-                totalQuestions:
-                _questions.length, // total length of the list
               ),
-              //const Divider(color: Colors.white),
-              // add some space
-              const SizedBox(height: 25.0),
-              for (int i = 0;
-              i < _questions[index].options.length;
-              i++)
-                GestureDetector(
-                  onTap: () =>
-                      checkAnswerAndUpdate(
-                          _questions[index].options.values.toList()[i]),
-                  child: OptionCard(
-                    option: _questions[index].options.keys.toList()[i],
-                    color: isPressed
-                        ? _questions[index]
-                        .options
-                        .values
-                        .toList()[i] ==
-                        true
-                        ? correct
-                        : incorrect
-                        : Colors.white
+            Expanded(
+              child: Align(
+                alignment: FractionalOffset.bottomCenter,
+                child: GestureDetector(
+                  onTap: () => nextQuestion(widget.questions.length),
+                  child: const Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 60.0),
+                    child: NextButton(),
                   ),
                 ),
-              Expanded(
-                child: Align(
-                  alignment: FractionalOffset.bottomCenter,
-                  child: GestureDetector(
-                    onTap: () => nextQuestion(_questions.length),
-                    child: const Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 60.0),
-                      child: NextButton(),
-                    ),
-                  ),
-                ),
-              )
-            ],
+              ),
+            )
+          ],
+        ),
+      ),
+      // use the floating action button
+      /*floatingActionButton: GestureDetector(
+        onTap: () => nextQuestion(_questions.length),
+        child: const Padding(
+          padding: EdgeInsets.symmetric(horizontal: 60.0,vertical: 30),
+          child: NextButton(// the above function
           ),
         ),
-        // use the floating action button
-        /*floatingActionButton: GestureDetector(
-          onTap: () => nextQuestion(_questions.length),
-          child: const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 60.0,vertical: 30),
-            child: NextButton(// the above function
-            ),
-          ),
-        ),
-        floatingActionButtonLocation:
-        FloatingActionButtonLocation.centerFloat,*/
-      );
-    }
-
+      ),
+      floatingActionButtonLocation:
+      FloatingActionButtonLocation.centerFloat,*/
+    );
+  }
 }
 

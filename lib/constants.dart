@@ -42,6 +42,21 @@ TextStyle texticon(Color? color) {
   );
 }
 
+TextStyle titreliste(Color? color) {
+  return GoogleFonts.montserrat(
+      fontSize: 15.0,
+      fontWeight: FontWeight.bold,
+      color: color
+  );
+}
+
+TextStyle soustitreliste(Color? color) {
+  return GoogleFonts.montserrat(
+      fontSize: 12.0,
+      color: color
+  );
+}
+
 int selectedPageIndex = 1;
 
 bool useindex = false;

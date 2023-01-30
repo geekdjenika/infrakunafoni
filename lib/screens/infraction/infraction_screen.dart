@@ -1,13 +1,11 @@
 import 'dart:convert';
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:infrakunafoni/models/categorie_model.dart';
 import 'package:infrakunafoni/screens/home.dart';
 
 import '../../constants.dart';
-import '../../models/infraction_model.dart';
 
 
 class InfractionScreen extends StatefulWidget {
@@ -86,11 +84,12 @@ class _InfractionScreenState extends State<InfractionScreen> {
                                     '${liste[i].categorie}',
                                     style: soustitregras(Colors.white),
                                   ),
-                                  //for(int j = 0; j < liste[i].amendes!.length; j++)
-                                    Text(
-                                      '${liste[i].amendes?.length} infractions',
-                                      style: soustitre(Colors.white),
-                                    )
+                                  Text(
+                                    liste[i].amendes!.length > 1
+                                    ? '${liste[i].amendes![0].infractions!.length + liste[i].amendes![1].infractions!.length} infractions'
+                                    : '${liste[i].amendes![0].infractions!.length} infractions',
+                                    style: soustitre(Colors.white),
+                                  )
                                 ],
                               ),
                             ),

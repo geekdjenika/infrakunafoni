@@ -33,25 +33,25 @@ class Questions {
     if (json['mauvaisesReponses'] != null) {
       mauvaisesReponses = <Reponse>[];
       json['mauvaisesReponses'].forEach((v) {
-        mauvaisesReponses!.add(new Reponse.fromJson(v));
+        mauvaisesReponses!.add(Reponse.fromJson(v));
       });
     }
     utilisateur = json['utilisateur'] != null
-        ? new Utilisateur.fromJson(json['utilisateur'])
+        ? Utilisateur.fromJson(json['utilisateur'])
         : null;
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['id'] = this.id;
-    data['question'] = this.question;
-    data['reponse'] = this.reponse;
-    if (this.mauvaisesReponses != null) {
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['id'] = id;
+    data['question'] = question;
+    data['reponse'] = reponse;
+    if (mauvaisesReponses != null) {
       data['mauvaisesReponses'] =
-          this.mauvaisesReponses!.map((v) => v.toJson()).toList();
+          mauvaisesReponses!.map((v) => v.toJson()).toList();
     }
-    if (this.utilisateur != null) {
-      data['utilisateur'] = this.utilisateur!.toJson();
+    if (utilisateur != null) {
+      data['utilisateur'] = utilisateur!.toJson();
     }
     return data;
   }

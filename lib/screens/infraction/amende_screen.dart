@@ -59,11 +59,11 @@ class _AmendeScreenState extends State<AmendeScreen> {
                   ),
                   title: Text(
                     '${liste[index].montant?.montant} ${liste[index].montant?.devise}',
-                    style: soustitregras(Colors.white),
+                    style: titreliste(Colors.white),
                   ),
                   subtitle: Text(
-                    'Nombre d\'infraction : ${liste[index].infractions?.length}',
-                    style: soustitre(Colors.white),
+                    'Infractions concernées : ${liste[index].infractions?.length}',
+                    style: soustitreliste(Colors.white),
                   ),
                   trailing: InkWell(
                     onTap: () async {

@@ -1,5 +1,15 @@
+import 'dart:convert';
+
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:infrakunafoni/models/question_model.dart';
+import 'package:infrakunafoni/models/quiz_model.dart';
+import 'package:infrakunafoni/screens/quiz/questions_screen.dart';
 import 'package:just_audio/just_audio.dart';
+
+import '../../constants.dart';
+import '../../widgets/list_card.dart';
 
 class QuizScreen extends StatefulWidget {
   const QuizScreen({Key? key}) : super(key: key);
@@ -9,34 +19,80 @@ class QuizScreen extends StatefulWidget {
 }
 
 class _QuizScreenState extends State<QuizScreen> {
-  late AudioPlayer _player;
 
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-    _player = AudioPlayer();
+  Future<List<Quiz>> readJson() async {
+    final String response =await rootBundle.loadString('assets/raw/Quiz.json');
+
+    final list = await json.decode(response) as List<dynamic>;
+
+    return list.map((e) => Quiz.fromJson(e)).toList(growable: true);
   }
 
-  @override
-  void dispose() {
-    // TODO: implement dispose
-    _player.dispose();
-    super.dispose();
-  }
+  final ScrollController _controller = ScrollController();
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () async {
-        await _player.setAsset('assets/aud/6000F bm.m4a');
-        await _player.play();
+    return FutureBuilder(
+      future: readJson(),
+      builder: (context, data) {
+        if(data.hasError) {
+          return Center(child: Text('${data.error}', style: titregras(Colors.black),),);
+        } else if(data.hasData) {
+          var liste = data.data as List<Quiz>;
+          return ListView.builder(
+            controller: _controller,
+            scrollDirection: Axis.vertical,
+            shrinkWrap: true,
+            itemCount: liste.length,
+            itemBuilder: (context, index) {
+              return ListCard(
+                listTile: ListTile(
+                  leading: CircleAvatar(
+                    maxRadius: 20,
+                    minRadius: 20,
+                    backgroundColor: Colors.white,
+                    child: Text(
+                      '${index+1}',
+                      style: soustitregras(background),
+                    ),
+                  ),
+                  title: Text(
+                    '${liste[index].label}',
+                    style: titreliste(Colors.white),
+                  ),
+                  subtitle: Text(
+                    'Nombre de questions : ${liste[index].questions?.length}',
+                    style: soustitreliste(Colors.white),
+                  ),
+                  trailing: InkWell(
+                    onTap: () {
+                      List<Question> qliste = [];
+                      liste[index].questions!.forEach((question) {
+                        qliste.add(
+                          Question(id: question.id!, question: question.question!, options: {
+                            question.reponse! : true,
+                            question.mauvaisesReponses![0].reponse! : false,
+                            question.mauvaisesReponses![1].reponse! : false,
+                            question.mauvaisesReponses![2].reponse! : false,
+                          })
+                        );
+                      });
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => QuestionsScreen(questions: qliste)));
+                    },
+                    child: const Icon(
+                      Icons.gamepad_outlined,
+                      color: Colors.white,
+                      size: 20,
+                    ),
+                  ),
+                ),
+              );
+            },
+          );
+        } else {
+          return const Center(child: CircularProgressIndicator(),);
+        }
       },
-        child: Container(
-        height: 23,
-        width: 23,
-        color: Colors.deepOrange,
-      ),
-      );
+    );
   }
 }

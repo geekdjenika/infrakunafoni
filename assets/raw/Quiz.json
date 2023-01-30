@@ -1,0 +1,75 @@
+[
+  {
+    "id": 1,
+    "label": "Quiz 1",
+    "questions": [
+      {
+        "id": 1,
+        "question": "Laquelle de ces assertions est une infraction ?",
+        "reponse": "Arrêt non autorisé",
+        "mauvaisesReponses": [
+          {
+            "id": 1,
+            "reponse": "Manger dans sa voiture "
+          },
+          {
+            "id": 2,
+            "reponse": "S'arrêter quand on veut"
+          },
+          {
+            "id": 3,
+            "reponse": "Se tenir debout sur sa moto"
+          }
+        ],
+        "utilisateur": {
+          "id": 1,
+          "username": "geekdjenika",
+          "email": "djenikaa@gmail.com",
+          "password": "$2a$10$d7m1AhxBsBKT7qyoZ5Bz8.LjLa1EjKSg.yOpb6tOFBR1tp/3CO0WO",
+          "image": "profil.png",
+          "notifications": [],
+          "roles": [
+            {
+              "id": 1,
+              "name": "ADMIN"
+            }
+          ]
+        }
+      },
+      {
+        "id": 2,
+        "question": "Choisis la bonne infraction infraction ?",
+        "reponse": "Pneumatiques en mauvais état",
+        "mauvaisesReponses": [
+          {
+            "id": 4,
+            "reponse": "Ancienne véhicule"
+          },
+          {
+            "id": 5,
+            "reponse": "Sortir avec un ordinateur sur la route"
+          },
+          {
+            "id": 6,
+            "reponse": "Conduire les jours férieux"
+          }
+        ],
+        "utilisateur": {
+          "id": 1,
+          "username": "geekdjenika",
+          "email": "djenikaa@gmail.com",
+          "password": "$2a$10$d7m1AhxBsBKT7qyoZ5Bz8.LjLa1EjKSg.yOpb6tOFBR1tp/3CO0WO",
+          "image": "profil.png",
+          "notifications": [],
+          "roles": [
+            {
+              "id": 1,
+              "name": "ADMIN"
+            }
+          ]
+        }
+      }
+    ],
+    "joueurs": []
+  }
+]
