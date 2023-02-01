@@ -1,4 +1,5 @@
-import 'package:flutter/cupertino.dart';
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:infrakunafoni/screens/quiz/result_screen.dart';
@@ -19,7 +20,11 @@ class QuestionsScreen extends StatefulWidget {
 
 class _QuetionsScreenState extends State<QuestionsScreen> {
 
-
+  @override
+  void initState() {
+    // TODO: implement initState
+    indexAleatoire = generateIndex();
+  }
 
   /*final List<Question> _questions = [
     Question(id: 1,
@@ -104,16 +109,27 @@ class _QuetionsScreenState extends State<QuestionsScreen> {
       score = 0;
       isPressed = false;
       isAlreadySelected = false;
+      indexAleatoire = generateIndex();
     });
     Navigator.pop(context);
   }
 
   void startToIndex(int i) {
-    setState(() {
-      index = i;
-      isPressed = false;
-      isAlreadySelected = false;
-    });
+    if(index == widget.questions.length -1) {
+      setState(() {
+        index = i;
+        isPressed = false;
+        isAlreadySelected = false;
+        score = 0;
+      });
+    } else {
+      setState(() {
+        index = i;
+        isPressed = false;
+        isAlreadySelected = false;
+      });
+    }
+
     Navigator.pop(context);
   }
 
@@ -150,6 +166,7 @@ class _QuetionsScreenState extends State<QuestionsScreen> {
           index++; // when the index will change to 1. rebuild the app.
           isPressed = false;
           isAlreadySelected = false;
+          indexAleatoire = generateIndex();
         });
       } else {
         Fluttertoast.showToast(
@@ -164,6 +181,20 @@ class _QuetionsScreenState extends State<QuestionsScreen> {
         ));*/
       }
     }
+  }
+
+  List indexAleatoire = [];
+
+  List generateIndex() {
+    List<int> numberList=[];
+    while(numberList.length < widget.questions[index].options.length){
+      int randomNumber = Random().nextInt(widget.questions[index].options.length);
+      if (!numberList.contains(randomNumber)){
+        numberList.add(randomNumber);
+      }
+    }
+    print(numberList);
+    return numberList;
   }
 
   void checkAnswerAndUpdate(bool value) {
@@ -199,7 +230,7 @@ class _QuetionsScreenState extends State<QuestionsScreen> {
                 showDialog(context: context, builder: (ctx) => ResultScreen(
                   result: score,
                   questionLength: widget.questions.length,
-                  onPressed: () => startToIndex(index),
+                  onPressed: () => startOver,
                 )
                 );
               },
@@ -211,12 +242,6 @@ class _QuetionsScreenState extends State<QuestionsScreen> {
         ),
         backgroundColor: background,
         shadowColor: Colors.transparent,
-        /*actions: const [
-          Padding(
-            padding: EdgeInsets.all(18.0),
-            child:
-          ),
-        ],*/
       ),
       body: Container(
         width: double.infinity,
@@ -245,14 +270,14 @@ class _QuetionsScreenState extends State<QuestionsScreen> {
               GestureDetector(
                 onTap: () =>
                     checkAnswerAndUpdate(
-                        widget.questions[index].options.values.toList()[i]),
+                        widget.questions[index].options.values.toList()[indexAleatoire.elementAt(i)]),
                 child: OptionCard(
-                  option: widget.questions[index].options.keys.toList()[i],
+                  option: widget.questions[index].options.keys.toList()[indexAleatoire.elementAt(i)],
                   color: isPressed
                       ? widget.questions[index]
                       .options
                       .values
-                      .toList()[i] ==
+                      .toList()[indexAleatoire.elementAt(i)] ==
                       true
                       ? correct
                       : incorrect
@@ -263,7 +288,9 @@ class _QuetionsScreenState extends State<QuestionsScreen> {
               child: Align(
                 alignment: FractionalOffset.bottomCenter,
                 child: GestureDetector(
-                  onTap: () => nextQuestion(widget.questions.length),
+                  onTap: () => {
+                    nextQuestion(widget.questions.length)
+                  },
                   child: const Padding(
                     padding: EdgeInsets.symmetric(horizontal: 60.0),
                     child: NextButton(),

@@ -5,6 +5,7 @@ import 'package:infrakunafoni/constants.dart';
 import 'package:infrakunafoni/screens/conseil/conseil_screen.dart';
 import 'package:infrakunafoni/screens/infraction/amende_screen.dart';
 import 'package:infrakunafoni/screens/infraction/infraction_screen.dart';
+import 'package:infrakunafoni/screens/profile_screen.dart';
 import 'package:infrakunafoni/screens/quiz/quiz_screen.dart';
 
 import 'infraction/infraction_list.dart';
@@ -40,9 +41,14 @@ class _AccueilState extends State<Accueil> {
               children: [
                 CircleAvatar(
                   backgroundColor: background,
-                  child: const Icon(
-                    Icons.person,
-                    color: Colors.white,
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => Profil()));
+                    },
+                    child: const Icon(
+                      Icons.person,
+                      color: Colors.white,
+                    ),
                   ),
                 ),
                 CircleAvatar(

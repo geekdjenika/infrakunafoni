@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:infrakunafoni/screens/home.dart';
+import 'package:infrakunafoni/screens/profile_screen.dart';
 
 void main() {
   runApp(const MyApp());

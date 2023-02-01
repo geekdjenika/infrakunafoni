@@ -19,7 +19,7 @@ class ResultScreen extends StatelessWidget {
         elevation: 0,
         leading: InkWell(
           onTap: () => Navigator.pop(context),
-          child: Icon(
+          child: const Icon(
               CupertinoIcons.back
           ),
         ),
@@ -30,13 +30,13 @@ class ResultScreen extends StatelessWidget {
         ),
         actions: [
           Padding(
-            padding: EdgeInsets.only(right: 8.0),
+            padding: const EdgeInsets.only(right: 8.0),
             child: InkWell(
               onTap: () {
 
               },
-              child: Icon(
-                  CupertinoIcons.sidebar_left
+              child: const Icon(
+                  CupertinoIcons.sidebar_right
               ),
             ),
           )
@@ -91,6 +91,7 @@ class ResultScreen extends StatelessWidget {
               alignment: WrapAlignment.spaceAround,
               direction: Axis.horizontal,
               children: [
+                for(int i = 0; i < questionLength; i++)
                 Container(
                   margin: const EdgeInsets.all(20.0),
                   height: 65,
@@ -106,111 +107,7 @@ class ResultScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-                Container(
-                  margin: const EdgeInsets.all(20.0),
-                  height: 65,
-                  width: 65,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    color: background,
-                  ),
-                  child: Center(
-                    child: Text(
-                      '$questionLength',
-                      style: soustitre(Colors.white),
-                    ),
-                  ),
-                ),
-                Container(
-                  margin: const EdgeInsets.all(20.0),
-                  height: 65,
-                  width: 65,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    color: background,
-                  ),
-                  child: Center(
-                    child: Text(
-                      '$questionLength',
-                      style: soustitre(Colors.white),
-                    ),
-                  ),
-                ),
-                Container(
-                  margin: const EdgeInsets.all(20.0),
-                  height: 65,
-                  width: 65,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    color: background,
-                  ),
-                  child: Center(
-                    child: Text(
-                      '$questionLength',
-                      style: soustitre(Colors.white),
-                    ),
-                  ),
-                ),
-                Container(
-                  margin: const EdgeInsets.all(20.0),
-                  height: 65,
-                  width: 65,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    color: background,
-                  ),
-                  child: Center(
-                    child: Text(
-                      '$questionLength',
-                      style: soustitre(Colors.white),
-                    ),
-                  ),
-                ),
-                Container(
-                  margin: const EdgeInsets.all(20.0),
-                  height: 65,
-                  width: 65,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    color: background,
-                  ),
-                  child: Center(
-                    child: Text(
-                      '$questionLength',
-                      style: soustitre(Colors.white),
-                    ),
-                  ),
-                ),
-                Container(
-                  margin: const EdgeInsets.all(20.0),
-                  height: 65,
-                  width: 65,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    color: background,
-                  ),
-                  child: Center(
-                    child: Text(
-                      '$questionLength',
-                      style: soustitre(Colors.white),
-                    ),
-                  ),
-                ),
-                Container(
-                  margin: const EdgeInsets.all(20.0),
-                  height: 65,
-                  width: 65,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    color: background,
-                  ),
-                  child: Center(
-                    child: Text(
-                      '$questionLength',
-                      style: soustitre(Colors.white),
-                    ),
-                  ),
-                ),
+
               ],
             ),
             Expanded(
