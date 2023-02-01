@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:infrakunafoni/constants.dart';
+import 'package:infrakunafoni/screens/auth/sign_in.dart';
 
 import '../widgets/my_button.dart';
 import '../widgets/my_card.dart';
@@ -72,7 +73,7 @@ class _ProfilState extends State<Profil> {
                               child: CircleAvatar(
                                 backgroundColor: Colors.white,
                                 maxRadius: MediaQuery.of(context).size.height * 0.02,
-                                child: const Icon(CupertinoIcons.camera),
+                                child: Icon(CupertinoIcons.camera, size: MediaQuery.of(context).size.height * 0.025,),
                               ),
                             )
                           ],
@@ -96,6 +97,9 @@ class _ProfilState extends State<Profil> {
                           style: soustitregras(background),
                         ),
                         MyTextField(
+                          prefixIcon: const Icon(
+                              Icons.person
+                          ),
                           controller: _usernameController,
                           hintText: 'geekdjenika',
                           obscureText: false,
@@ -106,11 +110,19 @@ class _ProfilState extends State<Profil> {
                           style: soustitregras(background),
                         ),
                         MyTextField(
+                          prefixIcon: const Icon(
+                              CupertinoIcons.envelope
+                          ),
                           controller: _emailController,
                           hintText: 'djenikaa@gmail.com',
                           obscureText: false,
                         ),
                         SizedBox(height: MediaQuery.of(context).size.height * 0.06,),
+                        Text(
+                          'Vos scores :',
+                          style: soustitregras(background),
+                        ),
+                        SizedBox(height: MediaQuery.of(context).size.height * 0.02),
                         MyCard(
                           widget: Column(
                             children: [
@@ -137,7 +149,9 @@ class _ProfilState extends State<Profil> {
                         SizedBox(height: MediaQuery.of(context).size.height * 0.06,),
                         MyButton(
                           text: 'Se deconnecter',
-                          onTap: () {},
+                          onTap: () {
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => Connexion()));
+                          },
                         ),
                       ],
                     )

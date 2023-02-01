@@ -243,62 +243,64 @@ class _QuetionsScreenState extends State<QuestionsScreen> {
         backgroundColor: background,
         shadowColor: Colors.transparent,
       ),
-      body: Container(
-        width: double.infinity,
-        height: MediaQuery.of(context).size.height * 0.85,
-        padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 40),
-        decoration: BoxDecoration(
-          color: neutral,
-          borderRadius: BorderRadius.circular(30),
-        ),
-        child: Column(
-          children: [
-            // add the questionWIdget here
-            QuestionWidget(
-              indexAction: index, // currently at 0.
-              question: widget.questions[index]
-                  .question, // means the first question in the list.
-              totalQuestions:
-              widget.questions.length, // total length of the list
-            ),
-            //const Divider(color: Colors.white),
-            // add some space
-            const SizedBox(height: 25.0),
-            for (int i = 0;
-            i < widget.questions[index].options.length;
-            i++)
-              GestureDetector(
-                onTap: () =>
-                    checkAnswerAndUpdate(
-                        widget.questions[index].options.values.toList()[indexAleatoire.elementAt(i)]),
-                child: OptionCard(
-                  option: widget.questions[index].options.keys.toList()[indexAleatoire.elementAt(i)],
-                  color: isPressed
-                      ? widget.questions[index]
-                      .options
-                      .values
-                      .toList()[indexAleatoire.elementAt(i)] ==
-                      true
-                      ? correct
-                      : incorrect
-                      : Colors.white
-                ),
+      body: SingleChildScrollView(
+        child: Container(
+          width: double.infinity,
+          height: MediaQuery.of(context).size.height * 0.85,
+          padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 40),
+          decoration: BoxDecoration(
+            color: neutral,
+            borderRadius: BorderRadius.circular(30),
+          ),
+          child: Column(
+            children: [
+              // add the questionWIdget here
+              QuestionWidget(
+                indexAction: index, // currently at 0.
+                question: widget.questions[index]
+                    .question, // means the first question in the list.
+                totalQuestions:
+                widget.questions.length, // total length of the list
               ),
-            Expanded(
-              child: Align(
-                alignment: FractionalOffset.bottomCenter,
-                child: GestureDetector(
-                  onTap: () => {
-                    nextQuestion(widget.questions.length)
-                  },
-                  child: const Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 60.0),
-                    child: NextButton(),
+              //const Divider(color: Colors.white),
+              // add some space
+              const SizedBox(height: 25.0),
+              for (int i = 0;
+              i < widget.questions[index].options.length;
+              i++)
+                GestureDetector(
+                  onTap: () =>
+                      checkAnswerAndUpdate(
+                          widget.questions[index].options.values.toList()[indexAleatoire.elementAt(i)]),
+                  child: OptionCard(
+                    option: widget.questions[index].options.keys.toList()[indexAleatoire.elementAt(i)],
+                    color: isPressed
+                        ? widget.questions[index]
+                        .options
+                        .values
+                        .toList()[indexAleatoire.elementAt(i)] ==
+                        true
+                        ? correct
+                        : incorrect
+                        : Colors.white
                   ),
                 ),
-              ),
-            )
-          ],
+              Expanded(
+                child: Align(
+                  alignment: FractionalOffset.bottomCenter,
+                  child: GestureDetector(
+                    onTap: () => {
+                      nextQuestion(widget.questions.length)
+                    },
+                    child: const Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 60.0),
+                      child: NextButton(),
+                    ),
+                  ),
+                ),
+              )
+            ],
+          ),
         ),
       ),
       // use the floating action button
