@@ -47,6 +47,20 @@ class _QuizScreenState extends State<QuizScreen> {
             itemBuilder: (context, index) {
               return ListCard(
                 listTile: ListTile(
+                  onTap: () {
+                    List<Question> qliste = [];
+                    liste[index].questions!.forEach((question) {
+                      qliste.add(
+                          Question(id: question.id!, question: question.question!, options: {
+                            question.reponse! : true,
+                            question.mauvaisesReponses![0].reponse! : false,
+                            question.mauvaisesReponses![1].reponse! : false,
+                            question.mauvaisesReponses![2].reponse! : false,
+                          })
+                      );
+                    });
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => QuestionsScreen(questions: qliste)));
+                  },
                   leading: CircleAvatar(
                     maxRadius: 20,
                     minRadius: 20,

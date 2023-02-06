@@ -1,3 +1,4 @@
+import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -24,7 +25,7 @@ class _AccueilState extends State<Accueil> {
     const InfractionScreen(),
     const AmendeScreen(),
     const QuizScreen(),
-    InfractionList(infractions: infractions),
+    InfractionList(infractions: infractions,amendes: amendes, categorie : categorie),
   ];
   int curveindex = 1;
 
@@ -43,7 +44,7 @@ class _AccueilState extends State<Accueil> {
                   backgroundColor: background,
                   child: GestureDetector(
                     onTap: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => Profil()));
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => const Profil()));
                     },
                     child: const Icon(
                       Icons.person,
@@ -53,9 +54,28 @@ class _AccueilState extends State<Accueil> {
                 ),
                 CircleAvatar(
                   backgroundColor: background,
-                  child: const Icon(
-                    CupertinoIcons.search,
-                    color: Colors.white,
+                  child: GestureDetector(
+                    onTap: () {
+                      AwesomeDialog(
+                        context: context,
+                        dialogType: DialogType.noHeader,
+                        animType: AnimType.rightSlide,
+                        autoHide: const Duration(seconds: 5),
+                        title: 'Salut !',
+                        desc: 'Je vais disparaître dans 5 sécondes !',
+                        btnCancelOnPress: () {
+                          //Navigator.pop(context);
+                        },
+
+                        btnOkOnPress: () {
+                          //Navigator.push(context, MaterialPageRoute(builder: (context) => Connexion()));
+                        },
+                      ).show();
+                    },
+                    child: const Icon(
+                      CupertinoIcons.search,
+                      color: Colors.white,
+                    ),
                   ),
                 )
               ],
@@ -162,6 +182,7 @@ class _AccueilState extends State<Accueil> {
         onTap: (index) {
           setState(() {
             useindex = false;
+            amendes = [];
             infractions = [];
             curveindex = index;
           });

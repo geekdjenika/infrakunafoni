@@ -2,22 +2,23 @@ import 'package:flutter/material.dart';
 import 'package:infrakunafoni/constants.dart';
 
 class MyCard extends StatelessWidget {
-  const MyCard({Key? key, required this.widget}) : super(key: key);
+  const MyCard({Key? key, required this.widget, this.color}) : super(key: key);
   final Widget widget;
+  final Color? color;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 300,//MediaQuery.of(context).size.height * 0.3,
+      height: 160,
       decoration: BoxDecoration(
-        color: neutral,
+        color: color != null ? color : neutral,
         borderRadius: BorderRadius.circular(10),
-        boxShadow: const [
+        boxShadow: [
           BoxShadow(
-            color: Colors.black54,
+            color: background,
             spreadRadius: 1,
             blurRadius: 5,
-            offset: Offset(1, 1),
+            offset: const Offset(1, 1),
           )
         ]
       ),

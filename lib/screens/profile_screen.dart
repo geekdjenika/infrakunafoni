@@ -1,11 +1,18 @@
+import 'dart:io';
+import 'dart:math';
+
+import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:infrakunafoni/constants.dart';
 import 'package:infrakunafoni/screens/auth/sign_in.dart';
 
 import '../widgets/my_button.dart';
 import '../widgets/my_card.dart';
 import '../widgets/my_textfield.dart';
+import '../widgets/square_tile.dart';
 
 class Profil extends StatefulWidget {
   const Profil({Key? key}) : super(key: key);
@@ -19,6 +26,29 @@ class _ProfilState extends State<Profil> {
   final _usernameController = TextEditingController();
   final _emailController = TextEditingController();
 
+  String selectedImagePath = '';
+
+  selectImageFromGallery() async {
+    XFile? file = await ImagePicker()
+        .pickImage(source: ImageSource.gallery, imageQuality: 10);
+    if (file != null) {
+      return file.path;
+    } else {
+      return '';
+    }
+  }
+
+  //
+  selectImageFromCamera() async {
+    XFile? file = await ImagePicker()
+        .pickImage(source: ImageSource.camera, imageQuality: 10);
+    if (file != null) {
+      return file.path;
+    } else {
+      return '';
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,7 +59,7 @@ class _ProfilState extends State<Profil> {
               elevation: 0,
               leading: InkWell(
                 onTap: () => Navigator.pop(context),
-                  child: Icon(CupertinoIcons.back)
+                  child: const Icon(CupertinoIcons.back)
               ),
               title: Center(
                 child: Text(
@@ -63,17 +93,77 @@ class _ProfilState extends State<Profil> {
                         Stack(
                           children: [
                             CircleAvatar(
-                              backgroundColor: Colors.white,
+                              backgroundColor: Colors.black,
                               maxRadius: MediaQuery.of(context).size.height * 0.08,
-                              child: Image.asset("assets/img/user_profile.png"),
+                              minRadius: MediaQuery.of(context).size.height * 0.08,
+                              child: selectedImagePath == '' ? ClipRRect(child: Image.asset("assets/img/photo.jpg"),borderRadius: BorderRadius.all(Radius.circular(MediaQuery.of(context).size.height * 0.08))) : ClipRRect(child: Image.file(File(selectedImagePath), fit: BoxFit.cover, width: MediaQuery.of(context).size.width, height: MediaQuery.of(context).size.height,), borderRadius: BorderRadius.all(Radius.circular(MediaQuery.of(context).size.height * 0.08)),),
                             ),
                             Positioned(
                               bottom: 0,
                               right: 0,
-                              child: CircleAvatar(
-                                backgroundColor: Colors.white,
-                                maxRadius: MediaQuery.of(context).size.height * 0.02,
-                                child: Icon(CupertinoIcons.camera, size: MediaQuery.of(context).size.height * 0.025,),
+                              child: GestureDetector(
+                                onTap: () {
+                                  AwesomeDialog(
+                                    context: context,
+                                    closeIcon: const Icon(
+                                      Icons.cancel_sharp
+                                    ),
+                                    dialogType: DialogType.noHeader,
+                                    body: Padding(
+                                      padding: const EdgeInsets.only(bottom: 15.0),
+                                      child: Row(
+                                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                        children: [
+                                          GestureDetector(
+                                            child: const SquareTile(imagePath: 'assets/img/gallery.png'),
+                                            onTap: () async {
+                                              Fluttertoast.showToast(
+                                                msg: "Pick from gallery",
+                                              );
+                                              selectedImagePath = await selectImageFromGallery();
+
+                                              if (selectedImagePath != '') {
+                                                Navigator.pop(context);
+                                                setState(() {});
+                                              } else {
+                                                ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                                                  content: Text("Aucune image selectionnée !"),
+                                                ));
+                                              }
+                                            },
+                                          ),
+
+                                          // apple button
+                                          GestureDetector(
+                                            child: const SquareTile(imagePath: 'assets/img/camera.png'),
+                                            onTap: () async {
+                                              Fluttertoast.showToast(
+                                                msg: "Pick from camera",
+                                              );
+
+                                              selectedImagePath = await selectImageFromCamera();
+
+                                              if (selectedImagePath != '') {
+                                                Navigator.pop(context);
+                                                setState(() {});
+                                              } else {
+                                                ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                                                  content: Text("Erreur lors de la capture de l'image !"),
+                                                ));
+                                              }
+
+                                            },
+                                          )
+                                        ],
+                                      ),
+                                    )
+                                  ).show();
+                                },
+                                child: CircleAvatar(
+                                  backgroundColor: Colors.grey[700],
+                                  maxRadius: MediaQuery.of(context).size.height * 0.02,
+                                  child: Icon(CupertinoIcons.camera, size: MediaQuery.of(context).size.height * 0.025,),
+                                ),
                               ),
                             )
                           ],
@@ -133,11 +223,11 @@ class _ProfilState extends State<Profil> {
                                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                   children: [
                                     Text(
-                                      '${DateTime(2023,1,24)}',
+                                      '${DateTime(2023,Random().nextInt(12),Random().nextInt(30))}',
                                       style: titreliste(background),
                                     ),
                                     Text(
-                                      '34 points',
+                                      '${Random().nextInt(100)} points',
                                       style: titreliste(background),
                                     )
                                   ],
@@ -150,7 +240,7 @@ class _ProfilState extends State<Profil> {
                         MyButton(
                           text: 'Se deconnecter',
                           onTap: () {
-                            Navigator.push(context, MaterialPageRoute(builder: (context) => Connexion()));
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => const Connexion()));
                           },
                         ),
                       ],

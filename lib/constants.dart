@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:infrakunafoni/extensions/extension.dart';
+import 'package:infrakunafoni/models/amende_model.dart';
+import 'package:infrakunafoni/models/categorie_model.dart';
 import 'package:infrakunafoni/models/infraction_model.dart';
 
 Color correct = '#3F72AF'.toColor();
@@ -61,7 +63,13 @@ int selectedPageIndex = 1;
 
 bool useindex = false;
 
+List<Amende> amendes = [];
+
 List<Infraction> infractions = [];
+
+Categorie categorie = Categorie();
+
+String nomcategorie = '';
 
 
 
