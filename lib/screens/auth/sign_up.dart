@@ -139,7 +139,16 @@ class _InscriptionState extends State<Inscription> {
                   // sign in button
                   MyButton(
                     text: 'S\'inscrire',
-                    onTap: () {},
+                    onTap: () async {
+                      SignUp signuprequest = SignUp(
+                          username: usernameController.value.text,
+                          email: emailController.value.text,
+                          password: passwordController.value.text
+                      );
+                      String retour = await utilisateurService.signup(signuprequest);
+                      print(retour);
+                      Fluttertoast.showToast(msg: retour);
+                    },
                   ),
 
                   SizedBox(height: MediaQuery.of(context).size.height * 0.04),
@@ -155,15 +164,7 @@ class _InscriptionState extends State<Inscription> {
                       SizedBox(width: MediaQuery.of(context).size.width * 0.02),
                       GestureDetector(
                         onTap: () async {
-                          SignUp signuprequest = SignUp(
-                            username: usernameController.value.text,
-                            email: emailController.value.text,
-                            password: passwordController.value.text
-                          );
-                          String retour = await utilisateurService.signup(signuprequest);
-                          print(utilisateurService.signup(signuprequest));
-                          Fluttertoast.showToast(msg: retour);
-                          //Navigator.push(context, MaterialPageRoute(builder: (context) => const Connexion()));
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => const Connexion()));
                         },
                         child: Text(
                             'Se connecter',
