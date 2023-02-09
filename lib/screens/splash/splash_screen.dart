@@ -19,7 +19,7 @@ class _SplashState extends State<Splash> {
 
     Future.delayed(const Duration(seconds: 4)).then((value) {
       Navigator.of(context).pushReplacement(
-          CupertinoPageRoute(builder: (context) =>  Accueil()));
+          CupertinoPageRoute(builder: (context) =>  const Accueil()));
     });
   }
   Widget build(BuildContext context) {

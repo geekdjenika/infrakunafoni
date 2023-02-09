@@ -10,11 +10,11 @@ import 'package:infrakunafoni/screens/infraction/infraction_details.dart';
 import '../../widgets/list_card.dart';
 
 class InfractionList extends StatefulWidget {
-  const InfractionList({Key? key, required this.infractions, required this.amendes, required this.categorie}) : super(key: key);
+  const InfractionList({Key? key, required this.infractions, required this.amendes}) : super(key: key);
 
   final List<Infraction> infractions;
   final List<Amende> amendes;
-  final Categorie categorie;
+  //final Categorie categorie;
 
   @override
   State<InfractionList> createState() => _InfractionListState();
@@ -27,11 +27,21 @@ class _InfractionListState extends State<InfractionList> {
   Widget build(BuildContext context) {
     return Column(
       children: [
+        ClipRRect(
+          borderRadius: const BorderRadius.all(Radius.circular(8.0)),
+          child: Image.asset(
+            "assets/img/${categorie[0].categorie}.png",
+            height: MediaQuery.of(context).size.height / 5.5,
+            width: double.infinity,
+            fit: BoxFit.cover,
+          ),
+        ),
         for(int i = 0; i < infractions.length; i++)
           ListCard(
             listTile: ListTile(
               onTap: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => DetailsInfracion(amendes: widget.amendes, infraction: widget.infractions[i], categorie : widget.categorie, numero: i+1,)));
+                //categorie.add(categorie[0]);
+                Navigator.push(context, MaterialPageRoute(builder: (context) => DetailsInfracion(amendes: amendes, infraction: infractions[i], categorie : categorie[0], numero: i+1,)));
               },
               leading: CircleAvatar(
                 maxRadius: 20,
@@ -58,7 +68,7 @@ class _InfractionListState extends State<InfractionList> {
                 collapseText: 'moins',
                 expandOnTextTap: true,
                 collapseOnTextTap: true,
-                maxLines: 1,
+                maxLines: 2,
                 linkColor: Colors.white,
                 style: soustitreliste(Colors.white),
               ),

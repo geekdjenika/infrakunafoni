@@ -25,7 +25,7 @@ class _AccueilState extends State<Accueil> {
     const InfractionScreen(),
     const AmendeScreen(),
     const QuizScreen(),
-    InfractionList(infractions: infractions,amendes: amendes, categorie : categorie),
+    InfractionList(infractions: infractions,amendes: amendes),
   ];
   int curveindex = 1;
 
@@ -182,6 +182,7 @@ class _AccueilState extends State<Accueil> {
         onTap: (index) {
           setState(() {
             useindex = false;
+            categorie = [];
             amendes = [];
             infractions = [];
             curveindex = index;

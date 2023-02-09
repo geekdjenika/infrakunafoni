@@ -24,7 +24,7 @@ class DetailsCard extends StatelessWidget {
             )
           ]
       ),
-      child: SingleChildScrollView(
+      child: Container(
           child: widget
       ),
     );

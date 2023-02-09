@@ -33,9 +33,12 @@ class _DetailsInfracionState extends State<DetailsInfracion> {
               ),
             ),
             actions: [
-              Icon(
-                Icons.more_vert_sharp,
-                color: background,
+              Padding(
+                padding: const EdgeInsets.only(right: 8.0),
+                child: Icon(
+                  Icons.more_vert_sharp,
+                  color: background,
+                ),
               )
             ],
             //pinned: true,
@@ -57,14 +60,15 @@ class _DetailsInfracionState extends State<DetailsInfracion> {
                     widget: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Column(
-                        //mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Text(
                                 '#${widget.numero}',
-                                style: soustitre(Colors.pink),
+                                style: soustitregras(Colors.pink),
                               ),
                               const Icon(
                                 Icons.tips_and_updates_outlined,
@@ -72,28 +76,48 @@ class _DetailsInfracionState extends State<DetailsInfracion> {
                               )
                             ],
                           ),
+
                           Text(
                             '${widget.infraction.description}',
                             style: soustitregras(Colors.black),
                           ),
-                          Text(
-                            'Amendes',
-                            style: titregras(Colors.pink),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                'Amende',
+                                style: soustitregras(Colors.pink),
+                              ),
+                              SizedBox(height: MediaQuery.of(context).size.height * 0.01,),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text(
+                                    '${categorie[0].categorie} :',
+                                    style: soustitre(Colors.black),
+                                  ),
+                                  Text(
+                                    '${amendes[0].montant!.montant} ${amendes[0].montant!.devise}',
+                                    style: soustitre(Colors.black),
+                                  ),
+                                ],
+                              ),
+                            ],
                           ),
-                          SizedBox(height: 10,),
-                          Text(
-                            '${amendes[0].montant!.montant} ${amendes[0].montant!.devise}',
-                            style: soustitregras(Colors.black),
-                          ),
-                          const Divider(color: Colors.pink,),
-                          const Positioned(
-                            right: 0,
-                            bottom: 0,
-                            child: Icon(
-                              CupertinoIcons.speaker_2_fill,
-                              color: Colors.pink,
-                              size: 20,
-                            ),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.end,
+                            children: const [
+                              Divider(color: Colors.pink),
+                              Positioned(
+                                right: 0,
+                                bottom: 0,
+                                child: Icon(
+                                  CupertinoIcons.speaker_2_fill,
+                                  color: Colors.pink,
+                                  size: 20,
+                                ),
+                              )
+                            ],
                           ),
                         ],
                       ),
@@ -103,7 +127,6 @@ class _DetailsInfracionState extends State<DetailsInfracion> {
           )
         ],
       ),
-
     );
   }
 }

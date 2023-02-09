@@ -48,7 +48,10 @@ class _InfractionScreenState extends State<InfractionScreen> {
                             infractions.addAll(liste[i].amendes![j].infractions!),
                             amendes.add(liste[i].amendes![j])
                           },
-                          categorie = liste[i],
+                          categorie.add(liste[i]),
+                          print(categorie[0].categorie),
+                          print("-------------------------obj-----------------------"),
+                          print(liste[i].categorie),
                           selectedPageIndex = 4,
                           Navigator.pop(context),
                           Navigator.push(context, MaterialPageRoute(builder: (context) => const Accueil()))

@@ -67,7 +67,7 @@ List<Amende> amendes = [];
 
 List<Infraction> infractions = [];
 
-Categorie categorie = Categorie();
+List<Categorie> categorie = [];
 
 String nomcategorie = '';
 

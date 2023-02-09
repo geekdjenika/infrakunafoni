@@ -94,8 +94,8 @@ class _ProfilState extends State<Profil> {
                           children: [
                             CircleAvatar(
                               backgroundColor: Colors.black,
-                              maxRadius: MediaQuery.of(context).size.height * 0.08,
-                              minRadius: MediaQuery.of(context).size.height * 0.08,
+                              maxRadius: MediaQuery.of(context).size.height * 0.07,
+                              minRadius: MediaQuery.of(context).size.height * 0.07,
                               child: selectedImagePath == '' ? ClipRRect(child: Image.asset("assets/img/photo.jpg"),borderRadius: BorderRadius.all(Radius.circular(MediaQuery.of(context).size.height * 0.08))) : ClipRRect(child: Image.file(File(selectedImagePath), fit: BoxFit.cover, width: MediaQuery.of(context).size.width, height: MediaQuery.of(context).size.height,), borderRadius: BorderRadius.all(Radius.circular(MediaQuery.of(context).size.height * 0.08)),),
                             ),
                             Positioned(
