@@ -71,5 +71,7 @@ List<Categorie> categorie = [];
 
 String nomcategorie = '';
 
+String host = 'http://10.175.48.40:8080/api';
+
 
 

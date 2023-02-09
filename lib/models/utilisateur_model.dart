@@ -1,7 +1,6 @@
-
+import 'package:infrakunafoni/models/notification_model.dart';
 import 'package:infrakunafoni/models/role_model.dart';
-
-import 'notification_model.dart';
+import 'package:infrakunafoni/models/sessionjeu_model.dart';
 
 class Utilisateur {
   int? id;
@@ -11,6 +10,7 @@ class Utilisateur {
   String? image;
   List<Notification>? notifications;
   List<Role>? roles;
+  List<SessionJeu>? sessionJeux;
 
   Utilisateur(
       {this.id,
@@ -19,7 +19,8 @@ class Utilisateur {
         this.password,
         this.image,
         this.notifications,
-        this.roles});
+        this.roles,
+        this.sessionJeux});
 
   Utilisateur.fromJson(Map<String, dynamic> json) {
     id = json['id'];
@@ -39,6 +40,12 @@ class Utilisateur {
         roles!.add(new Role.fromJson(v));
       });
     }
+    if (json['sessionJeux'] != null) {
+      sessionJeux = <SessionJeu>[];
+      json['sessionJeux'].forEach((v) {
+        sessionJeux!.add(new SessionJeu.fromJson(v));
+      });
+    }
   }
 
   Map<String, dynamic> toJson() {
@@ -54,6 +61,9 @@ class Utilisateur {
     }
     if (this.roles != null) {
       data['roles'] = this.roles!.map((v) => v.toJson()).toList();
+    }
+    if (this.sessionJeux != null) {
+      data['sessionJeux'] = this.sessionJeux!.map((v) => v.toJson()).toList();
     }
     return data;
   }

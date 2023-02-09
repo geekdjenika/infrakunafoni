@@ -1,7 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:infrakunafoni/models/signup_model.dart';
+import 'package:infrakunafoni/models/utilisateur_model.dart';
 import 'package:infrakunafoni/screens/auth/sign_in.dart';
+import 'package:infrakunafoni/services/auth/utilisateur_service.dart';
 
 import '../../constants.dart';
 import '../../widgets/my_button.dart';
@@ -19,12 +22,16 @@ class _InscriptionState extends State<Inscription> {
 
   final usernameController = TextEditingController();
 
+  final emailController = TextEditingController();
+
   final passwordController = TextEditingController();
 
   final passwordConfirmController = TextEditingController();
 
   bool showPassword = false;
   bool showConfirmPassword = false;
+
+  UtilisateurService utilisateurService = UtilisateurService();
 
   @override
   Widget build(BuildContext context) {
@@ -74,7 +81,7 @@ class _InscriptionState extends State<Inscription> {
                     prefixIcon: const Icon(
                         CupertinoIcons.envelope
                     ),
-                    controller: usernameController,
+                    controller: emailController,
                     hintText: 'Email',
                     obscureText: false,
                   ),
@@ -147,8 +154,16 @@ class _InscriptionState extends State<Inscription> {
                       ),
                       SizedBox(width: MediaQuery.of(context).size.width * 0.02),
                       GestureDetector(
-                        onTap: () {
-                          Navigator.push(context, MaterialPageRoute(builder: (context) => const Connexion()));
+                        onTap: () async {
+                          SignUp signuprequest = SignUp(
+                            username: usernameController.value.text,
+                            email: emailController.value.text,
+                            password: passwordController.value.text
+                          );
+                          String retour = await utilisateurService.signup(signuprequest);
+                          print(utilisateurService.signup(signuprequest));
+                          Fluttertoast.showToast(msg: retour);
+                          //Navigator.push(context, MaterialPageRoute(builder: (context) => const Connexion()));
                         },
                         child: Text(
                             'Se connecter',
