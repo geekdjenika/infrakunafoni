@@ -145,7 +145,7 @@ class _InscriptionState extends State<Inscription> {
                           email: emailController.value.text,
                           password: passwordController.value.text
                       );
-                      String retour = await utilisateurService.signup(signuprequest);
+                      String retour = await utilisateurService.signup(usernameController.value.text, emailController.value.text, passwordController.value.text);
                       print(retour);
                       Fluttertoast.showToast(msg: retour);
                     },
