@@ -7,7 +7,9 @@ import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:infrakunafoni/constants.dart';
+import 'package:infrakunafoni/models/utilisateur_model.dart';
 import 'package:infrakunafoni/screens/auth/sign_in.dart';
+import 'package:infrakunafoni/services/auth/utilisateur_service.dart';
 
 import '../widgets/my_button.dart';
 import '../widgets/my_card.dart';
@@ -27,6 +29,10 @@ class _ProfilState extends State<Profil> {
   final _emailController = TextEditingController();
 
   String selectedImagePath = '';
+
+  Utilisateur utilisateur = Utilisateur();
+
+  UtilisateurService utilisateurService = UtilisateurService();
 
   selectImageFromGallery() async {
     XFile? file = await ImagePicker()
@@ -48,6 +54,7 @@ class _ProfilState extends State<Profil> {
       return '';
     }
   }
+
 
   @override
   Widget build(BuildContext context) {

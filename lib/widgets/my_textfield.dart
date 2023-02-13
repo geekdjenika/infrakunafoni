@@ -7,22 +7,25 @@ class MyTextField extends StatelessWidget {
   final bool obscureText;
   final Widget? prefixIcon;
   final Widget? sufixIcon;
+  final String? Function(String?)? validator;
 
   const MyTextField({
     super.key,
     required this.controller,
     required this.hintText,
-    required this.obscureText, this.prefixIcon, this.sufixIcon,
+    required this.obscureText, this.prefixIcon, this.sufixIcon, this.validator,
   });
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(0),//const EdgeInsets.symmetric(horizontal: 25.0),
-      child: TextField(
+      child: TextFormField(
         controller: controller,
         obscureText: obscureText,
+        obscuringCharacter: '*',
         style: soustitre(background),
+        validator: validator,
         decoration: InputDecoration(
             enabledBorder: const OutlineInputBorder(
               borderSide: BorderSide(color: Colors.grey),

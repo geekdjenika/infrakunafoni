@@ -30,6 +30,7 @@ class _InscriptionState extends State<Inscription> {
 
   bool showPassword = false;
   bool showConfirmPassword = false;
+  final formKey = GlobalKey<FormState>();
 
   UtilisateurService utilisateurService = UtilisateurService();
 
@@ -42,199 +43,232 @@ class _InscriptionState extends State<Inscription> {
           child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  SizedBox(height: MediaQuery.of(context).size.height * 0.04),
+              child: Form(
+                key: formKey,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    SizedBox(height: MediaQuery.of(context).size.height * 0.04),
 
-                  // logo
-                  CircleAvatar(
-                    minRadius: MediaQuery.of(context).size.width / 5,
-                    maxRadius: MediaQuery.of(context).size.width / 5,
-                    child: Image.asset(
-                        "assets/img/logo.png"
+                    // logo
+                    CircleAvatar(
+                      minRadius: MediaQuery.of(context).size.width / 5,
+                      maxRadius: MediaQuery.of(context).size.width / 5,
+                      child: Image.asset(
+                          "assets/img/logo.png"
+                      ),
                     ),
-                  ),
 
-                  SizedBox(height: MediaQuery.of(context).size.height * 0.04),
-                  // welcome back, you've been missed!
-                  Text(
-                      'Créez un compte pour vous !',
-                      style: soustitre(Colors.grey)
-                  ),
-
-                  SizedBox(height: MediaQuery.of(context).size.height * 0.03),
-
-                  // username textfield
-                  MyTextField(
-                    prefixIcon: const Icon(
-                        Icons.person
+                    SizedBox(height: MediaQuery.of(context).size.height * 0.04),
+                    // welcome back, you've been missed!
+                    Text(
+                        'Créez un compte pour vous !',
+                        style: soustitre(Colors.grey)
                     ),
-                    controller: usernameController,
-                    hintText: 'Nom d\'utilisateur',
-                    obscureText: false,
-                  ),
 
-                  SizedBox(height: MediaQuery.of(context).size.height * 0.012),
+                    SizedBox(height: MediaQuery.of(context).size.height * 0.03),
 
-                  MyTextField(
-                    prefixIcon: const Icon(
-                        CupertinoIcons.envelope
-                    ),
-                    controller: emailController,
-                    hintText: 'Email',
-                    obscureText: false,
-                  ),
-
-                  SizedBox(height: MediaQuery.of(context).size.height * 0.012),
-
-                  // password textfield
-                  MyTextField(
-                    prefixIcon: const Icon(
-                        Icons.lock
-                    ),
-                    sufixIcon: InkWell(
-                      onTap: () {
-                        setState(() {
-                          showPassword = !showPassword;
-                        });
+                    // username textfield
+                    MyTextField(
+                      prefixIcon: const Icon(
+                          Icons.person
+                      ),
+                      controller: usernameController,
+                      hintText: 'Nom d\'utilisateur',
+                      obscureText: false,
+                      validator: (value) {
+                        if(value == null || value.isEmpty) {
+                          return "Ce champs ne doit pas être null !";
+                        }
                       },
-                      child: Icon(
-                          showPassword
-                              ? CupertinoIcons.eye_slash_fill
-                              : CupertinoIcons.eye_fill
+                    ),
+
+                    SizedBox(height: MediaQuery.of(context).size.height * 0.012),
+
+                    MyTextField(
+                      prefixIcon: const Icon(
+                          CupertinoIcons.envelope
                       ),
-                    ),
-                    controller: passwordController,
-                    hintText: 'Mot de passe',
-                    obscureText: !showPassword,
-                  ),
-
-                  SizedBox(height: MediaQuery.of(context).size.height * 0.02),
-
-                  // password textfield
-                  MyTextField(
-                    prefixIcon: const Icon(
-                        Icons.lock
-                    ),
-                    sufixIcon: InkWell(
-                      onTap: () {
-                        setState(() {
-                          showConfirmPassword = !showConfirmPassword;
-                        });
+                      controller: emailController,
+                      hintText: 'Email',
+                      obscureText: false,
+                      validator: (value) {
+                        if(value == null || value.isEmpty) {
+                          return "Ce champs ne doit pas être null !";
+                        } else if(!value.contains('@') || !value.contains('!')) {
+                          return "Entrez un adresse email valide ex : xyz@gmail.com";
+                        }
                       },
-                      child: Icon(
-                          showConfirmPassword
-                              ? CupertinoIcons.eye_slash_fill
-                              : CupertinoIcons.eye_fill
-                      ),
                     ),
-                    controller: passwordConfirmController,
-                    hintText: 'Confirmer le mot de passe',
-                    obscureText: !showConfirmPassword,
-                  ),
 
-                  SizedBox(height: MediaQuery.of(context).size.height * 0.03),
+                    SizedBox(height: MediaQuery.of(context).size.height * 0.012),
 
-                  // sign in button
-                  MyButton(
-                    text: 'S\'inscrire',
-                    onTap: () async {
-                      SignUp signuprequest = SignUp(
-                          username: usernameController.value.text,
-                          email: emailController.value.text,
-                          password: passwordController.value.text
-                      );
-                      String retour = await utilisateurService.signup(usernameController.value.text, emailController.value.text, passwordController.value.text);
-                      print(retour);
-                      Fluttertoast.showToast(msg: retour);
-                    },
-                  ),
-
-                  SizedBox(height: MediaQuery.of(context).size.height * 0.04),
-
-                  // not a member? register now
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        'J\'ai un compte ?',
-                        style: soustitre(Colors.grey[700]),
+                    // password textfield
+                    MyTextField(
+                      prefixIcon: const Icon(
+                          Icons.lock
                       ),
-                      SizedBox(width: MediaQuery.of(context).size.width * 0.02),
-                      GestureDetector(
-                        onTap: () async {
-                          Navigator.push(context, MaterialPageRoute(builder: (context) => const Connexion()));
+                      validator: (value) {
+                        if(value == null || value.isEmpty) {
+                          return "Entrez un mot de passe s'il vous plaît !";
+                        } else if (value.length < 8) {
+                          return "Allez jusqu'à 8 caractères !";
+                        }
+                      },
+                      sufixIcon: InkWell(
+                        onTap: () {
+                          setState(() {
+                            showPassword = !showPassword;
+                          });
                         },
-                        child: Text(
-                            'Se connecter',
-                            style: soustitregras(background)
+                        child: Icon(
+                            showPassword
+                                ? CupertinoIcons.eye_fill
+                                : CupertinoIcons.eye_slash_fill
                         ),
                       ),
-                    ],
-                  ),
+                      controller: passwordController,
+                      hintText: 'Mot de passe',
+                      obscureText: !showPassword,
+                    ),
 
-                  SizedBox(height: MediaQuery.of(context).size.height * 0.04),
+                    SizedBox(height: MediaQuery.of(context).size.height * 0.02),
 
+                    // password textfield
+                    MyTextField(
+                      prefixIcon: const Icon(
+                          Icons.lock
+                      ),
+                      validator: (value) {
+                        if(value == null || value.isEmpty) {
+                          return "Entrez un mot de passe s'il vous plaît !";
+                        } else if (value.length < 8) {
+                          return "Allez jusqu'à 8 caractères !";
+                        } else if(value != passwordController.text) {
+                          return "Les mots de passe ne correspondent pas !";
+                        }
+                      },
+                      sufixIcon: InkWell(
+                        onTap: () {
+                          setState(() {
+                            showConfirmPassword = !showConfirmPassword;
+                          });
+                        },
+                        child: Icon(
+                          showConfirmPassword
+                              ? CupertinoIcons.eye_fill
+                              : CupertinoIcons.eye_slash_fill
+                        ),
+                      ),
+                      controller: passwordConfirmController,
+                      hintText: 'Confirmer le mot de passe',
+                      obscureText: !showConfirmPassword,
+                    ),
 
-                  // or continue with
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 25.0),
-                    child: Row(
+                    SizedBox(height: MediaQuery.of(context).size.height * 0.03),
+
+                    // sign in button
+                    MyButton(
+                      text: 'S\'inscrire',
+                      onTap: () async {
+                        SignUp signuprequest = SignUp(
+                            username: usernameController.value.text,
+                            email: emailController.value.text,
+                            password: passwordController.value.text
+                        );
+                        String retour = await utilisateurService.signup(usernameController.value.text, emailController.value.text, passwordController.value.text);
+                        print(retour);
+                        Fluttertoast.showToast(msg: retour);
+                      },
+                    ),
+
+                    SizedBox(height: MediaQuery.of(context).size.height * 0.04),
+
+                    // not a member? register now
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Expanded(
-                          child: Divider(
-                            thickness: 0.5,
-                            color: Colors.grey[400],
-                          ),
+                        Text(
+                          'J\'ai un compte ?',
+                          style: soustitre(Colors.grey[700]),
                         ),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                        SizedBox(width: MediaQuery.of(context).size.width * 0.02),
+                        GestureDetector(
+                          onTap: () async {
+                            if(formKey.currentState!.validate()) {
+                              Navigator.push(context, MaterialPageRoute(builder: (context) => const Connexion()));
+                            }
+                          },
                           child: Text(
-                            'Ou continuer avec',
-                            style: soustitre(Colors.grey[700]),
-                          ),
-                        ),
-                        Expanded(
-                          child: Divider(
-                            thickness: 0.5,
-                            color: Colors.grey[400],
+                              'Se connecter',
+                              style: soustitregras(background)
                           ),
                         ),
                       ],
                     ),
-                  ),
 
-                  SizedBox(height: MediaQuery.of(context).size.height * 0.04),
+                    SizedBox(height: MediaQuery.of(context).size.height * 0.04),
 
-                  // google + apple sign in buttons
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      // google button
-                      GestureDetector(
-                        child: const SquareTile(imagePath: 'assets/img/google.png'),
-                        onTap: () {
-                          Fluttertoast.showToast(
-                            msg: "Inscription avec google en cours de développement !",
-                          );
-                        },
+
+                    // or continue with
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                      child: Row(
+                        children: [
+                          Expanded(
+                            child: Divider(
+                              thickness: 0.5,
+                              color: Colors.grey[400],
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                            child: Text(
+                              'Ou continuer avec',
+                              style: soustitre(Colors.grey[700]),
+                            ),
+                          ),
+                          Expanded(
+                            child: Divider(
+                              thickness: 0.5,
+                              color: Colors.grey[400],
+                            ),
+                          ),
+                        ],
                       ),
+                    ),
 
-                      SizedBox(width: MediaQuery.of(context).size.height * 0.03),
+                    SizedBox(height: MediaQuery.of(context).size.height * 0.04),
 
-                      // apple button
-                      GestureDetector(
-                        child: const SquareTile(imagePath: 'assets/img/github.png'),
-                        onTap: () {
-                          Fluttertoast.showToast(
-                            msg: "Inscription avec github en cours de développement !",
-                          );
-                        },
-                      )
-                    ],
-                  ),
-                ],
+                    // google + apple sign in buttons
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        // google button
+                        GestureDetector(
+                          child: const SquareTile(imagePath: 'assets/img/google.png'),
+                          onTap: () {
+                            Fluttertoast.showToast(
+                              msg: "Inscription avec google en cours de développement !",
+                            );
+                          },
+                        ),
+
+                        SizedBox(width: MediaQuery.of(context).size.height * 0.03),
+
+                        // apple button
+                        GestureDetector(
+                          child: const SquareTile(imagePath: 'assets/img/github.png'),
+                          onTap: () {
+                            Fluttertoast.showToast(
+                              msg: "Inscription avec github en cours de développement !",
+                            );
+                          },
+                        )
+                      ],
+                    ),
+                  ],
+                ),
               ),
             ),
           ),
