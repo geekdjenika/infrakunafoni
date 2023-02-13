@@ -36,7 +36,7 @@ class UtilisateurService {
 
     if (response.statusCode == 200) {
       Map<String, dynamic> json = jsonDecode(response.body);
-
+      connexion = true;
       return json['message'];
     } else {
       //throw ("Can't get the Articles");

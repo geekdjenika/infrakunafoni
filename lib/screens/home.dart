@@ -26,6 +26,7 @@ class _AccueilState extends State<Accueil> {
     const AmendeScreen(),
     const QuizScreen(),
     InfractionList(infractions: infractions,amendes: amendes),
+    InfractionList(infractions: infractions),
   ];
   int curveindex = 1;
 

@@ -64,6 +64,7 @@ class ResultScreen extends StatelessWidget {
                       : 'Félicitation !', // when the result is more than half
                   style: titre(Colors.black),
                 ),
+                //Lotties
                 CircleAvatar(
                     minRadius: 20,
                     maxRadius: 20,

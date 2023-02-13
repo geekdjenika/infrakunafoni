@@ -8,6 +8,7 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:infrakunafoni/constants.dart';
 import 'package:infrakunafoni/models/utilisateur_model.dart';
+import 'package:infrakunafoni/screens/auth/auth.dart';
 import 'package:infrakunafoni/screens/auth/sign_in.dart';
 import 'package:infrakunafoni/services/auth/utilisateur_service.dart';
 
@@ -247,7 +248,7 @@ class _ProfilState extends State<Profil> {
                         MyButton(
                           text: 'Se deconnecter',
                           onTap: () {
-                            Navigator.push(context, MaterialPageRoute(builder: (context) => const Connexion()));
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => const Auth()));
                           },
                         ),
                       ],

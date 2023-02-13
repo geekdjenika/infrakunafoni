@@ -73,5 +73,9 @@ String nomcategorie = '';
 
 String host = 'http://10.175.48.40:8080/api';
 
+//auth
+bool connexion = true;
+bool connecte = false;
+
 
 

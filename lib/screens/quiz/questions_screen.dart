@@ -3,6 +3,8 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:infrakunafoni/screens/quiz/result_screen.dart';
+import 'package:just_audio/just_audio.dart';
+import 'package:vibration/vibration.dart';
 
 import '../../constants.dart';
 import '../../models/question_model.dart';
@@ -101,6 +103,8 @@ class _QuetionsScreenState extends State<QuestionsScreen> {
 
   bool isAlreadySelected = false;
 
+  final _player = AudioPlayer();
+
 
   // create a function to start over
   void startOver() {
@@ -197,12 +201,16 @@ class _QuetionsScreenState extends State<QuestionsScreen> {
     return numberList;
   }
 
-  void checkAnswerAndUpdate(bool value) {
+  void checkAnswerAndUpdate(bool value) async {
     if (isAlreadySelected) {
       return;
     } else {
       if (value == true) {
         score++;
+        await _player.setAsset('assets/aud/correct.mp3');
+        _player.play();
+      } else {
+        Vibration.vibrate(duration: 80);
       }
       setState(() {
         isPressed = true;
@@ -282,7 +290,7 @@ class _QuetionsScreenState extends State<QuestionsScreen> {
                         true
                         ? correct
                         : incorrect
-                        : Colors.white
+                        : Colors.white,
                   ),
                 ),
               Expanded(

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:infrakunafoni/models/signup_model.dart';
 import 'package:infrakunafoni/models/utilisateur_model.dart';
+import 'package:infrakunafoni/screens/auth/auth.dart';
 import 'package:infrakunafoni/screens/auth/sign_in.dart';
 import 'package:infrakunafoni/services/auth/utilisateur_service.dart';
 
@@ -31,6 +32,15 @@ class _InscriptionState extends State<Inscription> {
   bool showPassword = false;
   bool showConfirmPassword = false;
   final formKey = GlobalKey<FormState>();
+
+  @override
+  void dispose() {
+    passwordController.dispose();
+    emailController.dispose();
+    passwordConfirmController.dispose();
+    usernameController.dispose();
+    super.dispose();
+  }
 
   UtilisateurService utilisateurService = UtilisateurService();
 
@@ -95,7 +105,7 @@ class _InscriptionState extends State<Inscription> {
                       validator: (value) {
                         if(value == null || value.isEmpty) {
                           return "Ce champs ne doit pas être null !";
-                        } else if(!value.contains('@') || !value.contains('!')) {
+                        } else if(!value.contains('@') || !value.contains('.')) {
                           return "Entrez un adresse email valide ex : xyz@gmail.com";
                         }
                       },
@@ -171,14 +181,12 @@ class _InscriptionState extends State<Inscription> {
                     MyButton(
                       text: 'S\'inscrire',
                       onTap: () async {
-                        SignUp signuprequest = SignUp(
-                            username: usernameController.value.text,
-                            email: emailController.value.text,
-                            password: passwordController.value.text
-                        );
-                        String retour = await utilisateurService.signup(usernameController.value.text, emailController.value.text, passwordController.value.text);
-                        print(retour);
-                        Fluttertoast.showToast(msg: retour);
+                        if(formKey.currentState!.validate()) {
+                          String retour = await utilisateurService.signup(usernameController.value.text, emailController.value.text, passwordController.value.text);
+                          print(retour);
+                          Fluttertoast.showToast(msg: retour);
+                        }
+
                       },
                     ),
 
@@ -195,9 +203,9 @@ class _InscriptionState extends State<Inscription> {
                         SizedBox(width: MediaQuery.of(context).size.width * 0.02),
                         GestureDetector(
                           onTap: () async {
-                            if(formKey.currentState!.validate()) {
-                              Navigator.push(context, MaterialPageRoute(builder: (context) => const Connexion()));
-                            }
+                            connexion = true;
+                            Navigator.pop(context);
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => Auth()));
                           },
                           child: Text(
                               'Se connecter',

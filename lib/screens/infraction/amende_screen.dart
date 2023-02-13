@@ -3,7 +3,9 @@ import 'dart:convert';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:infrakunafoni/models/amende_model.dart';
+import 'package:infrakunafoni/screens/home.dart';
 import 'package:just_audio/just_audio.dart';
 
 import '../../widgets/list_card.dart';
@@ -48,6 +50,18 @@ class _AmendeScreenState extends State<AmendeScreen> {
             itemBuilder: (context, index) {
               return ListCard(
                 listTile: ListTile(
+                  onTap: () {
+                    /*for(int i = 0; i < liste.length; i++) {
+                      infractions.addAll(liste[index].infractions!);
+                    }
+                    print(infractions);
+                    Fluttertoast.showToast(msg: '$infractions.length');
+                    useindex = true;
+                    selectedPageIndex = 5;
+                    Navigator.pop(context);
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => const Accueil()));*/
+                    Fluttertoast.showToast(msg: '$infractions.length');
+                  },
                   leading: CircleAvatar(
                     maxRadius: 20,
                     minRadius: 20,

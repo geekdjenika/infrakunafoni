@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:infrakunafoni/constants.dart';
+import 'package:infrakunafoni/screens/auth/auth.dart';
 import 'package:infrakunafoni/screens/auth/sign_up.dart';
 
 import '../../widgets/my_button.dart';
@@ -22,6 +23,8 @@ class _ConnexionState extends State<Connexion> {
 
   bool showPassword = false;
 
+  final formKey = GlobalKey<FormState>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,168 +34,190 @@ class _ConnexionState extends State<Connexion> {
             child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: Center(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    SizedBox(height: MediaQuery.of(context).size.height * 0.04),
+                child: Form(
+                  key: formKey,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      SizedBox(height: MediaQuery.of(context).size.height * 0.04),
 
-                    // logo
-                    CircleAvatar(
-                      minRadius: MediaQuery.of(context).size.width / 5,
-                      maxRadius: MediaQuery.of(context).size.width / 5,
-                      child: Image.asset(
-                        "assets/img/logo.png"
+                      // logo
+                      CircleAvatar(
+                        minRadius: MediaQuery.of(context).size.width / 5,
+                        maxRadius: MediaQuery.of(context).size.width / 5,
+                        child: Image.asset(
+                          "assets/img/logo.png"
+                        ),
                       ),
-                    ),
 
-                    SizedBox(height: MediaQuery.of(context).size.height * 0.04),
-                    // welcome back, you've been missed!
-                    Text(
-                      'Connectez-vous pour pouvoir jouer !',
-                      style: soustitre(Colors.grey)
-                    ),
-
-                    SizedBox(height: MediaQuery.of(context).size.height * 0.03),
-
-                    // username textfield
-                    MyTextField(
-                      prefixIcon: const Icon(
-                        Icons.person
+                      SizedBox(height: MediaQuery.of(context).size.height * 0.04),
+                      // welcome back, you've been missed!
+                      Text(
+                        'Connectez-vous pour pouvoir jouer !',
+                        style: soustitre(Colors.grey)
                       ),
-                      controller: usernameController,
-                      hintText: 'Nom d\'utilisateur',
-                      obscureText: false,
-                    ),
 
-                    SizedBox(height: MediaQuery.of(context).size.height * 0.012),
+                      SizedBox(height: MediaQuery.of(context).size.height * 0.03),
 
-                    // password textfield
-                    MyTextField(
-                      prefixIcon: const Icon(
-                        Icons.lock
-                      ),
-                      sufixIcon: InkWell(
-                        onTap: () {
-                          setState(() {
-                            showPassword = !showPassword;
-                          });
+                      // username textfield
+                      MyTextField(
+                        prefixIcon: const Icon(
+                          Icons.person
+                        ),
+                        controller: usernameController,
+                        hintText: 'Nom d\'utilisateur',
+                        obscureText: false,
+                        validator: (value) {
+                          if(value == null || value.isEmpty) {
+                            return "Le nom d'utilisateur ne doit pas être null !";
+                          }
                         },
-                        child: Icon(
-                          showPassword
-                              ? CupertinoIcons.eye_slash_fill
-                              : CupertinoIcons.eye_fill
-                        ),
                       ),
-                      controller: passwordController,
-                      hintText: 'Mot de passe',
-                      obscureText: !showPassword,
-                    ),
 
-                    SizedBox(height: MediaQuery.of(context).size.height * 0.02),
+                      SizedBox(height: MediaQuery.of(context).size.height * 0.012),
 
-                    // forgot password?
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        Text(
-                          'Mot de passe oublié ?',
-                          style: soustitre(background),
+                      // password textfield
+                      MyTextField(
+                        prefixIcon: const Icon(
+                          Icons.lock
                         ),
-                      ],
-                    ),
-
-                    SizedBox(height: MediaQuery.of(context).size.height * 0.03),
-
-                    // sign in button
-                    MyButton(
-                      text: 'Se connecter',
-                      onTap: () {},
-                    ),
-
-                    SizedBox(height: MediaQuery.of(context).size.height * 0.04),
-
-                    // not a member? register now
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          'Pas de compte ?',
-                          style: soustitre(Colors.grey[700]),
-                        ),
-                        SizedBox(width: MediaQuery.of(context).size.width * 0.02),
-                        GestureDetector(
+                        validator: (value) {
+                          if(value == null || value.isEmpty) {
+                            return "Entrez un mot de passe s'il vous plaît !";
+                          } else if (value.length < 8) {
+                            return "Allez jusqu'à 8 caractères !";
+                          }
+                        },
+                        sufixIcon: InkWell(
                           onTap: () {
-                            Navigator.push(context, MaterialPageRoute(builder: (context) => const Inscription()));
+                            setState(() {
+                              showPassword = !showPassword;
+                            });
                           },
-                          child: Text(
-                            'S\'inscrire',
-                            style: soustitregras(background)
+                          child: Icon(
+                            showPassword
+                                ? CupertinoIcons.eye_slash_fill
+                                : CupertinoIcons.eye_fill
                           ),
                         ),
-                      ],
-                    ),
+                        controller: passwordController,
+                        hintText: 'Mot de passe',
+                        obscureText: !showPassword,
+                      ),
 
-                    SizedBox(height: MediaQuery.of(context).size.height * 0.04),
+                      SizedBox(height: MediaQuery.of(context).size.height * 0.02),
 
-
-                    // or continue with
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 25.0),
-                      child: Row(
+                      // forgot password?
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
                         children: [
-                          Expanded(
-                            child: Divider(
-                              thickness: 0.5,
-                              color: Colors.grey[400],
-                            ),
+                          Text(
+                            'Mot de passe oublié ?',
+                            style: soustitre(background),
                           ),
-                          Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                        ],
+                      ),
+
+                      SizedBox(height: MediaQuery.of(context).size.height * 0.03),
+
+                      // sign in button
+                      MyButton(
+                        text: 'Se connecter',
+                        onTap: () async {
+                          if(formKey.currentState!.validate()) {
+                            Fluttertoast.showToast(msg: "Connexion ...");
+                          }
+                        },
+                      ),
+
+                      SizedBox(height: MediaQuery.of(context).size.height * 0.04),
+
+                      // not a member? register now
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            'Pas de compte ?',
+                            style: soustitre(Colors.grey[700]),
+                          ),
+                          SizedBox(width: MediaQuery.of(context).size.width * 0.02),
+                          GestureDetector(
+                            onTap: () {
+                              connexion = false;
+                              Navigator.pop(context);
+                              Navigator.push(context, MaterialPageRoute(builder: (context) => Auth()));
+                              //Navigator.push(context, MaterialPageRoute(builder: (context) => const Inscription()));
+                            },
                             child: Text(
-                              'Ou continuer avec',
-                              style: soustitre(Colors.grey[700]),
-                            ),
-                          ),
-                          Expanded(
-                            child: Divider(
-                              thickness: 0.5,
-                              color: Colors.grey[400],
+                              'S\'inscrire',
+                              style: soustitregras(background)
                             ),
                           ),
                         ],
                       ),
-                    ),
 
-                    SizedBox(height: MediaQuery.of(context).size.height * 0.04),
+                      SizedBox(height: MediaQuery.of(context).size.height * 0.04),
 
-                    // google + apple sign in buttons
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        // google button
-                        GestureDetector(
-                          child: const SquareTile(imagePath: 'assets/img/google.png'),
-                          onTap: () {
-                            Fluttertoast.showToast(
-                              msg: "Connexion avec google en cours de développement !",
-                            );
-                          },
+
+                      // or continue with
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                        child: Row(
+                          children: [
+                            Expanded(
+                              child: Divider(
+                                thickness: 0.5,
+                                color: Colors.grey[400],
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                              child: Text(
+                                'Ou continuer avec',
+                                style: soustitre(Colors.grey[700]),
+                              ),
+                            ),
+                            Expanded(
+                              child: Divider(
+                                thickness: 0.5,
+                                color: Colors.grey[400],
+                              ),
+                            ),
+                          ],
                         ),
+                      ),
 
-                        SizedBox(width: MediaQuery.of(context).size.height * 0.03),
+                      SizedBox(height: MediaQuery.of(context).size.height * 0.04),
 
-                        // apple button
-                        GestureDetector(
-                          child: const SquareTile(imagePath: 'assets/img/github.png'),
-                          onTap: () {
-                            Fluttertoast.showToast(
-                                msg: "Connexion avec github en cours de développement !",
-                            );
-                          },
-                        )
-                      ],
-                    ),
-                  ],
+                      // google + apple sign in buttons
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          // google button
+                          GestureDetector(
+                            child: const SquareTile(imagePath: 'assets/img/google.png'),
+                            onTap: () {
+                              Fluttertoast.showToast(
+                                msg: "Connexion avec google en cours de développement !",
+                              );
+                            },
+                          ),
+
+                          SizedBox(width: MediaQuery.of(context).size.height * 0.03),
+
+                          // apple button
+                          GestureDetector(
+                            child: const SquareTile(imagePath: 'assets/img/github.png'),
+                            onTap: () {
+                              Fluttertoast.showToast(
+                                  msg: "Connexion avec github en cours de développement !",
+                              );
+                            },
+                          )
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),
