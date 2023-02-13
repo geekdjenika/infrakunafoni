@@ -4,6 +4,7 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:infrakunafoni/constants.dart';
 import 'package:infrakunafoni/screens/auth/auth.dart';
 import 'package:infrakunafoni/screens/auth/sign_up.dart';
+import 'package:infrakunafoni/services/auth/utilisateur_service.dart';
 
 import '../../widgets/my_button.dart';
 import '../../widgets/my_textfield.dart';
@@ -24,6 +25,8 @@ class _ConnexionState extends State<Connexion> {
   bool showPassword = false;
 
   final formKey = GlobalKey<FormState>();
+
+  UtilisateurService utilisateurService = UtilisateurService();
 
   @override
   Widget build(BuildContext context) {
@@ -126,6 +129,9 @@ class _ConnexionState extends State<Connexion> {
                         onTap: () async {
                           if(formKey.currentState!.validate()) {
                             Fluttertoast.showToast(msg: "Connexion ...");
+                            String retour = await utilisateurService.signin(usernameController.text, passwordController.text);
+                            print(retour);
+                            Fluttertoast.showToast(msg: retour);
                           }
                         },
                       ),

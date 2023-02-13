@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:infrakunafoni/constants.dart';
 import 'package:infrakunafoni/models/conseil_model.dart';
+import 'package:lottie/lottie.dart';
 
 import '../../widgets/my_card.dart';
 
@@ -93,7 +94,7 @@ class _ConseilScreenState extends State<ConseilScreen> {
             },
           );
         } else {
-          return const Center(child: CircularProgressIndicator(),);
+          return Center(child: Lottie.asset("assets/json/loading.json"));
         }
       },
     );

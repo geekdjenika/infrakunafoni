@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:infrakunafoni/widgets/main_button.dart';
+import 'package:lottie/lottie.dart';
 
 import '../../constants.dart';
 
@@ -53,41 +54,24 @@ class ResultScreen extends StatelessWidget {
         ),
         child: Column(
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  result == questionLength / 2
-                      ? 'Presque terminé !' // when the result is half of the questions
-                      : result < questionLength / 2
-                      ? 'Réessayer ?' // when the result is less than half
-                      : 'Félicitation !', // when the result is more than half
-                  style: titre(Colors.black),
-                ),
-                //Lotties
-                CircleAvatar(
-                    minRadius: 20,
-                    maxRadius: 20,
-                    backgroundColor: result == questionLength / 2
-                        ? Colors.yellow // when the result is half of the questions
-                        : result < questionLength / 2
-                        ? incorrect // when the result is less than half
-                        : correct,
-                    child: GestureDetector(
-                      onTap: onPressed,
-                      child: Icon(
-                          result == questionLength / 2
-                              ? CupertinoIcons.gobackward_45
-                              : result < questionLength / 2
-                              ? CupertinoIcons.gobackward_minus
-                              : CupertinoIcons.wand_rays_inverse
-                      ),
-                    )
-                  // when the result is more than half
-                ),
-              ],
+            Text(
+              result == questionLength / 2
+                  ? 'Presque terminé !' // when the result is half of the questions
+                  : result < questionLength / 2
+                  ? 'Réessayer ?' // when the result is less than half
+                  : 'Félicitation !', // when the result is more than half
+              style: titregras(Colors.black),
             ),
             const SizedBox(height: 20),
+            Lottie.asset(
+              result == questionLength / 2
+                  ? "assets/json/medium.json"
+                  : result < questionLength / 2
+                  ? "assets/json/failed.json"
+                  : "assets/json/success.json",
+              height: MediaQuery.of(context).size.height / 4,
+              width: MediaQuery.of(context).size.width / 1.2,
+            ),
             Wrap(
               alignment: WrapAlignment.spaceAround,
               direction: Axis.horizontal,
@@ -103,13 +87,24 @@ class ResultScreen extends StatelessWidget {
                   ),
                   child: Center(
                     child: Text(
-                      '$questionLength',
+                      '${i+1}',
                       style: soustitre(Colors.white),
                     ),
                   ),
                 ),
-
               ],
+            ),
+            Text(
+              'Votre score',
+              style: titre(CupertinoColors.darkBackgroundGray),
+            ),
+            Text(
+              '$result',
+              style: score(Colors.pink),
+            ),
+            Text(
+              result > 1 ? 'points' : 'point',
+              style: titregras(CupertinoColors.darkBackgroundGray),
             ),
             Expanded(
               child: Align(

@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
       title: 'Infra Kunafoni',
       debugShowCheckedModeBanner: false,
-      home: Accueil(),
+      home: Splash(),
     );
   }
 }

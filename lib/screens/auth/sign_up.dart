@@ -182,6 +182,7 @@ class _InscriptionState extends State<Inscription> {
                       text: 'S\'inscrire',
                       onTap: () async {
                         if(formKey.currentState!.validate()) {
+                          Fluttertoast.showToast(msg: "Inscription ...");
                           String retour = await utilisateurService.signup(usernameController.value.text, emailController.value.text, passwordController.value.text);
                           print(retour);
                           Fluttertoast.showToast(msg: retour);

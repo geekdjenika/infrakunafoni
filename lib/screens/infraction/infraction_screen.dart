@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:infrakunafoni/models/categorie_model.dart';
 import 'package:infrakunafoni/screens/home.dart';
+import 'package:lottie/lottie.dart';
 
 import '../../constants.dart';
 
@@ -108,7 +109,7 @@ class _InfractionScreenState extends State<InfractionScreen> {
                 ]
             );
           } else {
-            return const Center(child: CircularProgressIndicator(),);
+            return Center(child: Lottie.asset("assets/json/loading.json"));
           }
         }
     );

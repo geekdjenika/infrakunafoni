@@ -7,6 +7,7 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:infrakunafoni/models/amende_model.dart';
 import 'package:infrakunafoni/screens/home.dart';
 import 'package:just_audio/just_audio.dart';
+import 'package:lottie/lottie.dart';
 
 import '../../widgets/list_card.dart';
 import 'package:infrakunafoni/constants.dart';
@@ -95,7 +96,7 @@ class _AmendeScreenState extends State<AmendeScreen> {
             },
           );
         } else {
-          return const Center(child: CircularProgressIndicator(),);
+          return Center(child: Lottie.asset("assets/json/loading.json"));
         }
       },
     );

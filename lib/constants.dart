@@ -59,6 +59,14 @@ TextStyle soustitreliste(Color? color) {
   );
 }
 
+TextStyle score(Color? color) {
+  return GoogleFonts.montserrat(
+      fontSize: 60.0,
+      fontWeight: FontWeight.bold,
+      color: color
+  );
+}
+
 int selectedPageIndex = 1;
 
 bool useindex = false;
@@ -71,11 +79,14 @@ List<Categorie> categorie = [];
 
 String nomcategorie = '';
 
-String host = 'http://10.175.48.40:8080/api';
+String host = 'http://10.175.48.139:8080/api';
 
 //auth
 bool connexion = true;
 bool connecte = false;
+String token = '';
+int id = 0;
+String photo = '';
 
 
 

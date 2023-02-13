@@ -7,6 +7,7 @@ import 'package:infrakunafoni/models/question_model.dart';
 import 'package:infrakunafoni/models/quiz_model.dart';
 import 'package:infrakunafoni/screens/quiz/questions_screen.dart';
 import 'package:just_audio/just_audio.dart';
+import 'package:lottie/lottie.dart';
 
 import '../../constants.dart';
 import '../../widgets/list_card.dart';
@@ -104,7 +105,7 @@ class _QuizScreenState extends State<QuizScreen> {
             },
           );
         } else {
-          return const Center(child: CircularProgressIndicator(),);
+            return Center(child: Lottie.asset("assets/json/loading.json"));
         }
       },
     );

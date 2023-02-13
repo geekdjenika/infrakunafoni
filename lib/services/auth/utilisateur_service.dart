@@ -1,38 +1,21 @@
 import 'dart:convert';
 
-import 'package:http/http.dart';
+import 'package:http/http.dart' as http;
 import 'package:infrakunafoni/constants.dart';
-import 'package:infrakunafoni/models/signup_model.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:infrakunafoni/models/utilisateur_model.dart';
 
 class UtilisateurService {
-  final url = host + '/auth';
+  final baseUrl = '$host/auth';
+  var client = http.Client();
 
   //SIGN UP
   Future<String> signup(String username, String email, String password) async {
+    var url = Uri.parse('$baseUrl/signup');
     final data = jsonEncode(
         {'username': username, 'email': email, 'password': password});
     Map<String, String> headers = {"Content-Type": "application/json"};
-    Response response = await post(
-        Uri.parse('$url/signup'), body: data, headers: headers);
-
-    if (response.statusCode == 200) {
-      Map<String, dynamic> json = jsonDecode(response.body);
-
-      return json['message'];
-    } else {
-      //throw ("Can't get the Articles");
-      return "Problème lors de l'inscription ${response.statusCode} ${response.body}";
-    }
-  }
-
-  //SIGN UP
-  Future<String> signin(String username, String password) async {
-    final data = jsonEncode(
-        {'username': username, 'password': password});
-    Map<String, String> headers = {"Content-Type": "application/json"};
-    Response response = await post(
-        Uri.parse('$url/signin'), body: data, headers: headers);
+    var response = await client.post(url, body: data, headers: headers);
 
     if (response.statusCode == 200) {
       Map<String, dynamic> json = jsonDecode(response.body);
@@ -40,29 +23,56 @@ class UtilisateurService {
       return json['message'];
     } else {
       //throw ("Can't get the Articles");
-      return "Problème lors de la connexion ${response.statusCode} ${response.body}";
+      return "Problème lors de l'inscription ${response.statusCode} ${response.body}";
     }
   }
 
+  //SIGN IN
+  Future<String> signin(String username, String password) async {
+    var url = Uri.parse('$baseUrl/signin');
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    final data = jsonEncode(
+        {'username': username, 'password': password});
+    Map<String, String> headers = {"Content-Type": "application/json"};
+    var response = await client.post(url, body: data, headers: headers);
+
+    if (response.statusCode == 200) {
+      prefs.setBool("loggedIn", true);
+      connecte = true;
+      Map<String, dynamic> json = jsonDecode(response.body);
+      prefs.setString("token", json['accessToken']);
+      token = json['accessToken'];
+      prefs.setInt("id", json['id']);
+      id = json['id'];
+      connexion = true;
+      return "Bienvenue ${json['username']} !".toUpperCase();
+
+    } else {
+      //throw ("Can't get the Articles");
+      return "Problème lors de la connexion ${response.statusCode} ${response.body}";
+    }
+  }
+  //Get user
   Future<Utilisateur> getUser() async {
+    var url = Uri.parse('$baseUrl/api/user/$id');
+    var _headers = {
+      "Authorization": "Bearer $token"
+    };
+    var response = await client.get(url, headers: _headers);
 
-    Response res = await get(Uri.parse('$host/api/user/1'), headers: {
-      "Authorization": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJnZWVrZGplbmlrYSIsImlhdCI6MTY3NjA1MzAzMywiZXhwIjoxNjc2MTM5NDMzfQ.hs-rh5f_h9o8Q6Lv_Qt66v4cN0_5ntbGrUGa89A_MB2fyFRKp3KfspNf4PW6Pywqbwli86kedppSqOe8ZA3Ppw"
-    });
-
-    if (res.statusCode == 200) {
-      Map<String, dynamic> json = jsonDecode(res.body);
+    if (response.statusCode == 200) {
+      Map<String, dynamic> json = jsonDecode(response.body);
 
       var body = json['data'];
+      photo = json['image'];
 
       //this line will allow us to get the different articles from the json file and putting them into a list
-      Utilisateur utilisateur =
-      body.map((dynamic item) => Utilisateur.fromJson(item)).toList();
+      Utilisateur utilisateur = body.map((dynamic item) => Utilisateur.fromJson(item)).toList();
 
       return utilisateur;
     } else {
       //return res.statusCode;
-      throw ("Can't get the User");
+      throw ("Utilisateur introuvable ! ${response.statusCode}");
     }
   }
 

@@ -1,5 +1,8 @@
+import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:infrakunafoni/constants.dart';
+import 'package:lottie/lottie.dart';
 
 import '../home.dart';
 
@@ -11,22 +14,23 @@ class Splash extends StatefulWidget {
 }
 
 class _SplashState extends State<Splash> {
-  @override
-  void initState() {
-    // ignore: todo
-    // TODO: implement initState
-    super.initState();
 
-    Future.delayed(const Duration(seconds: 4)).then((value) {
-      Navigator.of(context).pushReplacement(
-          CupertinoPageRoute(builder: (context) =>  const Accueil()));
-    });
-  }
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-          child: Image.asset("assets/img/logo_xl.png")
+    return AnimatedSplashScreen(
+      splash: Center(
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Column(
+            children: [
+              Text("InfraKunafoni".toUpperCase(), style: titregras(background),),
+              SizedBox(height: MediaQuery.of(context).size.height / 10,),
+              Lottie.asset("assets/json/loading.json", height: MediaQuery.of(context).size.height / 8, width: MediaQuery.of(context).size.width / 4,),
+            ],
+          ),
+        ),
       ),
+      duration: 5000,
+      nextScreen: const Accueil(),
     );
   }
 }
