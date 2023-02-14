@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:infrakunafoni/provider/utilisateur_provider.dart';
 import 'package:infrakunafoni/screens/home.dart';
 import 'package:infrakunafoni/screens/profile_screen.dart';
 import 'package:infrakunafoni/screens/splash/splash_screen.dart';
+import 'package:provider/provider.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,11 +14,18 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return ChangeNotifierProvider<UtilisateurProvider>(
+      create: (context) => UtilisateurProvider(),
+      child:  const MaterialApp(
+        title: 'Infra Kunafoni',
+        debugShowCheckedModeBanner: false,
+        home: Splash(),
+      ),
+    );/*const MaterialApp(
       title: 'Infra Kunafoni',
       debugShowCheckedModeBanner: false,
-      home: Splash(),
-    );
+      home: Accueil(),
+    );*/
   }
 }
 

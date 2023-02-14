@@ -121,8 +121,8 @@ class _InscriptionState extends State<Inscription> {
                       validator: (value) {
                         if(value == null || value.isEmpty) {
                           return "Entrez un mot de passe s'il vous plaît !";
-                        } else if (value.length < 8) {
-                          return "Allez jusqu'à 8 caractères !";
+                        } else if (value.length < 6) {
+                          return "Allez jusqu'à 6 caractères !";
                         }
                       },
                       sufixIcon: InkWell(
@@ -152,8 +152,8 @@ class _InscriptionState extends State<Inscription> {
                       validator: (value) {
                         if(value == null || value.isEmpty) {
                           return "Entrez un mot de passe s'il vous plaît !";
-                        } else if (value.length < 8) {
-                          return "Allez jusqu'à 8 caractères !";
+                        } else if (value.length < 6) {
+                          return "Allez jusqu'à 6 caractères !";
                         } else if(value != passwordController.text) {
                           return "Les mots de passe ne correspondent pas !";
                         }

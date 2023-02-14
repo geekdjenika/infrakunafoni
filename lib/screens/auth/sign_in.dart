@@ -87,8 +87,8 @@ class _ConnexionState extends State<Connexion> {
                         validator: (value) {
                           if(value == null || value.isEmpty) {
                             return "Entrez un mot de passe s'il vous plaît !";
-                          } else if (value.length < 8) {
-                            return "Allez jusqu'à 8 caractères !";
+                          } else if (value.length < 6) {
+                            return "Allez jusqu'à 6 caractères !";
                           }
                         },
                         sufixIcon: InkWell(

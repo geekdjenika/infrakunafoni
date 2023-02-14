@@ -6,11 +6,14 @@ import 'package:flutter/services.dart';
 import 'package:infrakunafoni/models/question_model.dart';
 import 'package:infrakunafoni/models/quiz_model.dart';
 import 'package:infrakunafoni/screens/quiz/questions_screen.dart';
+import 'package:infrakunafoni/services/quiz_service.dart';
+import 'package:infrakunafoni/widgets/my_button.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:lottie/lottie.dart';
 
 import '../../constants.dart';
 import '../../widgets/list_card.dart';
+import '../auth/auth.dart';
 
 class QuizScreen extends StatefulWidget {
   const QuizScreen({Key? key}) : super(key: key);
@@ -31,16 +34,80 @@ class _QuizScreenState extends State<QuizScreen> {
 
   final ScrollController _controller = ScrollController();
 
+  QuizService quizService = QuizService();
+
   @override
   Widget build(BuildContext context) {
     return FutureBuilder(
-      future: readJson(),
+      future: quizService.getAllQuiz(),
       builder: (context, data) {
         if(data.hasError) {
-          return Center(child: Text('${data.error}', style: titregras(Colors.black),),);
+          return Scaffold(
+            appBar: AppBar(
+              leading: InkWell(
+                onTap: () => Navigator.pop(context),
+                child: Icon(
+                  CupertinoIcons.xmark,
+                  color: background,
+                ),
+              ),
+              backgroundColor: Colors.white,
+              elevation: 0,
+            ),
+            backgroundColor: Colors.white,
+            body: Center(
+              child: SingleChildScrollView(
+                child: Column(
+                  //mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Lottie.asset("assets/json/connectionlost.json"),
+                    Text("Connexion perdue !", style: titregras(incorrect),),
+                    TextButton(
+                        onPressed: () {
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => const Auth()));
+                        },
+                        child: Text("Connectez-vous pour jouer !", style: soustitre(background),)),
+                    MyButton(onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const Auth())), text: "Connexion")
+                  ],
+                ),
+              ),
+            ),
+          );
         } else if(data.hasData) {
           var liste = data.data as List<Quiz>;
-          return ListView.builder(
+          return liste.length == 0
+            ? Scaffold(
+            appBar: AppBar(
+              leading: InkWell(
+                onTap: () => Navigator.pop(context),
+                child: Icon(
+                  CupertinoIcons.xmark,
+                  color: background,
+                ),
+              ),
+              backgroundColor: Colors.white,
+              elevation: 0,
+            ),
+            backgroundColor: Colors.white,
+            body: Center(
+              child: SingleChildScrollView(
+                child: Column(
+                  //mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Lottie.asset("assets/json/connectionlost.json"),
+                    Text("Connexion perdue !", style: titregras(incorrect),),
+                    TextButton(
+                        onPressed: () {
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => const Auth()));
+                        },
+                        child: Text("Connectez-vous pour jouer !", style: soustitre(background),)),
+                    MyButton(onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const Auth())), text: "Connexion")
+                  ],
+                ),
+              ),
+            ),
+          )
+          : ListView.builder(
             controller: _controller,
             scrollDirection: Axis.vertical,
             shrinkWrap: true,

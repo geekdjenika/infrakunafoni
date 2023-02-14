@@ -67,4 +67,18 @@ class Utilisateur {
     }
     return data;
   }
+
+  /*factory Utilisateur.fromMap(Map utilisateurMap){
+    return Utilisateur(
+        id: utilisateurMap['id'],
+        username: utilisateurMap['username'],
+        email: utilisateurMap['email'],
+        password: utilisateurMap['password'],
+        image: utilisateurMap['image'],
+        notifications: utilisateurMap['notifications'],
+        roles: utilisateurMap['roles'],
+        sessionJeux: utilisateurMap['sessionJeux'],
+    );
+  }*/
+
 }

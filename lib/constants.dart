@@ -79,7 +79,8 @@ List<Categorie> categorie = [];
 
 String nomcategorie = '';
 
-String host = 'http://10.175.48.139:8080/api';
+String host = 'http://192.168.47.151:8080/api';
+//String host = 'http://10.175.48.139:8080/api';
 
 //auth
 bool connexion = true;
