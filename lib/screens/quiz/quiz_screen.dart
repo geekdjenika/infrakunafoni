@@ -49,6 +49,18 @@ class _QuizScreenState extends State<QuizScreen> {
               children: [
                 Lottie.asset("assets/json/connectionlost.json"),
                 Text("Connexion perdue !", style: titregras(incorrect),),
+                InkWell(
+                  onTap: () {
+                    setState(() {
+
+                    });
+                  },
+                  child: Icon(
+                    CupertinoIcons.restart,
+                    color: background,
+                    size: 50,
+                  ),
+                ),
                 TextButton(
                     onPressed: () {
                       Navigator.push(context, MaterialPageRoute(builder: (context) => const Auth()));
@@ -95,9 +107,7 @@ class _QuizScreenState extends State<QuizScreen> {
             );
           } else {
             var liste = data.data as List<Quiz>;
-            return liste.length == 0
-                ? Container(color: background,)
-                : ListView.builder(
+            return ListView.builder(
               controller: _controller,
               scrollDirection: Axis.vertical,
               shrinkWrap: true,

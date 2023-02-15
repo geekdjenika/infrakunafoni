@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
       child:  const MaterialApp(
         title: 'Infra Kunafoni',
         debugShowCheckedModeBanner: false,
-        home: Splash(),
+        home: Accueil(),
       ),
     );/*const MaterialApp(
       title: 'Infra Kunafoni',

@@ -5,7 +5,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:infrakunafoni/models/amende_model.dart';
+import 'package:infrakunafoni/screens/auth/auth.dart';
 import 'package:infrakunafoni/screens/home.dart';
+import 'package:infrakunafoni/services/amende_service.dart';
+import 'package:infrakunafoni/widgets/my_button.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:lottie/lottie.dart';
 
@@ -34,25 +37,31 @@ class _AmendeScreenState extends State<AmendeScreen> {
   //final AudioCache _player = AudioCache(prefix: 'assets/aud');
   final _player = AudioPlayer();
 
+  AmendeService amendeService = AmendeService();
+
   @override
   Widget build(BuildContext context) {
     return FutureBuilder(
-      future: readJson(),
+      future: amendeService.getAllAmende(),
       builder: (context, data) {
         if(data.hasError) {
-          return Center(child: Text('${data.error}', style: titregras(Colors.black),),);
-        } else if(data.hasData) {
-          var liste = data.data as List<Amende>;
-          return ListView.builder(
-            controller: _controller,
-            scrollDirection: Axis.vertical,
-            shrinkWrap: true,
-            itemCount: liste.length,
-            itemBuilder: (context, index) {
-              return ListCard(
-                listTile: ListTile(
-                  onTap: () {
-                    /*for(int i = 0; i < liste.length; i++) {
+          return FutureBuilder(
+            future: readJson(),
+            builder: (context, data) {
+              if(data.hasError) {
+                return Center(child: Text('${data.error}', style: titregras(Colors.black),),);
+              } else if(data.hasData) {
+                var liste = data.data as List<Amende>;
+                return ListView.builder(
+                  controller: _controller,
+                  scrollDirection: Axis.vertical,
+                  shrinkWrap: true,
+                  itemCount: liste.length,
+                  itemBuilder: (context, index) {
+                    return ListCard(
+                      listTile: ListTile(
+                        onTap: () {
+                          /*for(int i = 0; i < liste.length; i++) {
                       infractions.addAll(liste[index].infractions!);
                     }
                     print(infractions);
@@ -61,42 +70,137 @@ class _AmendeScreenState extends State<AmendeScreen> {
                     selectedPageIndex = 5;
                     Navigator.pop(context);
                     Navigator.push(context, MaterialPageRoute(builder: (context) => const Accueil()));*/
-                    Fluttertoast.showToast(msg: '$infractions.length');
+                          Fluttertoast.showToast(msg: '$infractions.length');
+                        },
+                        leading: CircleAvatar(
+                          maxRadius: 20,
+                          minRadius: 20,
+                          backgroundColor: Colors.white,
+                          child: Text(
+                            '${index+1}',
+                            style: soustitregras(background),
+                          ),
+                        ),
+                        title: Text(
+                          '${liste[index].montant?.montant} ${liste[index].montant?.devise}',
+                          style: titreliste(Colors.white),
+                        ),
+                        subtitle: Text(
+                          'Infractions concernées : ${liste[index].infractions?.length}',
+                          style: soustitreliste(Colors.white),
+                        ),
+                        trailing: InkWell(
+                          onTap: () async {
+                            await _player.setAsset('assets/aud/${liste[index].vocals?[0].vocal}');
+                            _player.play();
+                          },
+                          child: const Icon(
+                            CupertinoIcons.speaker_2_fill,
+                            color: Colors.white,
+                            size: 20,
+                          ),
+                        ),
+                      ),
+                    );
                   },
-                  leading: CircleAvatar(
-                    maxRadius: 20,
-                    minRadius: 20,
-                    backgroundColor: Colors.white,
-                    child: Text(
-                      '${index+1}',
-                      style: soustitregras(background),
-                    ),
-                  ),
-                  title: Text(
-                    '${liste[index].montant?.montant} ${liste[index].montant?.devise}',
-                    style: titreliste(Colors.white),
-                  ),
-                  subtitle: Text(
-                    'Infractions concernées : ${liste[index].infractions?.length}',
-                    style: soustitreliste(Colors.white),
-                  ),
-                  trailing: InkWell(
-                    onTap: () async {
-                      await _player.setAsset('assets/aud/${liste[index].vocals?[0].vocal}');
-                      _player.play();
-                    },
-                    child: const Icon(
-                      CupertinoIcons.speaker_2_fill,
-                      color: Colors.white,
-                      size: 20,
-                    ),
-                  ),
-                ),
-              );
+                );
+              } else {
+                return Center(child: Lottie.asset("assets/json/loading.json", width: 50, height: 50));
+              }
             },
           );
+        } else if(data.hasData) {
+          print(data.data);
+          if(data.data!.isEmpty) {
+            return Container(
+              height: MediaQuery.of(context).size.height,
+              color: Colors.white,
+              child: Column(
+                //mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Lottie.asset("assets/json/empty.json"),
+                  Text("Pas d'amende !", style: titregras(background),),
+
+                  TextButton(
+                      onPressed: () {
+                        setState(() {
+
+                        });
+                      },
+                      child: Text("Cliquer ici pour recharger !", style: soustitre(background),)),
+                  InkWell(
+                    onTap: () {
+                      setState(() {
+
+                      });
+                    },
+                    child: Icon(
+                      CupertinoIcons.restart,
+                      color: background,
+                      size: 50,
+                    ),
+                  ),
+                ],
+              ),
+            );
+          } else {
+            var liste = data.data as List<Amende>;
+            //var liste = data.data as List<Amende>;
+            return ListView.builder(
+              controller: _controller,
+              scrollDirection: Axis.vertical,
+              shrinkWrap: true,
+              itemCount: liste.length,
+              itemBuilder: (context, index) {
+                return ListCard(
+                  listTile: ListTile(
+                    onTap: () {
+                      /*for(int i = 0; i < liste.length; i++) {
+                      infractions.addAll(liste[index].infractions!);
+                    }
+                    print(infractions);
+                    Fluttertoast.showToast(msg: '$infractions.length');
+                    useindex = true;
+                    selectedPageIndex = 5;
+                    Navigator.pop(context);
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => const Accueil()));*/
+                      Fluttertoast.showToast(msg: '$infractions.length');
+                    },
+                    leading: CircleAvatar(
+                      maxRadius: 20,
+                      minRadius: 20,
+                      backgroundColor: Colors.white,
+                      child: Text(
+                        '${index+1}',
+                        style: soustitregras(background),
+                      ),
+                    ),
+                    title: Text(
+                      '${liste[index].montant?.montant} ${liste[index].montant?.devise}',
+                      style: titreliste(Colors.white),
+                    ),
+                    subtitle: Text(
+                      'Infractions concernées : ${liste[index].infractions?.length}',
+                      style: soustitreliste(Colors.white),
+                    ),
+                    trailing: InkWell(
+                      onTap: () async {
+                        await _player.setAsset('assets/aud/${liste[index].vocals?[0].vocal}');
+                        _player.play();
+                      },
+                      child: const Icon(
+                        CupertinoIcons.speaker_2_fill,
+                        color: Colors.white,
+                        size: 20,
+                      ),
+                    ),
+                  ),
+                );
+              },
+            );
+          }
         } else {
-          return Center(child: Lottie.asset("assets/json/loading.json"));
+          return Center(child: Lottie.asset("assets/json/loading.json", width: 50, height: 50));
         }
       },
     );
