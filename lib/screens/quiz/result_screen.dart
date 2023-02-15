@@ -72,27 +72,20 @@ class ResultScreen extends StatelessWidget {
               height: MediaQuery.of(context).size.height / 4,
               width: MediaQuery.of(context).size.width / 1.2,
             ),
-            Wrap(
-              alignment: WrapAlignment.spaceAround,
-              direction: Axis.horizontal,
-              children: [
-                for(int i = 0; i < questionLength; i++)
-                Container(
-                  margin: const EdgeInsets.all(20.0),
-                  height: 65,
-                  width: 65,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    color: background,
-                  ),
-                  child: Center(
-                    child: Text(
-                      '${i+1}',
-                      style: soustitre(Colors.white),
-                    ),
-                  ),
+            Container(
+              margin: const EdgeInsets.all(20.0),
+              height: 65,
+              width: 65,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
+                color: background,
+              ),
+              child: Center(
+                child: Text(
+                  '$result/$questionLength',
+                  style: soustitre(Colors.white),
                 ),
-              ],
+              ),
             ),
             Text(
               'Votre score',

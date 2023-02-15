@@ -42,7 +42,7 @@ class UtilisateurService {
       prefs.setString("token", json['accessToken']);
       token = json['accessToken'];
       prefs.setInt("id", json['id']);
-      prefs.setString("profil", json['']);
+      //prefs.setString("profil", json['image']);
       id = json['id'];
       print("mon id");
       print(id);
@@ -51,7 +51,7 @@ class UtilisateurService {
 
     } else {
       //throw ("Can't get the Articles");
-      return "Problème lors de la connexion ${response.statusCode} ${response.body}";
+      return "Nom d'utilisateur ou mot de passe incorrect !";
     }
   }
   //Get user

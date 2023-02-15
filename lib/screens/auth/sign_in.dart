@@ -4,6 +4,7 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:infrakunafoni/constants.dart';
 import 'package:infrakunafoni/screens/auth/auth.dart';
 import 'package:infrakunafoni/screens/auth/sign_up.dart';
+import 'package:infrakunafoni/screens/home.dart';
 import 'package:infrakunafoni/services/auth/utilisateur_service.dart';
 
 import '../../widgets/my_button.dart';
@@ -132,6 +133,12 @@ class _ConnexionState extends State<Connexion> {
                             String retour = await utilisateurService.signin(usernameController.text, passwordController.text);
                             print(retour);
                             Fluttertoast.showToast(msg: retour);
+                            if(connecte) {
+                              Navigator.pop(context);
+                              Navigator.push(context, MaterialPageRoute(builder: (context) => Auth()));
+                            } else {
+                              Fluttertoast.showToast(msg: "Erreur, réessayer !");
+                            }
                           }
                         },
                       ),

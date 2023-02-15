@@ -22,11 +22,14 @@ class QuizService {
     );
     print("j'entre dans if");
     if (response.statusCode == 200) {
+      print(response.body);
       //get the data from the response
       String jsonString = response.body;
       //Convert to List<Map>
       List data = jsonDecode(jsonString);
-      //items= data.cast<Quiz.fromJson(jsonString)>();
+      print("mes data");
+      print(data);
+      items = data.map((e) => Quiz.fromJson(e)).toList();
       print("je suis là");
       print(response.body);
     }
