@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:http/http.dart' as http;
 import 'package:infrakunafoni/constants.dart';
+import 'package:infrakunafoni/extensions/diacritics.dart';
 import 'package:infrakunafoni/models/categorie_model.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 class CategorieService {
@@ -25,6 +26,7 @@ class CategorieService {
       String jsonString = response.body;
       //Convert to List<Map>
       print(response.body);
+      print("Ăⓑỡǚ".withoutDiacritics);
       List data = jsonDecode(jsonString);
       items = data.map((e) => Categorie.fromJson(e)).toList();
     }

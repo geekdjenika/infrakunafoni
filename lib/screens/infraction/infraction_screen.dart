@@ -3,9 +3,10 @@ import 'dart:convert';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:infrakunafoni/extensions/diacritics.dart';
 import 'package:infrakunafoni/models/categorie_model.dart';
 import 'package:infrakunafoni/screens/home.dart';
-import 'package:infrakunafoni/screens/quiz/categorie_service.dart';
+import 'package:infrakunafoni/services/categorie_service.dart';
 import 'package:lottie/lottie.dart';
 
 import '../../constants.dart';
@@ -58,9 +59,9 @@ class _InfractionScreenState extends State<InfractionScreen> {
                                   amendes.add(liste[i].amendes![j])
                                 },
                                 categorie.add(liste[i]),
-                                print(categorie[0].categorie),
+                                print(categorie[0].categorie!.withoutDiacritics),
                                 print("-------------------------obj-----------------------"),
-                                print(liste[i].categorie),
+                                print(liste[i].categorie!.withoutDiacritics),
                                 selectedPageIndex = 4,
                                 Navigator.pop(context),
                                 Navigator.push(context, MaterialPageRoute(builder: (context) => const Accueil()))
@@ -83,7 +84,7 @@ class _InfractionScreenState extends State<InfractionScreen> {
                                     ClipRRect(
                                       borderRadius: const BorderRadius.only(topLeft: Radius.circular(18),topRight: Radius.circular(18)),
                                       child: Image.asset(
-                                        "assets/img/${liste[i].categorie}.png",
+                                        "assets/img/${liste[i].categorie!.withoutDiacritics}.png",
                                         width: MediaQuery.of(context).size.width * 0.43,
                                         height: MediaQuery.of(context).size.height * 0.22,
                                         fit: BoxFit.cover,
@@ -96,7 +97,7 @@ class _InfractionScreenState extends State<InfractionScreen> {
                                         child: Column(
                                           children: [
                                             Text(
-                                              '${liste[i].categorie}',
+                                              '${liste[i].categorie!.withoutDiacritics}',
                                               style: soustitregras(Colors.white),
                                             ),
                                             Text(
@@ -172,9 +173,9 @@ class _InfractionScreenState extends State<InfractionScreen> {
                             amendes.add(liste[i].amendes![j])
                           },
                           categorie.add(liste[i]),
-                          print(categorie[0].categorie),
+                          print(categorie[0].categorie!.withoutDiacritics),
                           print("-------------------------obj-----------------------"),
-                          print(liste[i].categorie),
+                          print(liste[i].categorie!.withoutDiacritics),
                           selectedPageIndex = 4,
                           Navigator.pop(context),
                           Navigator.push(context, MaterialPageRoute(builder: (context) => const Accueil()))
@@ -197,7 +198,7 @@ class _InfractionScreenState extends State<InfractionScreen> {
                               ClipRRect(
                                 borderRadius: const BorderRadius.only(topLeft: Radius.circular(18),topRight: Radius.circular(18)),
                                 child: Image.asset(
-                                  "assets/img/${liste[i].categorie}.png",
+                                  "assets/img/${liste[i].categorie!.withoutDiacritics}.png",
                                   width: MediaQuery.of(context).size.width * 0.43,
                                   height: MediaQuery.of(context).size.height * 0.22,
                                   fit: BoxFit.cover,
@@ -210,7 +211,7 @@ class _InfractionScreenState extends State<InfractionScreen> {
                                   child: Column(
                                     children: [
                                       Text(
-                                        '${liste[i].categorie}',
+                                        '${liste[i].categorie!.withoutDiacritics}',
                                         style: soustitregras(Colors.white),
                                       ),
                                       Text(
