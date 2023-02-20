@@ -198,8 +198,14 @@ class _InfractionScreenState extends State<InfractionScreen> {
                               ClipRRect(
                                 borderRadius: const BorderRadius.only(topLeft: Radius.circular(18),topRight: Radius.circular(18)),
                                 child: Image.asset(
-                                  "assets/img/${liste[i].categorie!.withoutDiacritics}.png",
-                                  width: MediaQuery.of(context).size.width * 0.43,
+                                  liste[i].id == 1
+                                  ? "assets/img/Gros porteurs.png"
+                                  : liste[i].id == 2
+                                      ? "assets/img/Véhicules légers.png"
+                                  : liste[i].id == 3
+                                    ? "assets/img/Motos.png"
+                                  : "assets/img/Générales.png",
+                                    width: MediaQuery.of(context).size.width * 0.43,
                                   height: MediaQuery.of(context).size.height * 0.22,
                                   fit: BoxFit.cover,
                                 ),
