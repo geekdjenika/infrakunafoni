@@ -222,7 +222,7 @@ class _InscriptionState extends State<Inscription> {
 
 
                     // or continue with
-                    Padding(
+                    /*Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 25.0),
                       child: Row(
                         children: [
@@ -277,7 +277,7 @@ class _InscriptionState extends State<Inscription> {
                           },
                         )
                       ],
-                    ),
+                    ),*/
                   ],
                 ),
               ),

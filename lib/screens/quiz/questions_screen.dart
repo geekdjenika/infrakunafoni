@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:infrakunafoni/screens/quiz/result_screen.dart';
+import 'package:infrakunafoni/services/quiz_service.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:vibration/vibration.dart';
 
@@ -13,8 +14,9 @@ import '../../widgets/option_card.dart';
 import '../../widgets/question_widget.dart';
 
 class QuestionsScreen extends StatefulWidget {
-  const QuestionsScreen({Key? key, required this.questions}) : super(key: key);
+  const QuestionsScreen({Key? key, required this.questions, required this.idQ}) : super(key: key);
   final List<Question> questions;
+  final int idQ;
 
   @override
   State<QuestionsScreen> createState() => _QuetionsScreenState();
@@ -27,6 +29,8 @@ class _QuetionsScreenState extends State<QuestionsScreen> {
     // TODO: implement initState
     indexAleatoire = generateIndex();
   }
+
+  QuizService quizService = QuizService();
 
   /*final List<Question> _questions = [
     Question(id: 1,
@@ -107,7 +111,9 @@ class _QuetionsScreenState extends State<QuestionsScreen> {
 
 
   // create a function to start over
-  void startOver() {
+  void startOver() async {
+    String scorejeu = await quizService.addSession(widget.idQ, score);
+    print(scorejeu);
     setState(() {
       index = 0;
       score = 0;

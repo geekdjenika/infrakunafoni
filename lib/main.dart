@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:infrakunafoni/provider/utilisateur_provider.dart';
 import 'package:infrakunafoni/screens/home.dart';
-import 'package:infrakunafoni/screens/profile_screen.dart';
-import 'package:infrakunafoni/screens/splash/splash_screen.dart';
 import 'package:provider/provider.dart';
 
 void main() {

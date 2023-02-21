@@ -10,7 +10,6 @@ class AmendeService {
   //get all quiz
   Future<List<Amende>> getAllAmende() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    List<Amende> items = [];
     String? token = prefs.getString("token");
     //Get the item from the API
     var url = Uri.parse('$host/amende/get/all');
@@ -21,14 +20,24 @@ class AmendeService {
       headers: headers,
     );
     if (response.statusCode == 200) {
+      List<Amende> items = [];
       //get the data from the response
       String jsonString = response.body;
       //Convert to List<Map>
-      List data = jsonDecode(jsonString);
+      var jsonByte = response.bodyBytes;
+
+      //Convert to List<Map>
+      List data = json.decode(utf8.decode(jsonByte));
+      //List data = jsonDecode(jsonString);
       items = data.map((e) => Amende.fromJson(e)).toList();
+
+      return items;
+    } else {
+      throw ("Liste introuvable : ${response.body}");
     }
 
-    return items;
+
+
 
   }
 }

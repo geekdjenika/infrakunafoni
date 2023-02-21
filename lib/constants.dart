@@ -31,7 +31,7 @@ TextStyle soustitre(Color? color) {
 }
 TextStyle soustitregras(Color? color) {
   return GoogleFonts.montserrat(
-      fontSize: 16.0,
+      fontSize: 15.0,
       fontWeight: FontWeight.bold,
       color: color
   );

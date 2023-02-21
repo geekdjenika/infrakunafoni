@@ -320,7 +320,7 @@ class _ProfilState extends State<Profil> {
                                 style: soustitregras(background),
                               ),
                               SizedBox(height: MediaQuery.of(context).size.height * 0.02),
-                              utilisateur.sessionJeux!.length > 0
+                              utilisateur.sessionJeux!.isNotEmpty
                                   ?
                               MyCard(
                                 widget: Column(
@@ -332,7 +332,7 @@ class _ProfilState extends State<Profil> {
                                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                           children: [
                                             Text(
-                                              '${utilisateur.sessionJeux![i].date}',
+                                              utilisateur.sessionJeux![i].date!.substring(0, 19),
                                               style: titreliste(background),
                                             ),
                                             Text(

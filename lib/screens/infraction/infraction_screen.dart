@@ -217,7 +217,7 @@ class _InfractionScreenState extends State<InfractionScreen> {
                                   child: Column(
                                     children: [
                                       Text(
-                                        '${liste[i].categorie!.withoutDiacritics}',
+                                        '${liste[i].categorie}',
                                         style: soustitregras(Colors.white),
                                       ),
                                       Text(

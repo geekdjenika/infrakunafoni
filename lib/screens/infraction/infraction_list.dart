@@ -32,7 +32,13 @@ class _InfractionListState extends State<InfractionList> {
           child: categorie.length == 0
             ? null
             : Image.asset(
-                "assets/img/${categorie[0].categorie}.png",
+              categorie[0].id == 1
+              ? "assets/img/Gros porteurs.png"
+                  : categorie[0].id == 2
+              ? "assets/img/Véhicules légers.png"
+                  : categorie[0].id == 3
+              ? "assets/img/Motos.png"
+                  : "assets/img/Générales.png",
                 height: MediaQuery.of(context).size.height / 5.5,
                 width: double.infinity,
                 fit: BoxFit.cover,

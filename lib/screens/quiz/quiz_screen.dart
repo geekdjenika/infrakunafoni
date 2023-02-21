@@ -130,7 +130,7 @@ class _QuizScreenState extends State<QuizScreen> {
                               })
                           );
                         });
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => QuestionsScreen(questions: qliste)));
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => QuestionsScreen(questions: qliste, idQ: liste[index].id!)));
                       }
 
                     },
@@ -155,16 +155,17 @@ class _QuizScreenState extends State<QuizScreen> {
                       onTap: () {
                         List<Question> qliste = [];
                         liste[index].questions!.forEach((question) {
-                          qliste.add(
-                              Question(id: question.id!, question: question.question!, options: {
-                                question.reponse! : true,
-                                question.mauvaisesReponses![0].reponse! : false,
-                                question.mauvaisesReponses![1].reponse! : false,
-                                question.mauvaisesReponses![2].reponse! : false,
-                              })
-                          );
+                          for(int i = 0; i <= question.mauvaisesReponses!.length; i++) {
+                            qliste.add(
+                                Question(id: question.id!, question: question.question!, options: {
+                                  question.reponse! : true,
+                                  question.mauvaisesReponses![i].reponse! : false,
+                                })
+                            );
+                          }
+
                         });
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => QuestionsScreen(questions: qliste)));
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => QuestionsScreen(questions: qliste, idQ: liste[index].id!,)));
                       },
                       child: const Icon(
                         Icons.gamepad_outlined,

@@ -58,7 +58,6 @@ class UtilisateurService {
   Future<Map<String,dynamic>> getUser() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     int? UID = prefs.getInt("id");
-    Map<String,dynamic> item = {};
 
     String? token = prefs.getString("token");
     //Get the item from the API
@@ -73,15 +72,20 @@ class UtilisateurService {
     print(response.body);
 
     if (response.statusCode == 200) {
+      Map<String,dynamic> item = {};
       //get the data from the response
       String jsonString = response.body;
+      var jsonByte = response.bodyBytes;
 
       //Convert to List<Map>
-      item = jsonDecode(jsonString);
+      item = json.decode(utf8.decode(jsonByte));
       prefs.setString("profil", item['image']);
+      return item;
+    } else {
+      throw ("Liste introuvable : ${response.body}");
     }
 
-    return item;
+
   }
   /*static Future<List<Utilisateur>> getUser(int idU) async{
     var url = Uri.parse('$host/user/$idU');

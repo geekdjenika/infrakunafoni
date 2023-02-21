@@ -171,7 +171,7 @@ class _ConnexionState extends State<Connexion> {
 
                       SizedBox(height: MediaQuery.of(context).size.height * 0.04),
 
-
+/*
                       // or continue with
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 25.0),
@@ -228,7 +228,7 @@ class _ConnexionState extends State<Connexion> {
                             },
                           )
                         ],
-                      ),
+                      ),*/
                     ],
                   ),
                 ),

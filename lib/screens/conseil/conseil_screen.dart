@@ -7,6 +7,7 @@ import 'package:flutter/services.dart';
 import 'package:infrakunafoni/constants.dart';
 import 'package:infrakunafoni/models/conseil_model.dart';
 import 'package:infrakunafoni/services/conseil_service.dart';
+import 'package:infrakunafoni/widgets/conseil_card.dart';
 import 'package:lottie/lottie.dart';
 
 import '../../widgets/my_card.dart';
@@ -51,7 +52,7 @@ class _ConseilScreenState extends State<ConseilScreen> {
                   itemBuilder: (context, index) {
                     return Padding(
                       padding: const EdgeInsets.only(bottom: 8.0, top: 8.0),
-                      child: MyCard(
+                      child: ConseilCard(
                         color: Colors.white,
                         widget: Padding(
                           padding: const EdgeInsets.all(8.0),
@@ -148,11 +149,12 @@ class _ConseilScreenState extends State<ConseilScreen> {
               itemBuilder: (context, index) {
                 return Padding(
                   padding: const EdgeInsets.only(bottom: 8.0, top: 8.0),
-                  child: MyCard(
+                  child: ConseilCard(
                     color: Colors.white,
                     widget: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,

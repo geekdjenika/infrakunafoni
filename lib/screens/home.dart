@@ -57,7 +57,7 @@ class _AccueilState extends State<Accueil> {
                   backgroundColor: background,
                   child: GestureDetector(
                     onTap: () {
-                      AwesomeDialog(
+                      /*AwesomeDialog(
                         context: context,
                         dialogType: DialogType.noHeader,
                         animType: AnimType.rightSlide,
@@ -71,7 +71,7 @@ class _AccueilState extends State<Accueil> {
                         btnOkOnPress: () {
                           //Navigator.push(context, MaterialPageRoute(builder: (context) => Connexion()));
                         },
-                      ).show();
+                      ).show();*/
                     },
                     child: const Icon(
                       CupertinoIcons.search,
