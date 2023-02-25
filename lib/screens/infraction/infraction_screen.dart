@@ -157,6 +157,22 @@ class _InfractionScreenState extends State<InfractionScreen> {
             );
           } else {
             var liste = data.data as List<Categorie>;
+            var listgp = 0;
+            var listvl = 0;
+            var listm = 0;
+            var listg = 0;
+            liste[0].amendes!.forEach((element) {
+              listgp += element.infractions!.length;
+            });
+            liste[1].amendes!.forEach((element) {
+              listvl += element.infractions!.length;
+            });
+            liste[2].amendes!.forEach((element) {
+              listm += element.infractions!.length;
+            });
+            liste[3].amendes!.forEach((element) {
+              listg += element.infractions!.length;
+            });
             //var liste = data.data as List<Categorie>;
             return Wrap(
                 direction: Axis.horizontal,
@@ -173,9 +189,6 @@ class _InfractionScreenState extends State<InfractionScreen> {
                             amendes.add(liste[i].amendes![j])
                           },
                           categorie.add(liste[i]),
-                          print(categorie[0].categorie!.withoutDiacritics),
-                          print("-------------------------obj-----------------------"),
-                          print(liste[i].categorie!.withoutDiacritics),
                           selectedPageIndex = 4,
                           Navigator.pop(context),
                           Navigator.push(context, MaterialPageRoute(builder: (context) => const Accueil()))
@@ -220,10 +233,15 @@ class _InfractionScreenState extends State<InfractionScreen> {
                                         '${liste[i].categorie}',
                                         style: soustitregras(Colors.white),
                                       ),
+
                                       Text(
-                                        liste[i].amendes!.length > 1
-                                            ? '${liste[i].amendes![0].infractions!.length + liste[i].amendes![1].infractions!.length} infractions'
-                                            : '${liste[i].amendes![0].infractions!.length} infractions',
+                                        i == 0
+                                          ? '$listgp infractions'
+                                          : i==1
+                                          ? '$listvl infractions'
+                                          : i==2
+                                          ? '$listm infractions'
+                                          : '$listg infractions',
                                         style: soustitre(Colors.white),
                                       )
                                     ],

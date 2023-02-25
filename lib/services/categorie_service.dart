@@ -31,9 +31,20 @@ class CategorieService {
       //Convert to List<Map>
       List data = json.decode(utf8.decode(jsonByte));
       print(data);
-      print("Œꝏ".withoutDiacritics);
       //List data = jsonDecode(jsonString);
       items = data.map((e) => Categorie.fromJson(e)).toList();
+      print('Cta 1');
+      print(items[0].amendes![0].infractions!.length);
+      print(items[0].amendes![1].infractions!.length);
+      print('Cta 2');
+      print(items[1].amendes![0].infractions!.length);
+      print(items[1].amendes![1].infractions!.length);
+      print('Cta 3');
+      print(items[2].amendes![0].infractions!.length);
+      print(items[2].amendes![1].infractions!.length);
+      print('Cta 4');
+      print(items[3].amendes![0].infractions!.length);
+      print(items[3].amendes![1].infractions!.length);
       return items;
     } else {
       throw ("Liste introuvable : ${response.body}");
