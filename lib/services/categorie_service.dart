@@ -11,7 +11,7 @@ class CategorieService {
   //get all quiz
   Future<List<Categorie>> getAllCategorie() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
-
+    List<Categorie> items = [];
     String? token = prefs.getString("token");
     //Get the item from the API
     var url = Uri.parse('$host/categorie/get/all');
@@ -22,7 +22,7 @@ class CategorieService {
       headers: headers,
     );
     if (response.statusCode == 200) {
-      List<Categorie> items = [];
+
       //get the data from the response
       String jsonString = response.body;
       //Convert to List<Map>
@@ -33,24 +33,10 @@ class CategorieService {
       print(data);
       //List data = jsonDecode(jsonString);
       items = data.map((e) => Categorie.fromJson(e)).toList();
-      print('Cta 1');
-      print(items[0].amendes![0].infractions!.length);
-      print(items[0].amendes![1].infractions!.length);
-      print('Cta 2');
-      print(items[1].amendes![0].infractions!.length);
-      print(items[1].amendes![1].infractions!.length);
-      print('Cta 3');
-      print(items[2].amendes![0].infractions!.length);
-      print(items[2].amendes![1].infractions!.length);
-      print('Cta 4');
-      print(items[3].amendes![0].infractions!.length);
-      print(items[3].amendes![1].infractions!.length);
-      return items;
-    } else {
-      throw ("Liste introuvable : ${response.body}");
+
     }
 
-
+    return items;
 
 
   }

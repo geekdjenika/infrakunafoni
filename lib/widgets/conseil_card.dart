@@ -9,6 +9,9 @@ class ConseilCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      constraints: const BoxConstraints(
+        minHeight: 180,
+      ),
       decoration: BoxDecoration(
           color: color ?? neutral,
           borderRadius: BorderRadius.circular(10),

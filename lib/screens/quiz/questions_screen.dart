@@ -122,6 +122,7 @@ class _QuetionsScreenState extends State<QuestionsScreen> {
       indexAleatoire = generateIndex();
     });
     Navigator.pop(context);
+    Navigator.pop(context);
   }
 
   void startToIndex(int i) {
@@ -168,6 +169,7 @@ class _QuetionsScreenState extends State<QuestionsScreen> {
               ResultScreen(
                 result: score, // total points the user got
                 questionLength: questionLength, // out of how many questions
+                idQ: widget.idQ,
                 onPressed: startOver,
               ));
     } else {
@@ -244,6 +246,7 @@ class _QuetionsScreenState extends State<QuestionsScreen> {
                 showDialog(context: context, builder: (ctx) => ResultScreen(
                   result: score,
                   questionLength: widget.questions.length,
+                  idQ: widget.idQ,
                   onPressed: () => startOver,
                 )
                 );

@@ -5,8 +5,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:infrakunafoni/extensions/diacritics.dart';
 import 'package:infrakunafoni/models/categorie_model.dart';
+import 'package:infrakunafoni/screens/auth/auth.dart';
 import 'package:infrakunafoni/screens/home.dart';
 import 'package:infrakunafoni/services/categorie_service.dart';
+import 'package:infrakunafoni/widgets/my_button.dart';
 import 'package:lottie/lottie.dart';
 
 import '../../constants.dart';
@@ -130,8 +132,8 @@ class _InfractionScreenState extends State<InfractionScreen> {
               child: Column(
                 //mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  Lottie.asset("assets/json/empty.json"),
-                  Text("Pas d'infraction !", style: titregras(background),),
+                  Lottie.asset("assets/json/expire.json"),
+                  Text("Votre session est expirée !", style: titregras(background),),
 
                   TextButton(
                       onPressed: () {
@@ -140,18 +142,9 @@ class _InfractionScreenState extends State<InfractionScreen> {
                         });
                       },
                       child: Text("Cliquer ici pour recharger !", style: soustitre(background),)),
-                  InkWell(
-                    onTap: () {
-                      setState(() {
-
-                      });
-                    },
-                    child: Icon(
-                      CupertinoIcons.restart,
-                      color: background,
-                      size: 50,
-                    ),
-                  ),
+                  Text('OU', style: titre(background),),
+                  SizedBox(height: 5,),
+                  MyButton(onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const Auth())), text: "Connectez-vous")
                 ],
               ),
             );

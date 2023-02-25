@@ -9,7 +9,7 @@ class ConseilService {
   //get all quiz
   Future<List<Conseil>> getAllConseil() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
-
+    List<Conseil> items = [];
     String? token = prefs.getString("token");
     //Get the item from the API
     var url = Uri.parse('$host/conseil/get/all');
@@ -19,11 +19,9 @@ class ConseilService {
     http.Response response = await http.get(url,
       headers: headers,
     );
-    print('Je vais essayer');
-    print(response.body);
-    print(response.body);
+
     if (response.statusCode == 200) {
-      List<Conseil> items = [];
+
       //get the data from the response
       String jsonString = response.body;
       var jsonByte = response.bodyBytes;
@@ -34,12 +32,10 @@ class ConseilService {
       print(data);
       //List data = jsonDecode(jsonString);
       items = data.map((e) => Conseil.fromJson(e)).toList();
-      return items;
-    } else {
-      throw ("Liste introuvable : ${response.body}");
+
     }
 
-
+    return items;
 
 
   }

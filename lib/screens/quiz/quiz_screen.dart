@@ -80,8 +80,8 @@ class _QuizScreenState extends State<QuizScreen> {
               child: Column(
                 //mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  Lottie.asset("assets/json/empty.json"),
-                  Text("Pas de quiz !", style: titregras(background),),
+                  Lottie.asset("assets/json/expire.json"),
+                  Text("Votre session est expirée !", style: titregras(background),),
 
                   TextButton(
                       onPressed: () {
@@ -90,18 +90,9 @@ class _QuizScreenState extends State<QuizScreen> {
                         });
                       },
                       child: Text("Cliquer ici pour recharger !", style: soustitre(background),)),
-                  InkWell(
-                    onTap: () {
-                      setState(() {
-
-                      });
-                    },
-                    child: Icon(
-                      CupertinoIcons.restart,
-                      color: background,
-                      size: 50,
-                    ),
-                  ),
+                  Text('OU', style: titre(background),),
+                  const SizedBox(height: 5,),
+                  MyButton(onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const Auth())), text: "Connectez-vous")
                 ],
               ),
             );
@@ -153,7 +144,23 @@ class _QuizScreenState extends State<QuizScreen> {
                     ),
                     trailing: InkWell(
                       onTap: () {
-                        List<Question> qliste = [];
+                        if(liste[index].questions!.isEmpty) {
+                          Fluttertoast.showToast(msg: "Questions non disponibles, revenez plus tard !");
+                        } else {
+                          List<Question> qliste = [];
+                          liste[index].questions!.forEach((question) {
+                            qliste.add(
+                                Question(id: question.id!, question: question.question!, options: {
+                                  question.reponse! : true,
+                                  question.mauvaisesReponses![0].reponse! : false,
+                                  question.mauvaisesReponses![1].reponse! : false,
+                                  question.mauvaisesReponses![2].reponse! : false,
+                                })
+                            );
+                          });
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => QuestionsScreen(questions: qliste, idQ: liste[index].id!)));
+                        }
+                        /*List<Question> qliste = [];
                         liste[index].questions!.forEach((question) {
                           for(int i = 0; i <= question.mauvaisesReponses!.length; i++) {
                             qliste.add(
@@ -165,7 +172,7 @@ class _QuizScreenState extends State<QuizScreen> {
                           }
 
                         });
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => QuestionsScreen(questions: qliste, idQ: liste[index].id!,)));
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => QuestionsScreen(questions: qliste, idQ: liste[index].id!,)));*/
                       },
                       child: const Icon(
                         Icons.gamepad_outlined,

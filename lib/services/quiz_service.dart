@@ -10,7 +10,7 @@ class QuizService {
   //get all quiz
   Future<List<Quiz>> getAllQuiz() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
-
+    List<Quiz> items = [];
     String? token = prefs.getString("token");
     //Get the item from the API
     var url = Uri.parse('$host/quiz/get/all');
@@ -22,7 +22,7 @@ class QuizService {
     );
     print("j'entre dans if");
     if (response.statusCode == 200) {
-      List<Quiz> items = [];
+
       //get the data from the response
       String jsonString = response.body;
       var jsonByte = response.bodyBytes;
@@ -32,14 +32,11 @@ class QuizService {
       //Convert to List<Map>
       //List data = jsonDecode(jsonString);
 
-      print(data);
       items = data.map((e) => Quiz.fromJson(e)).toList();
-      return items;
-    } else {
-      throw ("Liste introuvable : ${response.body}");
+
     }
 
-
+    return items;
 
   }
 

@@ -1,19 +1,26 @@
+import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:infrakunafoni/screens/home.dart';
+import 'package:infrakunafoni/services/quiz_service.dart';
 import 'package:infrakunafoni/widgets/main_button.dart';
 import 'package:lottie/lottie.dart';
 
 import '../../constants.dart';
 
 class ResultScreen extends StatelessWidget {
-  const ResultScreen({Key? key, required this.result, required this.questionLength, this.onPressed}) : super(key: key);
+  const ResultScreen({Key? key, required this.result, required this.questionLength, this.onPressed, required this.idQ}) : super(key: key);
 
   final int result;
   final int questionLength;
   final VoidCallback? onPressed;
+  final int idQ;
+
+
 
   @override
   Widget build(BuildContext context) {
+    QuizService quizService = QuizService();
     return Scaffold(
       appBar: AppBar(
         backgroundColor: background,
@@ -103,7 +110,35 @@ class ResultScreen extends StatelessWidget {
               child: Align(
                 alignment: FractionalOffset.bottomCenter,
                 child: GestureDetector(
-                  onTap: onPressed,
+                  onTap: () {
+                    AwesomeDialog(
+                      title: 'Quitter le quiz ?'.toUpperCase(),
+                      titleTextStyle: titregras(Colors.black),
+                      desc: 'Vous pouvez recommencer le quiz ou aller à la page d\'accueil !',
+                      descTextStyle: titreliste(background),
+                      context: context,
+                      dialogType: DialogType.warning,
+                      btnOk: OutlinedButton(
+                        onPressed: () async {
+                          String scorejeu = await quizService.addSession(idQ, result);
+                          print(scorejeu);
+                          Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => Accueil()));
+                        },
+                        child: Text(
+                          'Accueil',
+                          style: soustitre(background),
+                        ),
+                      ),
+                      btnCancel: OutlinedButton(
+                        onPressed: onPressed,
+                        child: Text(
+                          'Reprendre',
+                          style: soustitre(background),
+                        ),
+                      ),
+                      
+                    ).show();
+                  },
                   child: const Padding(
                     padding: EdgeInsets.symmetric(horizontal: 60.0),
                     child: MainButton(texte: 'Terminer'),

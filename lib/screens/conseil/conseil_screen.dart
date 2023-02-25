@@ -6,8 +6,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:infrakunafoni/constants.dart';
 import 'package:infrakunafoni/models/conseil_model.dart';
+import 'package:infrakunafoni/screens/auth/auth.dart';
 import 'package:infrakunafoni/services/conseil_service.dart';
 import 'package:infrakunafoni/widgets/conseil_card.dart';
+import 'package:infrakunafoni/widgets/my_button.dart';
+import 'package:just_audio/just_audio.dart';
 import 'package:lottie/lottie.dart';
 
 import '../../widgets/my_card.dart';
@@ -30,6 +33,8 @@ class _ConseilScreenState extends State<ConseilScreen> {
     return list.map((e) => Conseil.fromJson(e)).toList(growable: true);
   }
   ConseilService conseilService = ConseilService();
+
+  final _player = AudioPlayer();
 
   @override
   Widget build(BuildContext context) {
@@ -57,6 +62,7 @@ class _ConseilScreenState extends State<ConseilScreen> {
                         widget: Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -82,13 +88,37 @@ class _ConseilScreenState extends State<ConseilScreen> {
                                 crossAxisAlignment: CrossAxisAlignment.end,
                                 children: [
                                   Divider(color: background,),
-                                  const Positioned(
-                                    right: 0,
-                                    bottom: 0,
-                                    child: Icon(
-                                      CupertinoIcons.speaker_2_fill,
-                                      color: Colors.pink,
-                                      size: 20,
+                                  GestureDetector(
+                                    onTap: () async {
+                                      await _player.setAsset('assets/aud/${liste[index].vocals![0].vocal}');
+                                      _player.play();
+                                    },
+                                    child: Container(
+                                        width: 110,
+                                        padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 8),
+                                        decoration: BoxDecoration(
+                                          border: Border.all(
+                                              color: background,
+                                              width: 0.5,
+                                              style: BorderStyle.solid
+                                          ),
+                                          borderRadius: BorderRadius.circular(18),
+                                        ),
+                                        child: Row(
+                                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            const Icon(
+                                              CupertinoIcons.speaker_2_fill,
+                                              color: Colors.pink,
+                                              size: 20,
+                                            ),
+                                            Text(
+                                              'Écouter',
+                                              style: titreliste(background),
+                                            ),
+
+                                          ],
+                                        )
                                     ),
                                   ),
                                 ],
@@ -113,8 +143,8 @@ class _ConseilScreenState extends State<ConseilScreen> {
               child: Column(
                 //mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  Lottie.asset("assets/json/empty.json"),
-                  Text("Pas de conseil !", style: titregras(background),),
+                  Lottie.asset("assets/json/expire.json"),
+                  Text("Votre session est expirée !", style: titregras(background),),
 
                   TextButton(
                       onPressed: () {
@@ -123,18 +153,9 @@ class _ConseilScreenState extends State<ConseilScreen> {
                         });
                       },
                       child: Text("Cliquer ici pour recharger !", style: soustitre(background),)),
-                  InkWell(
-                    onTap: () {
-                      setState(() {
-
-                      });
-                    },
-                    child: Icon(
-                      CupertinoIcons.restart,
-                      color: background,
-                      size: 50,
-                    ),
-                  ),
+                  Text('OU', style: titre(background),),
+                  const SizedBox(height: 5,),
+                  MyButton(onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const Auth())), text: "Connectez-vous")
                 ],
               ),
             );
@@ -180,13 +201,37 @@ class _ConseilScreenState extends State<ConseilScreen> {
                             crossAxisAlignment: CrossAxisAlignment.end,
                             children: [
                               Divider(color: background,),
-                              const Positioned(
-                                right: 0,
-                                bottom: 0,
-                                child: Icon(
-                                  CupertinoIcons.speaker_2_fill,
-                                  color: Colors.pink,
-                                  size: 20,
+                              GestureDetector(
+                                onTap: () async {
+                                  await _player.setAsset('assets/aud/${liste[index].vocals![0].vocal}');
+                                  _player.play();
+                                },
+                                child: Container(
+                                    width: 110,
+                                    padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 8),
+                                    decoration: BoxDecoration(
+                                      border: Border.all(
+                                          color: background,
+                                          width: 0.5,
+                                          style: BorderStyle.solid
+                                      ),
+                                      borderRadius: BorderRadius.circular(18),
+                                    ),
+                                    child: Row(
+                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        const Icon(
+                                          CupertinoIcons.speaker_2_fill,
+                                          color: Colors.pink,
+                                          size: 20,
+                                        ),
+                                        Text(
+                                          'Écouter',
+                                          style: titreliste(background),
+                                        ),
+
+                                      ],
+                                    )
                                 ),
                               ),
                             ],

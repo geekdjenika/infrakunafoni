@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:expandable_text/expandable_text.dart';
 import 'package:infrakunafoni/constants.dart';
 import 'package:infrakunafoni/models/amende_model.dart';
-import 'package:infrakunafoni/models/categorie_model.dart';
 import 'package:infrakunafoni/models/infraction_model.dart';
 import 'package:infrakunafoni/screens/infraction/infraction_details.dart';
+import 'package:just_audio/just_audio.dart';
 
 import '../../widgets/list_card.dart';
 
@@ -21,6 +21,8 @@ class InfractionList extends StatefulWidget {
 }
 
 class _InfractionListState extends State<InfractionList> {
+
+  final _player = AudioPlayer();
 
 
   @override
@@ -84,10 +86,16 @@ class _InfractionListState extends State<InfractionList> {
                 linkColor: Colors.white,
                 style: soustitreliste(Colors.white),
               ),
-              trailing: const Icon(
-                CupertinoIcons.speaker_2_fill,
-                color: Colors.white,
-                size: 20,
+              trailing: InkWell(
+                onTap: () async {
+                  await _player.setAsset('assets/aud/${infractions[i].vocals?[0].vocal}');
+                  _player.play();
+                },
+                child: const Icon(
+                  CupertinoIcons.speaker_2_fill,
+                  color: Colors.white,
+                  size: 20,
+                ),
               ),
             ),
           ),

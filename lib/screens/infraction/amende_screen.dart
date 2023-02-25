@@ -85,10 +85,10 @@ class _AmendeScreenState extends State<AmendeScreen> {
                           '${liste[index].montant?.montant} ${liste[index].montant?.devise}',
                           style: titreliste(Colors.white),
                         ),
-                        subtitle: Text(
+                        /*subtitle: Text(
                           'Infractions concernées : ${liste[index].infractions?.length}',
                           style: soustitreliste(Colors.white),
-                        ),
+                        ),*/
                         trailing: InkWell(
                           onTap: () async {
                             await _player.setAsset('assets/aud/${liste[index].vocals?[0].vocal}');
@@ -110,7 +110,6 @@ class _AmendeScreenState extends State<AmendeScreen> {
             },
           );
         } else if(data.hasData) {
-          print(data.data);
           if(data.data!.isEmpty) {
             return Container(
               height: MediaQuery.of(context).size.height,
@@ -118,8 +117,8 @@ class _AmendeScreenState extends State<AmendeScreen> {
               child: Column(
                 //mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  Lottie.asset("assets/json/empty.json"),
-                  Text("Pas d'amende !", style: titregras(background),),
+                  Lottie.asset("assets/json/expire.json"),
+                  Text("Votre session est expirée !", style: titregras(background),),
 
                   TextButton(
                       onPressed: () {
@@ -128,18 +127,9 @@ class _AmendeScreenState extends State<AmendeScreen> {
                         });
                       },
                       child: Text("Cliquer ici pour recharger !", style: soustitre(background),)),
-                  InkWell(
-                    onTap: () {
-                      setState(() {
-
-                      });
-                    },
-                    child: Icon(
-                      CupertinoIcons.restart,
-                      color: background,
-                      size: 50,
-                    ),
-                  ),
+                  Text('OU', style: titre(background),),
+                  const SizedBox(height: 5,),
+                  MyButton(onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const Auth())), text: "Connectez-vous")
                 ],
               ),
             );
@@ -164,7 +154,7 @@ class _AmendeScreenState extends State<AmendeScreen> {
                     selectedPageIndex = 5;
                     Navigator.pop(context);
                     Navigator.push(context, MaterialPageRoute(builder: (context) => const Accueil()));*/
-                      Fluttertoast.showToast(msg: '$infractions.length');
+                      //Fluttertoast.showToast(msg: '$infractions.length');
                     },
                     leading: CircleAvatar(
                       maxRadius: 20,
@@ -179,10 +169,10 @@ class _AmendeScreenState extends State<AmendeScreen> {
                       '${liste[index].montant?.montant} ${liste[index].montant?.devise}',
                       style: titreliste(Colors.white),
                     ),
-                    subtitle: Text(
+                    /*subtitle: Text(
                       'Infractions concernées : ${liste[index].infractions?.length}',
                       style: soustitreliste(Colors.white),
-                    ),
+                    ),*/
                     trailing: InkWell(
                       onTap: () async {
                         await _player.setAsset('assets/aud/${liste[index].vocals?[0].vocal}');

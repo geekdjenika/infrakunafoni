@@ -11,7 +11,8 @@ class DetailsCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: MediaQuery.of(context).size.height / 2,
+      constraints: BoxConstraints(
+          minHeight: MediaQuery.of(context).size.height / 2),
       decoration: BoxDecoration(
           color: color != null ? color : Colors.white,
           borderRadius: BorderRadius.circular(10),
