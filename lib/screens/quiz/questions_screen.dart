@@ -214,7 +214,7 @@ class _QuetionsScreenState extends State<QuestionsScreen> {
       return;
     } else {
       if (value == true) {
-        score++;
+        score+=100;
         await _player.setAsset('assets/aud/correct.mp3');
         _player.play();
       } else {

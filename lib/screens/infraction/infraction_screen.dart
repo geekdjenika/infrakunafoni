@@ -46,6 +46,23 @@ class _InfractionScreenState extends State<InfractionScreen> {
                   return Center(child: Text('${data.error}', style: titregras(Colors.black),),);
                 } else if(data.hasData) {
                   var liste = data.data as List<Categorie>;
+                  //var liste = data.data as List<Categorie>;
+                  var listgp = 0;
+                  var listvl = 0;
+                  var listm = 0;
+                  var listg = 0;
+                  liste[0].amendes!.forEach((element) {
+                    listgp += element.infractions!.length;
+                  });
+                  liste[1].amendes!.forEach((element) {
+                    listvl += element.infractions!.length;
+                  });
+                  liste[2].amendes!.forEach((element) {
+                    listm += element.infractions!.length;
+                  });
+                  liste[3].amendes!.forEach((element) {
+                    listg += element.infractions!.length;
+                  });
                   return Wrap(
                       direction: Axis.horizontal,
                       alignment: WrapAlignment.spaceAround,
@@ -103,9 +120,13 @@ class _InfractionScreenState extends State<InfractionScreen> {
                                               style: soustitregras(Colors.white),
                                             ),
                                             Text(
-                                              liste[i].amendes!.length > 1
-                                                  ? '${liste[i].amendes![0].infractions!.length + liste[i].amendes![1].infractions!.length} infractions'
-                                                  : '${liste[i].amendes![0].infractions!.length} infractions',
+                                              i == 0
+                                                  ? listgp == 0 ? 'Pas d\'infraction' : listgp == 1 ? '$listgp infraction' : '$listgp infractions'
+                                                  : i==1
+                                                  ? listvl == 0 ? 'Pas d\'infraction' : listvl == 1 ? '$listvl infraction' : '$listvl infractions'
+                                                  : i==2
+                                                  ? listm == 0 ? 'Pas d\'infraction' : listm == 1 ? '$listm infraction' : '$listm infractions'
+                                                  : listg == 0 ? 'Pas d\'infraction' : listg == 1 ? '$listg infraction' : '$listg infractions',
                                               style: soustitre(Colors.white),
                                             )
                                           ],
@@ -229,12 +250,12 @@ class _InfractionScreenState extends State<InfractionScreen> {
 
                                       Text(
                                         i == 0
-                                          ? '$listgp infractions'
+                                          ? listgp == 0 ? 'Pas d\'infraction' : listgp == 1 ? '$listgp infraction' : '$listgp infractions'
                                           : i==1
-                                          ? '$listvl infractions'
+                                          ? listvl == 0 ? 'Pas d\'infraction' : listvl == 1 ? '$listvl infraction' : '$listvl infractions'
                                           : i==2
-                                          ? '$listm infractions'
-                                          : '$listg infractions',
+                                          ? listm == 0 ? 'Pas d\'infraction' : listm == 1 ? '$listm infraction' : '$listm infractions'
+                                          : listg == 0 ? 'Pas d\'infraction' : listg == 1 ? '$listg infraction' : '$listg infractions',
                                         style: soustitre(Colors.white),
                                       )
                                     ],

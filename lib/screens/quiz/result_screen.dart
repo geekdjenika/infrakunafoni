@@ -1,6 +1,7 @@
 import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:infrakunafoni/models/sessionjeu_model.dart';
 import 'package:infrakunafoni/screens/home.dart';
 import 'package:infrakunafoni/services/quiz_service.dart';
 import 'package:infrakunafoni/widgets/main_button.dart';
@@ -8,7 +9,7 @@ import 'package:lottie/lottie.dart';
 
 import '../../constants.dart';
 
-class ResultScreen extends StatelessWidget {
+class ResultScreen extends StatefulWidget {
   const ResultScreen({Key? key, required this.result, required this.questionLength, this.onPressed, required this.idQ}) : super(key: key);
 
   final int result;
@@ -16,7 +17,18 @@ class ResultScreen extends StatelessWidget {
   final VoidCallback? onPressed;
   final int idQ;
 
+  @override
+  State<ResultScreen> createState() => _ResultScreenState();
+}
 
+class _ResultScreenState extends State<ResultScreen> {
+
+  QuizService quizService = QuizService();
+
+
+  getLastScore() async {
+
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +45,7 @@ class ResultScreen extends StatelessWidget {
         ),
         title: Center(
           child: Text(
-              '$result/$questionLength réponses correctes !'
+              '${widget.result}/${widget.questionLength} réponses correctes !'
           ),
         ),
         actions: [
@@ -62,18 +74,18 @@ class ResultScreen extends StatelessWidget {
         child: Column(
           children: [
             Text(
-              result == questionLength / 2
+              widget.result == widget.questionLength / 2
                   ? 'Presque terminé !' // when the result is half of the questions
-                  : result < questionLength / 2
+                  : widget.result < widget.questionLength / 2
                   ? 'Réessayer ?' // when the result is less than half
                   : 'Félicitation !', // when the result is more than half
               style: titregras(Colors.black),
             ),
             const SizedBox(height: 20),
             Lottie.asset(
-              result == questionLength / 2
+              widget.result == widget.questionLength / 2
                   ? "assets/json/medium.json"
-                  : result < questionLength / 2
+                  : widget.result < widget.questionLength / 2
                   ? "assets/json/failed.json"
                   : "assets/json/success.json",
               height: MediaQuery.of(context).size.height / 4,
@@ -89,7 +101,7 @@ class ResultScreen extends StatelessWidget {
               ),
               child: Center(
                 child: Text(
-                  '$result/$questionLength',
+                  '${widget.result}/${widget.questionLength}',
                   style: soustitre(Colors.white),
                 ),
               ),
@@ -99,12 +111,39 @@ class ResultScreen extends StatelessWidget {
               style: titre(CupertinoColors.darkBackgroundGray),
             ),
             Text(
-              '$result',
+              '${widget.result}',
               style: score(Colors.pink),
             ),
             Text(
-              result > 1 ? 'points' : 'point',
+              widget.result > 1 ? 'points' : 'point',
               style: titregras(CupertinoColors.darkBackgroundGray),
+            ),
+            SizedBox(height: MediaQuery.of(context).size.height * .025,),
+            FutureBuilder<Map<String,dynamic>>(
+              future: quizService.getLastScore(),
+              builder: (context, data) {
+                if(data.hasError) {
+                  return Center(child: Text('Scores indisponibles', style: soustitre(Colors.black),),);
+                } else if(data.hasData) {
+                  var session = SessionJeu.fromJson(data.data!);
+                  return Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      Text(
+                        "Votre dernier score :",
+                        style: titreliste(Colors.black),
+                      ),
+                      Text(
+                        '${session.points} points',
+                        style: titreliste(Colors.black),
+                      ),
+
+                    ],
+                  );
+                } else {
+                  return Center(child: Lottie.asset("assets/json/loading.json", width: 25, height: 25));
+                }
+              },
             ),
             Expanded(
               child: Align(
@@ -120,7 +159,7 @@ class ResultScreen extends StatelessWidget {
                       dialogType: DialogType.warning,
                       btnOk: OutlinedButton(
                         onPressed: () async {
-                          String scorejeu = await quizService.addSession(idQ, result);
+                          String scorejeu = await quizService.addSession(widget.idQ, widget.result);
                           print(scorejeu);
                           Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => Accueil()));
                         },
@@ -130,13 +169,13 @@ class ResultScreen extends StatelessWidget {
                         ),
                       ),
                       btnCancel: OutlinedButton(
-                        onPressed: onPressed,
+                        onPressed: widget.onPressed,
                         child: Text(
                           'Reprendre',
                           style: soustitre(background),
                         ),
                       ),
-                      
+
                     ).show();
                   },
                   child: const Padding(
