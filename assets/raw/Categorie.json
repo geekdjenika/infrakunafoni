@@ -16,101 +16,121 @@
             "id": 1,
             "description": "Arrêt non autorisé",
             "reference": "Article 16 Arrêté interministériel 2492 du 11/12/2002",
-            "vocals": [],
-            "utilisateur": {
-              "id": 1,
-              "username": "geekdjenika",
-              "email": "djenikaa@gmail.com",
-              "password": "$2a$10$d7m1AhxBsBKT7qyoZ5Bz8.LjLa1EjKSg.yOpb6tOFBR1tp/3CO0WO",
-              "image": "profil.png",
-              "notifications": [],
-              "roles": [
-                {
-                  "id": 1,
-                  "name": "ADMIN"
-                }
-              ]
-            }
+            "vocals": []
+          },
+          {
+            "id": 3,
+            "description": "Arrêt gênant la circulation",
+            "reference": "Article 16 Arrêté interministériel 2492 du 11/12/2002",
+            "vocals": []
+          },
+          {
+            "id": 4,
+            "description": "Dépassement défectueux",
+            "reference": "Article 9-14-110 Arrêté interministériel 2492 du 11/12/2002",
+            "vocals": []
+          },
+          {
+            "id": 5,
+            "description": "Non respect de la priorité",
+            "reference": "Article 110 Arrêté interministériel 2492 du 11/12/2002",
+            "vocals": []
+          },
+          {
+            "id": 6,
+            "description": "Non respect aux feux rouges",
+            "reference": "Article 110 Arrêté interministériel 2492 du 11/12/2002",
+            "vocals": []
+          },
+          {
+            "id": 7,
+            "description": "Non respect des panneaux de signalisation",
+            "reference": "Article 110 Arrêté interministériel 2492 du 11/12/2002",
+            "vocals": []
+          },
+          {
+            "id": 8,
+            "description": "Refus d’obtempérer",
+            "reference": "Article 119 Arrêté interministériel 2492 du 11/12/2002",
+            "vocals": []
+          },
+          {
+            "id": 9,
+            "description": "Excès de vitesse",
+            "reference": "Article 13 Arrêté interministériel 2492 du 11/12/2002",
+            "vocals": []
+          },
+          {
+            "id": 10,
+            "description": "Non respect de conditions de travail dans le transport",
+            "reference": "Article 116 Arrêté interministériel 2492 du 11/12/2002",
+            "vocals": []
+          },
+          {
+            "id": 11,
+            "description": "Chargement volumineux",
+            "reference": "Article 30 Arrêté interministériel 2492 du 11/12/2002",
+            "vocals": []
+          },
+          {
+            "id": 12,
+            "description": "Circulation sans phare ou phare unique",
+            "reference": "Article 37 Arrêté interministériel 2492 du 11/12/2002",
+            "vocals": []
+          },
+          {
+            "id": 13,
+            "description": "Circulation en sens interdit",
+            "reference": "Article 110 Arrêté interministériel 2492 du 11/12/2002",
+            "vocals": []
+          },
+          {
+            "id": 14,
+            "description": "Non respect de la piste cyclable",
+            "reference": "Article 21 Arrêté interministériel 2492 du 11/12/2002",
+            "vocals": []
+          },
+          {
+            "id": 15,
+            "description": "Défaut de casque de protection pour les motos",
+            "reference": "Article 27 Arrêté interministériel 2492 du 11/12/2002",
+            "vocals": []
           },
           {
             "id": 16,
-            "description": "Défaut de casque de protection pour les motos",
-            "reference": "Article 27 Arrêté interministériel 2492 du 11/12/2002",
-            "vocals": [],
-            "utilisateur": {
-              "id": 1,
-              "username": "geekdjenika",
-              "email": "djenikaa@gmail.com",
-              "password": "$2a$10$d7m1AhxBsBKT7qyoZ5Bz8.LjLa1EjKSg.yOpb6tOFBR1tp/3CO0WO",
-              "image": "profil.png",
-              "notifications": [],
-              "roles": [
-                {
-                  "id": 1,
-                  "name": "ADMIN"
-                }
-              ]
-            }
+            "description": "Manœuvres dangereuses",
+            "reference": "Articles 9 et 14 Arrêté interministériel 2492 du 11/12/2002",
+            "vocals": []
+          },
+          {
+            "id": 17,
+            "description": "Emission excessive de fumée",
+            "reference": "Articles 30 Arrêté interministériel 2492 du 11/12/2002",
+            "vocals": []
+          },
+          {
+            "id": 18,
+            "description": "Non présentation des pièces afférentes au véhicule et à la conduite",
+            "reference": "Articles 117 Décret 99-134 du 26/05/1999",
+            "vocals": []
           },
           {
             "id": 19,
-            "description": "Non présentation des pièces afférentes au véhicule et à la conduite",
-            "reference": "Articles 117 Décret 99-134 du 26/05/1999",
-            "vocals": [],
-            "utilisateur": {
-              "id": 1,
-              "username": "geekdjenika",
-              "email": "djenikaa@gmail.com",
-              "password": "$2a$10$d7m1AhxBsBKT7qyoZ5Bz8.LjLa1EjKSg.yOpb6tOFBR1tp/3CO0WO",
-              "image": "profil.png",
-              "notifications": [],
-              "roles": [
-                {
-                  "id": 1,
-                  "name": "ADMIN"
-                }
-              ]
-            }
-          },
-          {
-            "id": 20,
             "description": "Usure pneumatique",
             "reference": "Articles 30 Arrêté interministériel 2492 du 11/12/2002",
-            "vocals": [],
-            "utilisateur": {
-              "id": 1,
-              "username": "geekdjenika",
-              "email": "djenikaa@gmail.com",
-              "password": "$2a$10$d7m1AhxBsBKT7qyoZ5Bz8.LjLa1EjKSg.yOpb6tOFBR1tp/3CO0WO",
-              "image": "profil.png",
-              "notifications": [],
-              "roles": [
-                {
-                  "id": 1,
-                  "name": "ADMIN"
-                }
-              ]
-            }
+            "vocals": []
+          },
+          {
+            "id": 23,
+            "description": "Support à 3 (engins à 2 roues)",
+            "reference": "Arrêté n° 2979 du 09/11/2000",
+            "vocals": []
           },
           {
             "id": 24,
-            "description": "Support à 3 (engins à 2 roues)",
-            "reference": "Arrêté n° 2979 du 09/11/2000",
-            "vocals": [],
-            "utilisateur": {
-              "id": 1,
-              "username": "geekdjenika",
-              "email": "djenikaa@gmail.com",
-              "password": "$2a$10$d7m1AhxBsBKT7qyoZ5Bz8.LjLa1EjKSg.yOpb6tOFBR1tp/3CO0WO",
-              "image": "profil.png",
-              "notifications": [],
-              "roles": [
-                {
-                  "id": 1,
-                  "name": "ADMIN"
-                }
-              ]
-            }
+            "description": "Défaut de vignette",
+            "reference": "Articles 103 Arrêté interministériel 2492 du 11/12/2002",
+            "vocals": []
           }
         ]
       },
@@ -124,24 +144,22 @@
         "vocals": [],
         "infractions": [
           {
-            "id": 21,
+            "id": 20,
             "description": "Visité Technique - Assurance Périmée",
             "reference": "Articles 112 - 108 Arrêté interministériel 2492 du 11/12/2002",
-            "vocals": [],
-            "utilisateur": {
-              "id": 1,
-              "username": "geekdjenika",
-              "email": "djenikaa@gmail.com",
-              "password": "$2a$10$d7m1AhxBsBKT7qyoZ5Bz8.LjLa1EjKSg.yOpb6tOFBR1tp/3CO0WO",
-              "image": "profil.png",
-              "notifications": [],
-              "roles": [
-                {
-                  "id": 1,
-                  "name": "ADMIN"
-                }
-              ]
-            }
+            "vocals": []
+          },
+          {
+            "id": 21,
+            "description": "Défaut de plaque d’Immatriculation",
+            "reference": "Articles 119 Arrêté interministériel 2492 du 11/12/2002",
+            "vocals": []
+          },
+          {
+            "id": 22,
+            "description": "Surcharge de passagers",
+            "reference": "Articles 46 Arrêté interministériel 2492 du 11/12/2002",
+            "vocals": []
           }
         ]
       }
@@ -164,341 +182,97 @@
             "id": 1,
             "description": "Arrêt non autorisé",
             "reference": "Article 16 Arrêté interministériel 2492 du 11/12/2002",
-            "vocals": [],
-            "utilisateur": {
-              "id": 1,
-              "username": "geekdjenika",
-              "email": "djenikaa@gmail.com",
-              "password": "$2a$10$d7m1AhxBsBKT7qyoZ5Bz8.LjLa1EjKSg.yOpb6tOFBR1tp/3CO0WO",
-              "image": "profil.png",
-              "notifications": [],
-              "roles": [
-                {
-                  "id": 1,
-                  "name": "ADMIN"
-                }
-              ]
-            }
+            "vocals": []
           },
           {
             "id": 2,
             "description": "Stationnement interdit",
             "reference": "Article 16 Arrêté interministériel 2492 du 11/12/2002",
-            "vocals": [],
-            "utilisateur": {
-              "id": 1,
-              "username": "geekdjenika",
-              "email": "djenikaa@gmail.com",
-              "password": "$2a$10$d7m1AhxBsBKT7qyoZ5Bz8.LjLa1EjKSg.yOpb6tOFBR1tp/3CO0WO",
-              "image": "profil.png",
-              "notifications": [],
-              "roles": [
-                {
-                  "id": 1,
-                  "name": "ADMIN"
-                }
-              ]
-            }
+            "vocals": []
           },
           {
             "id": 3,
             "description": "Arrêt gênant la circulation",
             "reference": "Article 16 Arrêté interministériel 2492 du 11/12/2002",
-            "vocals": [],
-            "utilisateur": {
-              "id": 1,
-              "username": "geekdjenika",
-              "email": "djenikaa@gmail.com",
-              "password": "$2a$10$d7m1AhxBsBKT7qyoZ5Bz8.LjLa1EjKSg.yOpb6tOFBR1tp/3CO0WO",
-              "image": "profil.png",
-              "notifications": [],
-              "roles": [
-                {
-                  "id": 1,
-                  "name": "ADMIN"
-                }
-              ]
-            }
+            "vocals": []
           },
           {
             "id": 4,
             "description": "Dépassement défectueux",
             "reference": "Article 9-14-110 Arrêté interministériel 2492 du 11/12/2002",
-            "vocals": [],
-            "utilisateur": {
-              "id": 1,
-              "username": "geekdjenika",
-              "email": "djenikaa@gmail.com",
-              "password": "$2a$10$d7m1AhxBsBKT7qyoZ5Bz8.LjLa1EjKSg.yOpb6tOFBR1tp/3CO0WO",
-              "image": "profil.png",
-              "notifications": [],
-              "roles": [
-                {
-                  "id": 1,
-                  "name": "ADMIN"
-                }
-              ]
-            }
+            "vocals": []
           },
           {
             "id": 5,
             "description": "Non respect de la priorité",
             "reference": "Article 110 Arrêté interministériel 2492 du 11/12/2002",
-            "vocals": [],
-            "utilisateur": {
-              "id": 1,
-              "username": "geekdjenika",
-              "email": "djenikaa@gmail.com",
-              "password": "$2a$10$d7m1AhxBsBKT7qyoZ5Bz8.LjLa1EjKSg.yOpb6tOFBR1tp/3CO0WO",
-              "image": "profil.png",
-              "notifications": [],
-              "roles": [
-                {
-                  "id": 1,
-                  "name": "ADMIN"
-                }
-              ]
-            }
+            "vocals": []
           },
           {
             "id": 6,
             "description": "Non respect aux feux rouges",
             "reference": "Article 110 Arrêté interministériel 2492 du 11/12/2002",
-            "vocals": [],
-            "utilisateur": {
-              "id": 1,
-              "username": "geekdjenika",
-              "email": "djenikaa@gmail.com",
-              "password": "$2a$10$d7m1AhxBsBKT7qyoZ5Bz8.LjLa1EjKSg.yOpb6tOFBR1tp/3CO0WO",
-              "image": "profil.png",
-              "notifications": [],
-              "roles": [
-                {
-                  "id": 1,
-                  "name": "ADMIN"
-                }
-              ]
-            }
+            "vocals": []
           },
           {
             "id": 7,
             "description": "Non respect des panneaux de signalisation",
             "reference": "Article 110 Arrêté interministériel 2492 du 11/12/2002",
-            "vocals": [],
-            "utilisateur": {
-              "id": 1,
-              "username": "geekdjenika",
-              "email": "djenikaa@gmail.com",
-              "password": "$2a$10$d7m1AhxBsBKT7qyoZ5Bz8.LjLa1EjKSg.yOpb6tOFBR1tp/3CO0WO",
-              "image": "profil.png",
-              "notifications": [],
-              "roles": [
-                {
-                  "id": 1,
-                  "name": "ADMIN"
-                }
-              ]
-            }
+            "vocals": []
           },
           {
             "id": 8,
             "description": "Refus d’obtempérer",
             "reference": "Article 119 Arrêté interministériel 2492 du 11/12/2002",
-            "vocals": [],
-            "utilisateur": {
-              "id": 1,
-              "username": "geekdjenika",
-              "email": "djenikaa@gmail.com",
-              "password": "$2a$10$d7m1AhxBsBKT7qyoZ5Bz8.LjLa1EjKSg.yOpb6tOFBR1tp/3CO0WO",
-              "image": "profil.png",
-              "notifications": [],
-              "roles": [
-                {
-                  "id": 1,
-                  "name": "ADMIN"
-                }
-              ]
-            }
+            "vocals": []
           },
           {
             "id": 9,
             "description": "Excès de vitesse",
             "reference": "Article 13 Arrêté interministériel 2492 du 11/12/2002",
-            "vocals": [],
-            "utilisateur": {
-              "id": 1,
-              "username": "geekdjenika",
-              "email": "djenikaa@gmail.com",
-              "password": "$2a$10$d7m1AhxBsBKT7qyoZ5Bz8.LjLa1EjKSg.yOpb6tOFBR1tp/3CO0WO",
-              "image": "profil.png",
-              "notifications": [],
-              "roles": [
-                {
-                  "id": 1,
-                  "name": "ADMIN"
-                }
-              ]
-            }
+            "vocals": []
           },
           {
             "id": 10,
             "description": "Non respect de conditions de travail dans le transport",
             "reference": "Article 116 Arrêté interministériel 2492 du 11/12/2002",
-            "vocals": [],
-            "utilisateur": {
-              "id": 1,
-              "username": "geekdjenika",
-              "email": "djenikaa@gmail.com",
-              "password": "$2a$10$d7m1AhxBsBKT7qyoZ5Bz8.LjLa1EjKSg.yOpb6tOFBR1tp/3CO0WO",
-              "image": "profil.png",
-              "notifications": [],
-              "roles": [
-                {
-                  "id": 1,
-                  "name": "ADMIN"
-                }
-              ]
-            }
+            "vocals": []
           },
           {
             "id": 11,
             "description": "Chargement volumineux",
             "reference": "Article 30 Arrêté interministériel 2492 du 11/12/2002",
-            "vocals": [],
-            "utilisateur": {
-              "id": 1,
-              "username": "geekdjenika",
-              "email": "djenikaa@gmail.com",
-              "password": "$2a$10$d7m1AhxBsBKT7qyoZ5Bz8.LjLa1EjKSg.yOpb6tOFBR1tp/3CO0WO",
-              "image": "profil.png",
-              "notifications": [],
-              "roles": [
-                {
-                  "id": 1,
-                  "name": "ADMIN"
-                }
-              ]
-            }
+            "vocals": []
           },
           {
             "id": 12,
             "description": "Circulation sans phare ou phare unique",
             "reference": "Article 37 Arrêté interministériel 2492 du 11/12/2002",
-            "vocals": [],
-            "utilisateur": {
-              "id": 1,
-              "username": "geekdjenika",
-              "email": "djenikaa@gmail.com",
-              "password": "$2a$10$d7m1AhxBsBKT7qyoZ5Bz8.LjLa1EjKSg.yOpb6tOFBR1tp/3CO0WO",
-              "image": "profil.png",
-              "notifications": [],
-              "roles": [
-                {
-                  "id": 1,
-                  "name": "ADMIN"
-                }
-              ]
-            }
+            "vocals": []
           },
           {
             "id": 13,
             "description": "Circulation en sens interdit",
             "reference": "Article 110 Arrêté interministériel 2492 du 11/12/2002",
-            "vocals": [],
-            "utilisateur": {
-              "id": 1,
-              "username": "geekdjenika",
-              "email": "djenikaa@gmail.com",
-              "password": "$2a$10$d7m1AhxBsBKT7qyoZ5Bz8.LjLa1EjKSg.yOpb6tOFBR1tp/3CO0WO",
-              "image": "profil.png",
-              "notifications": [],
-              "roles": [
-                {
-                  "id": 1,
-                  "name": "ADMIN"
-                }
-              ]
-            }
+            "vocals": []
           },
           {
             "id": 14,
             "description": "Non respect de la piste cyclable",
             "reference": "Article 21 Arrêté interministériel 2492 du 11/12/2002",
-            "vocals": [],
-            "utilisateur": {
-              "id": 1,
-              "username": "geekdjenika",
-              "email": "djenikaa@gmail.com",
-              "password": "$2a$10$d7m1AhxBsBKT7qyoZ5Bz8.LjLa1EjKSg.yOpb6tOFBR1tp/3CO0WO",
-              "image": "profil.png",
-              "notifications": [],
-              "roles": [
-                {
-                  "id": 1,
-                  "name": "ADMIN"
-                }
-              ]
-            }
+            "vocals": []
           },
           {
-            "id": 15,
-            "description": "Défaut de casque de protection pour les motos",
-            "reference": "Article 21 Arrêté interministériel 2492 du 11/12/2002",
-            "vocals": [],
-            "utilisateur": {
-              "id": 1,
-              "username": "geekdjenika",
-              "email": "djenikaa@gmail.com",
-              "password": "$2a$10$d7m1AhxBsBKT7qyoZ5Bz8.LjLa1EjKSg.yOpb6tOFBR1tp/3CO0WO",
-              "image": "profil.png",
-              "notifications": [],
-              "roles": [
-                {
-                  "id": 1,
-                  "name": "ADMIN"
-                }
-              ]
-            }
+            "id": 16,
+            "description": "Manœuvres dangereuses",
+            "reference": "Articles 9 et 14 Arrêté interministériel 2492 du 11/12/2002",
+            "vocals": []
           },
           {
             "id": 17,
-            "description": "Manœuvres dangereuses",
-            "reference": "Articles 9 et 14 Arrêté interministériel 2492 du 11/12/2002",
-            "vocals": [],
-            "utilisateur": {
-              "id": 1,
-              "username": "geekdjenika",
-              "email": "djenikaa@gmail.com",
-              "password": "$2a$10$d7m1AhxBsBKT7qyoZ5Bz8.LjLa1EjKSg.yOpb6tOFBR1tp/3CO0WO",
-              "image": "profil.png",
-              "notifications": [],
-              "roles": [
-                {
-                  "id": 1,
-                  "name": "ADMIN"
-                }
-              ]
-            }
-          },
-          {
-            "id": 18,
             "description": "Emission excessive de fumée",
             "reference": "Articles 30 Arrêté interministériel 2492 du 11/12/2002",
-            "vocals": [],
-            "utilisateur": {
-              "id": 1,
-              "username": "geekdjenika",
-              "email": "djenikaa@gmail.com",
-              "password": "$2a$10$d7m1AhxBsBKT7qyoZ5Bz8.LjLa1EjKSg.yOpb6tOFBR1tp/3CO0WO",
-              "image": "profil.png",
-              "notifications": [],
-              "roles": [
-                {
-                  "id": 1,
-                  "name": "ADMIN"
-                }
-              ]
-            }
+            "vocals": []
           }
         ]
       },
@@ -512,84 +286,28 @@
         "vocals": [],
         "infractions": [
           {
-            "id": 21,
+            "id": 20,
             "description": "Visité Technique - Assurance Périmée",
             "reference": "Articles 112 - 108 Arrêté interministériel 2492 du 11/12/2002",
-            "vocals": [],
-            "utilisateur": {
-              "id": 1,
-              "username": "geekdjenika",
-              "email": "djenikaa@gmail.com",
-              "password": "$2a$10$d7m1AhxBsBKT7qyoZ5Bz8.LjLa1EjKSg.yOpb6tOFBR1tp/3CO0WO",
-              "image": "profil.png",
-              "notifications": [],
-              "roles": [
-                {
-                  "id": 1,
-                  "name": "ADMIN"
-                }
-              ]
-            }
+            "vocals": []
+          },
+          {
+            "id": 21,
+            "description": "Défaut de plaque d’Immatriculation",
+            "reference": "Articles 119 Arrêté interministériel 2492 du 11/12/2002",
+            "vocals": []
           },
           {
             "id": 22,
-            "description": "Défaut de plaque d’Immatriculation",
-            "reference": "Articles 119 Arrêté interministériel 2492 du 11/12/2002",
-            "vocals": [],
-            "utilisateur": {
-              "id": 1,
-              "username": "geekdjenika",
-              "email": "djenikaa@gmail.com",
-              "password": "$2a$10$d7m1AhxBsBKT7qyoZ5Bz8.LjLa1EjKSg.yOpb6tOFBR1tp/3CO0WO",
-              "image": "profil.png",
-              "notifications": [],
-              "roles": [
-                {
-                  "id": 1,
-                  "name": "ADMIN"
-                }
-              ]
-            }
-          },
-          {
-            "id": 23,
             "description": "Surcharge de passagers",
             "reference": "Articles 46 Arrêté interministériel 2492 du 11/12/2002",
-            "vocals": [],
-            "utilisateur": {
-              "id": 1,
-              "username": "geekdjenika",
-              "email": "djenikaa@gmail.com",
-              "password": "$2a$10$d7m1AhxBsBKT7qyoZ5Bz8.LjLa1EjKSg.yOpb6tOFBR1tp/3CO0WO",
-              "image": "profil.png",
-              "notifications": [],
-              "roles": [
-                {
-                  "id": 1,
-                  "name": "ADMIN"
-                }
-              ]
-            }
+            "vocals": []
           },
           {
-            "id": 25,
+            "id": 24,
             "description": "Défaut de vignette",
             "reference": "Articles 103 Arrêté interministériel 2492 du 11/12/2002",
-            "vocals": [],
-            "utilisateur": {
-              "id": 1,
-              "username": "geekdjenika",
-              "email": "djenikaa@gmail.com",
-              "password": "$2a$10$d7m1AhxBsBKT7qyoZ5Bz8.LjLa1EjKSg.yOpb6tOFBR1tp/3CO0WO",
-              "image": "profil.png",
-              "notifications": [],
-              "roles": [
-                {
-                  "id": 1,
-                  "name": "ADMIN"
-                }
-              ]
-            }
+            "vocals": []
           }
         ]
       }
@@ -609,124 +327,40 @@
         "vocals": [],
         "infractions": [
           {
-            "id": 31,
+            "id": 30,
             "description": "Pneumatiques en mauvais état",
             "reference": "Article 117 du Décret n° 1999-134 du 26 mai 1999",
-            "vocals": [],
-            "utilisateur": {
-              "id": 1,
-              "username": "geekdjenika",
-              "email": "djenikaa@gmail.com",
-              "password": "$2a$10$d7m1AhxBsBKT7qyoZ5Bz8.LjLa1EjKSg.yOpb6tOFBR1tp/3CO0WO",
-              "image": "profil.png",
-              "notifications": [],
-              "roles": [
-                {
-                  "id": 1,
-                  "name": "ADMIN"
-                }
-              ]
-            }
+            "vocals": []
+          },
+          {
+            "id": 31,
+            "description": "Dispositif de freinage",
+            "reference": "Article 76 du Décret n° 1999-134 du 26 mai 1999",
+            "vocals": []
           },
           {
             "id": 32,
-            "description": "Dispositif de freinage",
+            "description": "Système d'éclairage",
             "reference": "Article 76 du Décret n° 1999-134 du 26 mai 1999",
-            "vocals": [],
-            "utilisateur": {
-              "id": 1,
-              "username": "geekdjenika",
-              "email": "djenikaa@gmail.com",
-              "password": "$2a$10$d7m1AhxBsBKT7qyoZ5Bz8.LjLa1EjKSg.yOpb6tOFBR1tp/3CO0WO",
-              "image": "profil.png",
-              "notifications": [],
-              "roles": [
-                {
-                  "id": 1,
-                  "name": "ADMIN"
-                }
-              ]
-            }
+            "vocals": []
           },
           {
             "id": 33,
-            "description": "Système d'éclairage",
+            "description": "Dispositif réfléchissant rouge visible de l'arrière",
             "reference": "Article 76 du Décret n° 1999-134 du 26 mai 1999",
-            "vocals": [],
-            "utilisateur": {
-              "id": 1,
-              "username": "geekdjenika",
-              "email": "djenikaa@gmail.com",
-              "password": "$2a$10$d7m1AhxBsBKT7qyoZ5Bz8.LjLa1EjKSg.yOpb6tOFBR1tp/3CO0WO",
-              "image": "profil.png",
-              "notifications": [],
-              "roles": [
-                {
-                  "id": 1,
-                  "name": "ADMIN"
-                }
-              ]
-            }
+            "vocals": []
           },
           {
             "id": 34,
-            "description": "Dispositif réfléchissant rouge visible de l'arrière",
+            "description": "Appareil avertisseur",
             "reference": "Article 76 du Décret n° 1999-134 du 26 mai 1999",
-            "vocals": [],
-            "utilisateur": {
-              "id": 1,
-              "username": "geekdjenika",
-              "email": "djenikaa@gmail.com",
-              "password": "$2a$10$d7m1AhxBsBKT7qyoZ5Bz8.LjLa1EjKSg.yOpb6tOFBR1tp/3CO0WO",
-              "image": "profil.png",
-              "notifications": [],
-              "roles": [
-                {
-                  "id": 1,
-                  "name": "ADMIN"
-                }
-              ]
-            }
+            "vocals": []
           },
           {
             "id": 35,
-            "description": "Appareil avertisseur",
-            "reference": "Article 76 du Décret n° 1999-134 du 26 mai 1999",
-            "vocals": [],
-            "utilisateur": {
-              "id": 1,
-              "username": "geekdjenika",
-              "email": "djenikaa@gmail.com",
-              "password": "$2a$10$d7m1AhxBsBKT7qyoZ5Bz8.LjLa1EjKSg.yOpb6tOFBR1tp/3CO0WO",
-              "image": "profil.png",
-              "notifications": [],
-              "roles": [
-                {
-                  "id": 1,
-                  "name": "ADMIN"
-                }
-              ]
-            }
-          },
-          {
-            "id": 36,
             "description": "Plaque métallique fixée au véhicule ou au cadre de celui-ci portant l'indication du nom et de l'adresse du propriétaire",
             "reference": "Article 76 du Décret n° 1999-134 du 26 mai 1999",
-            "vocals": [],
-            "utilisateur": {
-              "id": 1,
-              "username": "geekdjenika",
-              "email": "djenikaa@gmail.com",
-              "password": "$2a$10$d7m1AhxBsBKT7qyoZ5Bz8.LjLa1EjKSg.yOpb6tOFBR1tp/3CO0WO",
-              "image": "profil.png",
-              "notifications": [],
-              "roles": [
-                {
-                  "id": 1,
-                  "name": "ADMIN"
-                }
-              ]
-            }
+            "vocals": []
           }
         ]
       }
@@ -746,24 +380,10 @@
         "vocals": [],
         "infractions": [
           {
-            "id": 26,
+            "id": 25,
             "description": "Non respect de l’arrêté municipal régissant la circulation des gros porteurs (itinéraires-horaires)",
             "reference": "Arrêté municipal n° 39/MDB du 16/08/2007",
-            "vocals": [],
-            "utilisateur": {
-              "id": 1,
-              "username": "geekdjenika",
-              "email": "djenikaa@gmail.com",
-              "password": "$2a$10$d7m1AhxBsBKT7qyoZ5Bz8.LjLa1EjKSg.yOpb6tOFBR1tp/3CO0WO",
-              "image": "profil.png",
-              "notifications": [],
-              "roles": [
-                {
-                  "id": 1,
-                  "name": "ADMIN"
-                }
-              ]
-            }
+            "vocals": []
           }
         ]
       },
@@ -777,64 +397,22 @@
         "vocals": [],
         "infractions": [
           {
-            "id": 27,
+            "id": 26,
             "description": "Occupation anarchique du domaine public",
             "reference": "Arrêté municipal n° 114/MDB du 09/08/2001",
-            "vocals": [],
-            "utilisateur": {
-              "id": 1,
-              "username": "geekdjenika",
-              "email": "djenikaa@gmail.com",
-              "password": "$2a$10$d7m1AhxBsBKT7qyoZ5Bz8.LjLa1EjKSg.yOpb6tOFBR1tp/3CO0WO",
-              "image": "profil.png",
-              "notifications": [],
-              "roles": [
-                {
-                  "id": 1,
-                  "name": "ADMIN"
-                }
-              ]
-            }
+            "vocals": []
+          },
+          {
+            "id": 27,
+            "description": "Mauvais champ de visibilité vitres teintées",
+            "reference": "Décret n° 413 PRM du 27/09/2006",
+            "vocals": []
           },
           {
             "id": 28,
-            "description": "Mauvais champ de visibilité vitres teintées",
-            "reference": "Décret n° 413 PRM du 27/09/2006",
-            "vocals": [],
-            "utilisateur": {
-              "id": 1,
-              "username": "geekdjenika",
-              "email": "djenikaa@gmail.com",
-              "password": "$2a$10$d7m1AhxBsBKT7qyoZ5Bz8.LjLa1EjKSg.yOpb6tOFBR1tp/3CO0WO",
-              "image": "profil.png",
-              "notifications": [],
-              "roles": [
-                {
-                  "id": 1,
-                  "name": "ADMIN"
-                }
-              ]
-            }
-          },
-          {
-            "id": 29,
             "description": "Usage du téléphone portable tenu en main pendant la conduite",
             "reference": "Décret n° 413 PRM du 27/0WX9/2006",
-            "vocals": [],
-            "utilisateur": {
-              "id": 1,
-              "username": "geekdjenika",
-              "email": "djenikaa@gmail.com",
-              "password": "$2a$10$d7m1AhxBsBKT7qyoZ5Bz8.LjLa1EjKSg.yOpb6tOFBR1tp/3CO0WO",
-              "image": "profil.png",
-              "notifications": [],
-              "roles": [
-                {
-                  "id": 1,
-                  "name": "ADMIN"
-                }
-              ]
-            }
+            "vocals": []
           }
         ]
       }

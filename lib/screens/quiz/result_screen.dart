@@ -45,7 +45,7 @@ class _ResultScreenState extends State<ResultScreen> {
         ),
         title: Center(
           child: Text(
-              '${widget.result}/${widget.questionLength} réponses correctes !'
+              '${widget.result ~/ 100}/${widget.questionLength} réponses correctes !'
           ),
         ),
         actions: [
@@ -74,18 +74,18 @@ class _ResultScreenState extends State<ResultScreen> {
         child: Column(
           children: [
             Text(
-              widget.result == widget.questionLength / 2
+              widget.result ~/ 100 == widget.questionLength / 2
                   ? 'Presque terminé !' // when the result is half of the questions
-                  : widget.result < widget.questionLength / 2
+                  : widget.result ~/ 100 < widget.questionLength / 2
                   ? 'Réessayer ?' // when the result is less than half
                   : 'Félicitation !', // when the result is more than half
               style: titregras(Colors.black),
             ),
             const SizedBox(height: 20),
             Lottie.asset(
-              widget.result == widget.questionLength / 2
+              widget.result ~/ 100 == widget.questionLength / 2
                   ? "assets/json/medium.json"
-                  : widget.result < widget.questionLength / 2
+                  : widget.result ~/ 100 < widget.questionLength / 2
                   ? "assets/json/failed.json"
                   : "assets/json/success.json",
               height: MediaQuery.of(context).size.height / 4,
@@ -101,7 +101,7 @@ class _ResultScreenState extends State<ResultScreen> {
               ),
               child: Center(
                 child: Text(
-                  '${widget.result}/${widget.questionLength}',
+                  '${widget.result ~/ 100}/${widget.questionLength}',
                   style: soustitre(Colors.white),
                 ),
               ),
