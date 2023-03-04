@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -61,16 +62,28 @@ class _AmendeScreenState extends State<AmendeScreen> {
                     return ListCard(
                       listTile: ListTile(
                         onTap: () {
-                          /*for(int i = 0; i < liste.length; i++) {
-                      infractions.addAll(liste[index].infractions!);
-                    }
-                    print(infractions);
-                    Fluttertoast.showToast(msg: '$infractions.length');
-                    useindex = true;
-                    selectedPageIndex = 5;
-                    Navigator.pop(context);
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => const Accueil()));*/
-                          Fluttertoast.showToast(msg: '$infractions.length');
+                          AwesomeDialog(
+                              context: context,
+                              closeIcon: const Icon(
+                                  Icons.cancel_sharp
+                              ),
+                              dialogType: DialogType.noHeader,
+                              body: Padding(
+                                padding: const EdgeInsets.only(bottom: 15.0),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                  children: [
+                                    for(int i = liste[index].infractions!.length - 1; i >= 0; i--)
+                                      ListCard(
+                                        listTile: ListTile(
+                                          title: Text(liste[index].infractions![i].description!, style: soustitregras(Colors.white),),
+                                          subtitle: Text(liste[index].infractions![i].reference!, style: soustitre(Colors.white),),
+                                        ),
+                                      )
+                                  ],
+                                ),
+                              )
+                          ).show();
                         },
                         leading: CircleAvatar(
                           maxRadius: 20,
@@ -85,10 +98,12 @@ class _AmendeScreenState extends State<AmendeScreen> {
                           '${liste[index].montant?.montant} ${liste[index].montant?.devise}',
                           style: titreliste(Colors.white),
                         ),
-                        /*subtitle: Text(
-                          'Infractions concernées : ${liste[index].infractions?.length}',
+                        subtitle: Text(
+                          liste[index].infractions!.length > 1
+                            ? 'Infractions concernées : ${liste[index].infractions?.length}'
+                            : 'Infraction concernée : ${liste[index].infractions?.length}',
                           style: soustitreliste(Colors.white),
-                        ),*/
+                        ),
                         trailing: InkWell(
                           onTap: () async {
                             await _player.setAsset('assets/aud/${liste[index].vocals?[0].vocal}');
@@ -145,16 +160,28 @@ class _AmendeScreenState extends State<AmendeScreen> {
                 return ListCard(
                   listTile: ListTile(
                     onTap: () {
-                      /*for(int i = 0; i < liste.length; i++) {
-                      infractions.addAll(liste[index].infractions!);
-                    }
-                    print(infractions);
-                    Fluttertoast.showToast(msg: '$infractions.length');
-                    useindex = true;
-                    selectedPageIndex = 5;
-                    Navigator.pop(context);
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => const Accueil()));*/
-                      //Fluttertoast.showToast(msg: '$infractions.length');
+                      AwesomeDialog(
+                          context: context,
+                          closeIcon: const Icon(
+                              Icons.cancel_sharp
+                          ),
+                          dialogType: DialogType.noHeader,
+                          body: Padding(
+                            padding: const EdgeInsets.only(bottom: 15.0),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              children: [
+                                for(int i = liste[index].infractions!.length - 1; i >= 0; i--)
+                                  ListCard(
+                                    listTile: ListTile(
+                                      title: Text(liste[index].infractions![i].description!, style: soustitregras(Colors.white),),
+                                      subtitle: Text(liste[index].infractions![i].reference!, style: soustitre(Colors.white),),
+                                    ),
+                                  )
+                              ],
+                            ),
+                          )
+                      ).show();
                     },
                     leading: CircleAvatar(
                       maxRadius: 20,
@@ -169,10 +196,12 @@ class _AmendeScreenState extends State<AmendeScreen> {
                       '${liste[index].montant?.montant} ${liste[index].montant?.devise}',
                       style: titreliste(Colors.white),
                     ),
-                    /*subtitle: Text(
-                      'Infractions concernées : ${liste[index].infractions?.length}',
+                    subtitle: Text(
+                      liste[index].infractions!.length > 1
+                          ? 'Infractions concernées : ${liste[index].infractions?.length}'
+                          : 'Infraction concernée : ${liste[index].infractions?.length}',
                       style: soustitreliste(Colors.white),
-                    ),*/
+                    ),
                     trailing: InkWell(
                       onTap: () async {
                         await _player.setAsset('assets/aud/${liste[index].vocals?[0].vocal}');

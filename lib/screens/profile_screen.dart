@@ -9,6 +9,7 @@ import 'package:infrakunafoni/constants.dart';
 import 'package:infrakunafoni/models/utilisateur_model.dart';
 import 'package:infrakunafoni/screens/auth/auth.dart';
 import 'package:infrakunafoni/services/auth/utilisateur_service.dart';
+import 'package:infrakunafoni/widgets/list_card.dart';
 import 'package:lottie/lottie.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -288,6 +289,43 @@ class _ProfilState extends State<Profil> {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
+
+                              Row(
+                                crossAxisAlignment: CrossAxisAlignment.end,
+                                children: [
+                                  Expanded(
+                                    child: GestureDetector(
+                                      onTap: () {
+                                        AwesomeDialog(
+                                            context: context,
+                                            closeIcon: const Icon(
+                                                Icons.cancel_sharp
+                                            ),
+                                            dialogType: DialogType.noHeader,
+                                            body: Padding(
+                                              padding: const EdgeInsets.only(bottom: 15.0),
+                                              child: Column(
+                                                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                                children: [
+                                                  for(int i = utilisateur.notifications!.length - 1; i >= 0; i--)
+                                                  ListCard(
+                                                    listTile: ListTile(
+                                                    subtitle: Text(utilisateur.notifications![i].description!, style: soustitre(Colors.white),),
+                                                  ),
+                                                  )
+                                                ],
+                                              ),
+                                            )
+                                        ).show();
+                                      },
+                                      child: const Icon(
+                                        Icons.notifications_active,
+                                        color: Colors.pink,
+                                      ),
+                                    ),
+                                  )
+                                ],
+                              ),
                               SizedBox(height: MediaQuery.of(context).size.height * 0.02,),
                               Text(
                                 "Nom d'utilisateur",
