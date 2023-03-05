@@ -111,29 +111,35 @@ class _DetailsInfracionState extends State<DetailsInfracion> {
                             children: [
 
                               SizedBox(height: MediaQuery.of(context).size.height * 0.01,),
-                              Container(
-                                  padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 8),
-                                  decoration: BoxDecoration(
-                                    border: Border.all(
-                                        color: background,
-                                        width: 1,
-                                        style: BorderStyle.solid
+                              GestureDetector(
+                                onTap: () async {
+                                  await _player.setAsset('assets/aud/${amendes[0].vocals?[0].vocal}');
+                                  _player.play();
+                                },
+                                child: Container(
+                                    padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 8),
+                                    decoration: BoxDecoration(
+                                      border: Border.all(
+                                          color: background,
+                                          width: 1,
+                                          style: BorderStyle.solid
+                                      ),
+                                      //borderRadius: BorderRadius.circular(18),
                                     ),
-                                    //borderRadius: BorderRadius.circular(18),
-                                  ),
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      Text(
-                                        'Montant',
-                                        style: soustitregras(background),
-                                      ),
-                                      Text(
-                                        '${amendes[0].montant!.montant} ${amendes[0].montant!.devise}',
-                                        style: titre(Colors.pink),
-                                      ),
-                                    ],
-                                  )
+                                    child: Column(
+                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Text(
+                                          'Montant',
+                                          style: soustitregras(background),
+                                        ),
+                                        Text(
+                                          '${amendes[0].montant!.montant} ${amendes[0].montant!.devise}',
+                                          style: titre(Colors.pink),
+                                        ),
+                                      ],
+                                    )
+                                ),
                               ),
                             ],
                           ),

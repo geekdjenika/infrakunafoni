@@ -10,156 +10,321 @@
           "montant": 3000,
           "devise": "FCFA"
         },
-        "vocals": [],
+        "vocals": [
+          {
+            "id": 2,
+            "vocal": "3000F bm.m4a",
+            "langue": {
+              "id": 1,
+              "label": "bm"
+            }
+          }
+        ],
         "infractions": [
           {
             "id": 1,
             "description": "Arrêt non autorisé",
             "reference": "Article 16 Arrêté interministériel 2492 du 11/12/2002",
-            "vocals": []
+            "vocals": [
+              {
+                "id": 64,
+                "vocal": "Arrêt non autorisé.m4a",
+                "langue": {
+                  "id": 1,
+                  "label": "bm"
+                }
+              }
+            ]
           },
           {
             "id": 3,
             "description": "Arrêt gênant la circulation",
             "reference": "Article 16 Arrêté interministériel 2492 du 11/12/2002",
-            "vocals": []
+            "vocals": [
+              {
+                "id": 66,
+                "vocal": "Arrêt gênant la circulation.m4a",
+                "langue": {
+                  "id": 1,
+                  "label": "bm"
+                }
+              }
+            ]
           },
           {
             "id": 4,
             "description": "Dépassement défectueux",
             "reference": "Article 9-14-110 Arrêté interministériel 2492 du 11/12/2002",
-            "vocals": []
+            "vocals": [
+              {
+                "id": 56,
+                "vocal": "Dépassement défectueux.m4a",
+                "langue": {
+                  "id": 1,
+                  "label": "bm"
+                }
+              }
+            ]
           },
           {
             "id": 5,
             "description": "Non respect de la priorité",
             "reference": "Article 110 Arrêté interministériel 2492 du 11/12/2002",
-            "vocals": []
+            "vocals": [
+              {
+                "id": 57,
+                "vocal": "Non respect de la priorité.m4a",
+                "langue": {
+                  "id": 1,
+                  "label": "bm"
+                }
+              }
+            ]
           },
           {
             "id": 6,
             "description": "Non respect aux feux rouges",
             "reference": "Article 110 Arrêté interministériel 2492 du 11/12/2002",
-            "vocals": []
+            "vocals": [
+              {
+                "id": 58,
+                "vocal": "Non respect aux feux rouges.m4a",
+                "langue": {
+                  "id": 1,
+                  "label": "bm"
+                }
+              }
+            ]
           },
           {
             "id": 7,
             "description": "Non respect des panneaux de signalisation",
             "reference": "Article 110 Arrêté interministériel 2492 du 11/12/2002",
-            "vocals": []
+            "vocals": [
+              {
+                "id": 59,
+                "vocal": "Non respect des panneaux.m4a",
+                "langue": {
+                  "id": 1,
+                  "label": "bm"
+                }
+              }
+            ]
           },
           {
             "id": 8,
             "description": "Refus d’obtempérer",
             "reference": "Article 119 Arrêté interministériel 2492 du 11/12/2002",
-            "vocals": []
+            "vocals": [
+              {
+                "id": 60,
+                "vocal": "Refus d’obtempérer.m4a",
+                "langue": {
+                  "id": 1,
+                  "label": "bm"
+                }
+              }
+            ]
           },
           {
             "id": 9,
             "description": "Excès de vitesse",
             "reference": "Article 13 Arrêté interministériel 2492 du 11/12/2002",
-            "vocals": []
+            "vocals": [
+              {
+                "id": 61,
+                "vocal": "Excès de vitesse.m4a",
+                "langue": {
+                  "id": 1,
+                  "label": "bm"
+                }
+              }
+            ]
           },
           {
             "id": 10,
             "description": "Non respect de conditions de travail dans le transport",
             "reference": "Article 116 Arrêté interministériel 2492 du 11/12/2002",
-            "vocals": []
+            "vocals": [
+              {
+                "id": 62,
+                "vocal": "Non respect de conditions de travail.m4a",
+                "langue": {
+                  "id": 1,
+                  "label": "bm"
+                }
+              }
+            ]
           },
           {
             "id": 11,
             "description": "Chargement volumineux",
             "reference": "Article 30 Arrêté interministériel 2492 du 11/12/2002",
-            "vocals": []
+            "vocals": [
+              {
+                "id": 63,
+                "vocal": "Chargement volumineux.m4a",
+                "langue": {
+                  "id": 1,
+                  "label": "bm"
+                }
+              }
+            ]
           },
           {
             "id": 12,
             "description": "Circulation sans phare ou phare unique",
             "reference": "Article 37 Arrêté interministériel 2492 du 11/12/2002",
-            "vocals": []
+            "vocals": [
+              {
+                "id": 48,
+                "vocal": "Circulation sans phare ou.m4a",
+                "langue": {
+                  "id": 1,
+                  "label": "bm"
+                }
+              }
+            ]
           },
           {
             "id": 13,
             "description": "Circulation en sens interdit",
             "reference": "Article 110 Arrêté interministériel 2492 du 11/12/2002",
-            "vocals": []
+            "vocals": [
+              {
+                "id": 49,
+                "vocal": "Circulation en sens interdit.m4a",
+                "langue": {
+                  "id": 1,
+                  "label": "bm"
+                }
+              }
+            ]
           },
           {
             "id": 14,
             "description": "Non respect de la piste cyclable",
             "reference": "Article 21 Arrêté interministériel 2492 du 11/12/2002",
-            "vocals": []
-          },
-          {
-            "id": 15,
-            "description": "Défaut de casque de protection pour les motos",
-            "reference": "Article 27 Arrêté interministériel 2492 du 11/12/2002",
-            "vocals": []
+            "vocals": [
+              {
+                "id": 50,
+                "vocal": "Non respect de la piste cyclable.m4a",
+                "langue": {
+                  "id": 1,
+                  "label": "bm"
+                }
+              }
+            ]
           },
           {
             "id": 16,
             "description": "Manœuvres dangereuses",
             "reference": "Articles 9 et 14 Arrêté interministériel 2492 du 11/12/2002",
-            "vocals": []
+            "vocals": [
+              {
+                "id": 52,
+                "vocal": "Manœuvres dangereuses.m4a",
+                "langue": {
+                  "id": 1,
+                  "label": "bm"
+                }
+              }
+            ]
           },
           {
             "id": 17,
             "description": "Emission excessive de fumée",
             "reference": "Articles 30 Arrêté interministériel 2492 du 11/12/2002",
-            "vocals": []
-          },
-          {
-            "id": 18,
-            "description": "Non présentation des pièces afférentes au véhicule et à la conduite",
-            "reference": "Articles 117 Décret 99-134 du 26/05/1999",
-            "vocals": []
-          },
-          {
-            "id": 19,
-            "description": "Usure pneumatique",
-            "reference": "Articles 30 Arrêté interministériel 2492 du 11/12/2002",
-            "vocals": []
-          },
-          {
-            "id": 23,
-            "description": "Support à 3 (engins à 2 roues)",
-            "reference": "Arrêté n° 2979 du 09/11/2000",
-            "vocals": []
+            "vocals": [
+              {
+                "id": 53,
+                "vocal": "Emission excessive de fumée.m4a",
+                "langue": {
+                  "id": 1,
+                  "label": "bm"
+                }
+              }
+            ]
           },
           {
             "id": 24,
             "description": "Défaut de vignette",
             "reference": "Articles 103 Arrêté interministériel 2492 du 11/12/2002",
-            "vocals": []
+            "vocals": [
+              {
+                "id": 44,
+                "vocal": "Défaut de vignette.m4a",
+                "langue": {
+                  "id": 1,
+                  "label": "bm"
+                }
+              }
+            ]
           }
         ]
       },
       {
-        "id": 4,
+        "id": 5,
         "montant": {
           "id": 4,
           "montant": 6500,
           "devise": "FCFA"
         },
-        "vocals": [],
+        "vocals": [
+          {
+            "id": 70,
+            "vocal": "6500F bm.m4a",
+            "langue": {
+              "id": 1,
+              "label": "bm"
+            }
+          }
+        ],
         "infractions": [
           {
             "id": 20,
             "description": "Visité Technique - Assurance Périmée",
             "reference": "Articles 112 - 108 Arrêté interministériel 2492 du 11/12/2002",
-            "vocals": []
+            "vocals": [
+              {
+                "id": 40,
+                "vocal": "Visité Technique - Assurance.m4a",
+                "langue": {
+                  "id": 1,
+                  "label": "bm"
+                }
+              }
+            ]
           },
           {
             "id": 21,
             "description": "Défaut de plaque d’Immatriculation",
             "reference": "Articles 119 Arrêté interministériel 2492 du 11/12/2002",
-            "vocals": []
+            "vocals": [
+              {
+                "id": 41,
+                "vocal": "Défaut de plaque.m4a",
+                "langue": {
+                  "id": 1,
+                  "label": "bm"
+                }
+              }
+            ]
           },
           {
             "id": 22,
             "description": "Surcharge de passagers",
             "reference": "Articles 46 Arrêté interministériel 2492 du 11/12/2002",
-            "vocals": []
+            "vocals": [
+              {
+                "id": 42,
+                "vocal": "Surcharge de passagers.m4a",
+                "langue": {
+                  "id": 1,
+                  "label": "bm"
+                }
+              }
+            ]
           }
         ]
       }
@@ -176,138 +341,336 @@
           "montant": 2000,
           "devise": "FCFA"
         },
-        "vocals": [],
+        "vocals": [
+          {
+            "id": 67,
+            "vocal": "2000F bm.m4a",
+            "langue": {
+              "id": 1,
+              "label": "bm"
+            }
+          }
+        ],
         "infractions": [
           {
             "id": 1,
             "description": "Arrêt non autorisé",
             "reference": "Article 16 Arrêté interministériel 2492 du 11/12/2002",
-            "vocals": []
+            "vocals": [
+              {
+                "id": 64,
+                "vocal": "Arrêt non autorisé.m4a",
+                "langue": {
+                  "id": 1,
+                  "label": "bm"
+                }
+              }
+            ]
           },
           {
             "id": 2,
             "description": "Stationnement interdit",
             "reference": "Article 16 Arrêté interministériel 2492 du 11/12/2002",
-            "vocals": []
+            "vocals": [
+              {
+                "id": 65,
+                "vocal": "Stationnement interdit.m4a",
+                "langue": {
+                  "id": 1,
+                  "label": "bm"
+                }
+              }
+            ]
           },
           {
             "id": 3,
             "description": "Arrêt gênant la circulation",
             "reference": "Article 16 Arrêté interministériel 2492 du 11/12/2002",
-            "vocals": []
+            "vocals": [
+              {
+                "id": 66,
+                "vocal": "Arrêt gênant la circulation.m4a",
+                "langue": {
+                  "id": 1,
+                  "label": "bm"
+                }
+              }
+            ]
           },
           {
             "id": 4,
             "description": "Dépassement défectueux",
             "reference": "Article 9-14-110 Arrêté interministériel 2492 du 11/12/2002",
-            "vocals": []
+            "vocals": [
+              {
+                "id": 56,
+                "vocal": "Dépassement défectueux.m4a",
+                "langue": {
+                  "id": 1,
+                  "label": "bm"
+                }
+              }
+            ]
           },
           {
             "id": 5,
             "description": "Non respect de la priorité",
             "reference": "Article 110 Arrêté interministériel 2492 du 11/12/2002",
-            "vocals": []
+            "vocals": [
+              {
+                "id": 57,
+                "vocal": "Non respect de la priorité.m4a",
+                "langue": {
+                  "id": 1,
+                  "label": "bm"
+                }
+              }
+            ]
           },
           {
             "id": 6,
             "description": "Non respect aux feux rouges",
             "reference": "Article 110 Arrêté interministériel 2492 du 11/12/2002",
-            "vocals": []
+            "vocals": [
+              {
+                "id": 58,
+                "vocal": "Non respect aux feux rouges.m4a",
+                "langue": {
+                  "id": 1,
+                  "label": "bm"
+                }
+              }
+            ]
           },
           {
             "id": 7,
             "description": "Non respect des panneaux de signalisation",
             "reference": "Article 110 Arrêté interministériel 2492 du 11/12/2002",
-            "vocals": []
+            "vocals": [
+              {
+                "id": 59,
+                "vocal": "Non respect des panneaux.m4a",
+                "langue": {
+                  "id": 1,
+                  "label": "bm"
+                }
+              }
+            ]
           },
           {
             "id": 8,
             "description": "Refus d’obtempérer",
             "reference": "Article 119 Arrêté interministériel 2492 du 11/12/2002",
-            "vocals": []
+            "vocals": [
+              {
+                "id": 60,
+                "vocal": "Refus d’obtempérer.m4a",
+                "langue": {
+                  "id": 1,
+                  "label": "bm"
+                }
+              }
+            ]
           },
           {
             "id": 9,
             "description": "Excès de vitesse",
             "reference": "Article 13 Arrêté interministériel 2492 du 11/12/2002",
-            "vocals": []
+            "vocals": [
+              {
+                "id": 61,
+                "vocal": "Excès de vitesse.m4a",
+                "langue": {
+                  "id": 1,
+                  "label": "bm"
+                }
+              }
+            ]
           },
           {
             "id": 10,
             "description": "Non respect de conditions de travail dans le transport",
             "reference": "Article 116 Arrêté interministériel 2492 du 11/12/2002",
-            "vocals": []
+            "vocals": [
+              {
+                "id": 62,
+                "vocal": "Non respect de conditions de travail.m4a",
+                "langue": {
+                  "id": 1,
+                  "label": "bm"
+                }
+              }
+            ]
           },
           {
             "id": 11,
             "description": "Chargement volumineux",
             "reference": "Article 30 Arrêté interministériel 2492 du 11/12/2002",
-            "vocals": []
+            "vocals": [
+              {
+                "id": 63,
+                "vocal": "Chargement volumineux.m4a",
+                "langue": {
+                  "id": 1,
+                  "label": "bm"
+                }
+              }
+            ]
           },
           {
             "id": 12,
             "description": "Circulation sans phare ou phare unique",
             "reference": "Article 37 Arrêté interministériel 2492 du 11/12/2002",
-            "vocals": []
+            "vocals": [
+              {
+                "id": 48,
+                "vocal": "Circulation sans phare ou.m4a",
+                "langue": {
+                  "id": 1,
+                  "label": "bm"
+                }
+              }
+            ]
           },
           {
             "id": 13,
             "description": "Circulation en sens interdit",
             "reference": "Article 110 Arrêté interministériel 2492 du 11/12/2002",
-            "vocals": []
+            "vocals": [
+              {
+                "id": 49,
+                "vocal": "Circulation en sens interdit.m4a",
+                "langue": {
+                  "id": 1,
+                  "label": "bm"
+                }
+              }
+            ]
           },
           {
             "id": 14,
             "description": "Non respect de la piste cyclable",
             "reference": "Article 21 Arrêté interministériel 2492 du 11/12/2002",
-            "vocals": []
+            "vocals": [
+              {
+                "id": 50,
+                "vocal": "Non respect de la piste cyclable.m4a",
+                "langue": {
+                  "id": 1,
+                  "label": "bm"
+                }
+              }
+            ]
           },
           {
             "id": 16,
             "description": "Manœuvres dangereuses",
             "reference": "Articles 9 et 14 Arrêté interministériel 2492 du 11/12/2002",
-            "vocals": []
+            "vocals": [
+              {
+                "id": 52,
+                "vocal": "Manœuvres dangereuses.m4a",
+                "langue": {
+                  "id": 1,
+                  "label": "bm"
+                }
+              }
+            ]
           },
           {
             "id": 17,
             "description": "Emission excessive de fumée",
             "reference": "Articles 30 Arrêté interministériel 2492 du 11/12/2002",
-            "vocals": []
+            "vocals": [
+              {
+                "id": 53,
+                "vocal": "Emission excessive de fumée.m4a",
+                "langue": {
+                  "id": 1,
+                  "label": "bm"
+                }
+              }
+            ]
           }
         ]
       },
       {
-        "id": 3,
+        "id": 4,
         "montant": {
           "id": 3,
           "montant": 6000,
           "devise": "FCFA"
         },
-        "vocals": [],
+        "vocals": [
+          {
+            "id": 69,
+            "vocal": "6000F bm.m4a",
+            "langue": {
+              "id": 1,
+              "label": "bm"
+            }
+          }
+        ],
         "infractions": [
           {
             "id": 20,
             "description": "Visité Technique - Assurance Périmée",
             "reference": "Articles 112 - 108 Arrêté interministériel 2492 du 11/12/2002",
-            "vocals": []
+            "vocals": [
+              {
+                "id": 40,
+                "vocal": "Visité Technique - Assurance.m4a",
+                "langue": {
+                  "id": 1,
+                  "label": "bm"
+                }
+              }
+            ]
           },
           {
             "id": 21,
             "description": "Défaut de plaque d’Immatriculation",
             "reference": "Articles 119 Arrêté interministériel 2492 du 11/12/2002",
-            "vocals": []
+            "vocals": [
+              {
+                "id": 41,
+                "vocal": "Défaut de plaque.m4a",
+                "langue": {
+                  "id": 1,
+                  "label": "bm"
+                }
+              }
+            ]
           },
           {
             "id": 22,
             "description": "Surcharge de passagers",
             "reference": "Articles 46 Arrêté interministériel 2492 du 11/12/2002",
-            "vocals": []
+            "vocals": [
+              {
+                "id": 42,
+                "vocal": "Surcharge de passagers.m4a",
+                "langue": {
+                  "id": 1,
+                  "label": "bm"
+                }
+              }
+            ]
           },
           {
             "id": 24,
             "description": "Défaut de vignette",
             "reference": "Articles 103 Arrêté interministériel 2492 du 11/12/2002",
-            "vocals": []
+            "vocals": [
+              {
+                "id": 44,
+                "vocal": "Défaut de vignette.m4a",
+                "langue": {
+                  "id": 1,
+                  "label": "bm"
+                }
+              }
+            ]
           }
         ]
       }
@@ -318,13 +681,22 @@
     "categorie": "Motos",
     "amendes": [
       {
-        "id": 7,
+        "id": 8,
         "montant": {
           "id": 7,
           "montant": 300,
           "devise": "FCFA"
         },
-        "vocals": [],
+        "vocals": [
+          {
+            "id": 73,
+            "vocal": "300F bm.m4a",
+            "langue": {
+              "id": 1,
+              "label": "bm"
+            }
+          }
+        ],
         "infractions": [
           {
             "id": 30,
@@ -336,31 +708,76 @@
             "id": 31,
             "description": "Dispositif de freinage",
             "reference": "Article 76 du Décret n° 1999-134 du 26 mai 1999",
-            "vocals": []
+            "vocals": [
+              {
+                "id": 37,
+                "vocal": "Dispositif de freinage.m4a",
+                "langue": {
+                  "id": 1,
+                  "label": "bm"
+                }
+              }
+            ]
           },
           {
             "id": 32,
             "description": "Système d'éclairage",
             "reference": "Article 76 du Décret n° 1999-134 du 26 mai 1999",
-            "vocals": []
+            "vocals": [
+              {
+                "id": 36,
+                "vocal": "Système d'éclairage.m4a",
+                "langue": {
+                  "id": 1,
+                  "label": "bm"
+                }
+              }
+            ]
           },
           {
             "id": 33,
             "description": "Dispositif réfléchissant rouge visible de l'arrière",
             "reference": "Article 76 du Décret n° 1999-134 du 26 mai 1999",
-            "vocals": []
+            "vocals": [
+              {
+                "id": 35,
+                "vocal": "Dispositif réfléchissant rouge.m4a",
+                "langue": {
+                  "id": 1,
+                  "label": "bm"
+                }
+              }
+            ]
           },
           {
             "id": 34,
             "description": "Appareil avertisseur",
             "reference": "Article 76 du Décret n° 1999-134 du 26 mai 1999",
-            "vocals": []
+            "vocals": [
+              {
+                "id": 34,
+                "vocal": "Appareil avertisseur.m4a",
+                "langue": {
+                  "id": 1,
+                  "label": "bm"
+                }
+              }
+            ]
           },
           {
             "id": 35,
             "description": "Plaque métallique fixée au véhicule ou au cadre de celui-ci portant l'indication du nom et de l'adresse du propriétaire",
             "reference": "Article 76 du Décret n° 1999-134 du 26 mai 1999",
-            "vocals": []
+            "vocals": [
+              {
+                "id": 33,
+                "vocal": "Plaque métallique fixée au véhicule.m4a",
+                "langue": {
+                  "id": 1,
+                  "label": "bm"
+                }
+              }
+            ]
           }
         ]
       }
@@ -371,48 +788,182 @@
     "categorie": "Générales",
     "amendes": [
       {
-        "id": 5,
+        "id": 3,
         "montant": {
-          "id": 5,
-          "montant": 10000,
+          "id": 2,
+          "montant": 3000,
           "devise": "FCFA"
         },
-        "vocals": [],
+        "vocals": [
+          {
+            "id": 68,
+            "vocal": "3000F bm.m4a",
+            "langue": {
+              "id": 1,
+              "label": "bm"
+            }
+          }
+        ],
         "infractions": [
           {
-            "id": 25,
-            "description": "Non respect de l’arrêté municipal régissant la circulation des gros porteurs (itinéraires-horaires)",
-            "reference": "Arrêté municipal n° 39/MDB du 16/08/2007",
-            "vocals": []
+            "id": 15,
+            "description": "Défaut de casque de protection pour les motos",
+            "reference": "Article 27 Arrêté interministériel 2492 du 11/12/2002",
+            "vocals": [
+              {
+                "id": 51,
+                "vocal": "Défaut de casque de protection.m4a",
+                "langue": {
+                  "id": 1,
+                  "label": "bm"
+                }
+              }
+            ]
+          },
+          {
+            "id": 18,
+            "description": "Non présentation des pièces afférentes au véhicule et à la conduite",
+            "reference": "Articles 117 Décret 99-134 du 26/05/1999",
+            "vocals": [
+              {
+                "id": 54,
+                "vocal": "Non présentation des pièces.m4a",
+                "langue": {
+                  "id": 1,
+                  "label": "bm"
+                }
+              }
+            ]
+          },
+          {
+            "id": 19,
+            "description": "Usure pneumatique",
+            "reference": "Articles 30 Arrêté interministériel 2492 du 11/12/2002",
+            "vocals": [
+              {
+                "id": 55,
+                "vocal": "Usure pneumatique.m4a",
+                "langue": {
+                  "id": 1,
+                  "label": "bm"
+                }
+              }
+            ]
+          },
+          {
+            "id": 23,
+            "description": "Support à 3 (engins à 2 roues)",
+            "reference": "Arrêté n° 2979 du 09/11/2000",
+            "vocals": [
+              {
+                "id": 43,
+                "vocal": "Support à 3 (engins à 2 roues).m4a",
+                "langue": {
+                  "id": 1,
+                  "label": "bm"
+                }
+              }
+            ]
           }
         ]
       },
       {
         "id": 6,
         "montant": {
+          "id": 5,
+          "montant": 10000,
+          "devise": "FCFA"
+        },
+        "vocals": [
+          {
+            "id": 71,
+            "vocal": "10000F bm.m4a",
+            "langue": {
+              "id": 1,
+              "label": "bm"
+            }
+          }
+        ],
+        "infractions": [
+          {
+            "id": 25,
+            "description": "Non respect de l’arrêté municipal régissant la circulation des gros porteurs (itinéraires-horaires)",
+            "reference": "Arrêté municipal n° 39/MDB du 16/08/2007",
+            "vocals": [
+              {
+                "id": 45,
+                "vocal": "Non respect de l’arrêté municipal.m4a",
+                "langue": {
+                  "id": 1,
+                  "label": "bm"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 7,
+        "montant": {
           "id": 6,
           "montant": 15000,
           "devise": "FCFA"
         },
-        "vocals": [],
+        "vocals": [
+          {
+            "id": 72,
+            "vocal": "15000F bm.m4a",
+            "langue": {
+              "id": 1,
+              "label": "bm"
+            }
+          }
+        ],
         "infractions": [
           {
             "id": 26,
             "description": "Occupation anarchique du domaine public",
             "reference": "Arrêté municipal n° 114/MDB du 09/08/2001",
-            "vocals": []
+            "vocals": [
+              {
+                "id": 46,
+                "vocal": "Occupation anarchique.m4a",
+                "langue": {
+                  "id": 1,
+                  "label": "bm"
+                }
+              }
+            ]
           },
           {
             "id": 27,
             "description": "Mauvais champ de visibilité vitres teintées",
             "reference": "Décret n° 413 PRM du 27/09/2006",
-            "vocals": []
+            "vocals": [
+              {
+                "id": 47,
+                "vocal": "Mauvais champ de visibilité.m4a",
+                "langue": {
+                  "id": 1,
+                  "label": "bm"
+                }
+              }
+            ]
           },
           {
             "id": 28,
             "description": "Usage du téléphone portable tenu en main pendant la conduite",
             "reference": "Décret n° 413 PRM du 27/0WX9/2006",
-            "vocals": []
+            "vocals": [
+              {
+                "id": 39,
+                "vocal": "Usage du téléphone portable.m4a",
+                "langue": {
+                  "id": 1,
+                  "label": "bm"
+                }
+              }
+            ]
           }
         ]
       }

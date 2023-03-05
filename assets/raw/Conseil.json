@@ -1,98 +1,212 @@
 [
   {
-    "id": 1,
-    "conseil": "Connaissez les règles de la route : Assurez-vous de connaître les règles de circulation, les signes de circulation et les limitations de vitesse.",
-    "vocals": [],
-    "infractions": []
-  },
-  {
-    "id": 2,
-    "conseil": "Respectez les limites de vitesse : Rouler à une vitesse excessive peut être dangereux pour vous-même et les autres usagers de la route.",
-    "vocals": [],
-    "infractions": []
-  },
-  {
-    "id": 3,
-    "conseil": "Soyez attentif en conduisant : Évitez de conduire en étant distrait ou fatigué.",
-    "vocals": [],
-    "infractions": []
-  },
-  {
-    "id": 4,
-    "conseil": "Portez toujours votre ceinture de sécurité : Cela peut vous protéger en cas d'accident.",
-    "vocals": [],
-    "infractions": []
-  },
-  {
-    "id": 5,
-    "conseil": "Ne conduisez pas sous l'emprise de l'alcool ou de drogues : Cela peut entraîner des charges criminelles graves et des conséquences graves pour votre sécurité et celle des autres.",
-    "vocals": [],
-    "infractions": []
-  },
-  {
-    "id": 6,
-    "conseil": "Respectez les panneaux de signalisation : Les feux rouges, les stops et les panneaux de signalisation doivent être respectés pour garantir la sécurité sur la route.",
-    "vocals": [],
-    "infractions": []
-  },
-  {
-    "id": 7,
-    "conseil": "Entretenez votre véhicule : Assurez-vous que votre véhicule est en bon état de marche et que tous les équipements de sécurité obligatoires sont en place et en bon état.",
-    "vocals": [],
-    "infractions": []
-  },
-  {
-    "id": 8,
-    "conseil": "Utilisez des feux de signalisation : Utilisez vos clignotants pour signaler vos intentions de changer de voie, de tourner ou de quitter la route.",
-    "vocals": [],
-    "infractions": []
-  },
-  {
-    "id": 9,
-    "conseil": "Respectez les distances de sécurité : Maintenez une distance suffisante entre vous et le véhicule devant vous pour vous donner suffisamment de temps pour réagir en cas d'arrêt soudain.",
-    "vocals": [],
-    "infractions": []
-  },
-  {
-    "id": 10,
-    "conseil": "Soyez prévisible en conduisant : Agissez de manière cohérente et prévisible sur la route pour que les autres usagers de la route puissent anticiper vos actions.",
-    "vocals": [],
-    "infractions": []
-  },
-  {
-    "id": 11,
-    "conseil": "Évitez les manœuvres dangereuses : Évitez de couper les autres conducteurs, de changer brusquement de voie sans signaler ou de doubler sur une ligne continue.",
-    "vocals": [],
-    "infractions": []
-  },
-  {
-    "id": 12,
-    "conseil": "Restez concentré sur la route : Évitez de vous distraire avec votre téléphone portable, de manger ou de boire pendant que vous conduisez.",
-    "vocals": [],
+    "id": 14,
+    "conseil": "Évitez la conduite en état d'ébriété : La conduite en état d'ébriété est illégale et peut entraîner des conséquences graves, y compris des blessures ou des décès. Si vous avez consommé de l'alcool, il est préférable de prendre un taxi ou de désigner un conducteur désigné.",
+    "vocals": [
+      {
+        "id": 87,
+        "vocal": "Évitez la conduite en état d'ébriété.m4a",
+        "langue": {
+          "id": 1,
+          "label": "bm"
+        }
+      }
+    ],
     "infractions": []
   },
   {
     "id": 13,
-    "conseil": "Soyez patient : La patience est importante sur la route. Évitez de vous mettre en colère ou de prendre des risques inutiles en réponse à des situations stressantes sur la route.",
-    "vocals": [],
-    "infractions": []
-  },
-  {
-    "id": 14,
-    "conseil": "Soyez conscient des conditions météorologiques : Soyez conscient des conditions météorologiques et ajustez votre conduite en conséquence. Par exemple, ralentissez lorsqu'il pleut ou neige pour maintenir une traction adéquate.",
-    "vocals": [],
-    "infractions": []
-  },
-  {
-    "id": 15,
-    "conseil": "Évitez la conduite agressive : La conduite agressive, telle que le dépassement dangereux, le suivi de trop près et les coups de klaxon inutiles, peut causer des accidents et entraîner des infractions routières.",
-    "vocals": [],
-    "infractions": []
-  },
-  {
-    "id": 16,
     "conseil": "Soyez conscient des usagers vulnérables de la route : Soyez conscient des usagers vulnérables de la route, tels que les piétons, les cyclistes et les motocyclistes, et partagez la route de manière sûre et respectueuse.",
-    "vocals": [],
+    "vocals": [
+      {
+        "id": 86,
+        "vocal": "Soyez conscient des usagers vulnérables de la route.m4a",
+        "langue": {
+          "id": 1,
+          "label": "bm"
+        }
+      }
+    ],
+    "infractions": []
+  },
+  {
+    "id": 12,
+    "conseil": "Évitez la conduite agressive : La conduite agressive, telle que le dépassement dangereux, le suivi de trop près et les coups de klaxon inutiles, peut causer des accidents et entraîner des infractions routières.",
+    "vocals": [
+      {
+        "id": 85,
+        "vocal": "Évitez la conduite agressive.m4a",
+        "langue": {
+          "id": 1,
+          "label": "bm"
+        }
+      }
+    ],
+    "infractions": []
+  },
+  {
+    "id": 11,
+    "conseil": "Soyez conscient des conditions météorologiques : Soyez conscient des conditions météorologiques et ajustez votre conduite en conséquence. Par exemple, ralentissez lorsqu'il pleut.",
+    "vocals": [
+      {
+        "id": 84,
+        "vocal": "Soyez conscient des conditions météorologiques.m4a",
+        "langue": {
+          "id": 1,
+          "label": "bm"
+        }
+      }
+    ],
+    "infractions": []
+  },
+  {
+    "id": 10,
+    "conseil": "Soyez patient : La patience est importante sur la route. Évitez de vous mettre en colère ou de prendre des risques inutiles en réponse à des situations stressantes sur la route.",
+    "vocals": [
+      {
+        "id": 83,
+        "vocal": "Soyez patient.m4a",
+        "langue": {
+          "id": 1,
+          "label": "bm"
+        }
+      }
+    ],
+    "infractions": []
+  },
+  {
+    "id": 9,
+    "conseil": "Restez concentré sur la route : Évitez de vous distraire avec votre téléphone portable, de manger ou de boire pendant que vous conduisez.",
+    "vocals": [
+      {
+        "id": 82,
+        "vocal": "Restez concentré sur la route.m4a",
+        "langue": {
+          "id": 1,
+          "label": "bm"
+        }
+      }
+    ],
+    "infractions": []
+  },
+  {
+    "id": 8,
+    "conseil": "Évitez les manœuvres dangereuses : Évitez de couper les autres conducteurs, de changer brusquement de voie sans signaler ou de doubler sur une ligne continue.",
+    "vocals": [
+      {
+        "id": 81,
+        "vocal": "Évitez les manœuvres dangereuses.m4a",
+        "langue": {
+          "id": 1,
+          "label": "bm"
+        }
+      }
+    ],
+    "infractions": []
+  },
+  {
+    "id": 7,
+    "conseil": "Soyez prévisible en conduisant : Agissez de manière cohérente et prévisible sur la route pour que les autres usagers de la route puissent anticiper vos actions.",
+    "vocals": [
+      {
+        "id": 80,
+        "vocal": "Soyez prévisible en conduisant.m4a",
+        "langue": {
+          "id": 1,
+          "label": "bm"
+        }
+      }
+    ],
+    "infractions": []
+  },
+  {
+    "id": 6,
+    "conseil": "Respectez les distances de sécurité : Maintenez une distance suffisante entre vous et le véhicule devant vous pour vous donner suffisamment de temps pour réagir en cas d'arrêt soudain.",
+    "vocals": [
+      {
+        "id": 79,
+        "vocal": "Respectez les distances de sécurité.m4a",
+        "langue": {
+          "id": 1,
+          "label": "bm"
+        }
+      }
+    ],
+    "infractions": []
+  },
+  {
+    "id": 5,
+    "conseil": "Utilisez des feux de signalisation : Utilisez vos clignotants pour signaler vos intentions de changer de voie, de tourner ou de quitter la route.",
+    "vocals": [
+      {
+        "id": 78,
+        "vocal": "Utilisez des feux de signalisation.m4a",
+        "langue": {
+          "id": 1,
+          "label": "bm"
+        }
+      }
+    ],
+    "infractions": []
+  },
+  {
+    "id": 4,
+    "conseil": "Entretenez votre véhicule : Assurez-vous que votre véhicule est en bon état de marche et que tous les équipements de sécurité obligatoires sont en place et en bon état.",
+    "vocals": [
+      {
+        "id": 77,
+        "vocal": "Entretenez votre véhicule.m4a",
+        "langue": {
+          "id": 1,
+          "label": "bm"
+        }
+      }
+    ],
+    "infractions": []
+  },
+  {
+    "id": 3,
+    "conseil": "Respectez les panneaux de signalisation : Les feux rouges, les stops et les panneaux de signalisation doivent être respectés pour garantir la sécurité sur la route.",
+    "vocals": [
+      {
+        "id": 76,
+        "vocal": "Respectez les panneaux de signalisation.m4a",
+        "langue": {
+          "id": 1,
+          "label": "bm"
+        }
+      }
+    ],
+    "infractions": []
+  },
+  {
+    "id": 2,
+    "conseil": "Ne conduisez pas sous l'emprise de l'alcool ou de drogues : Cela peut entraîner des charges criminelles graves et des conséquences graves pour votre sécurité et celle des autres.",
+    "vocals": [
+      {
+        "id": 75,
+        "vocal": "Ne conduisez pas sous l'emprise de l'alcool.m4a",
+        "langue": {
+          "id": 1,
+          "label": "bm"
+        }
+      }
+    ],
+    "infractions": []
+  },
+  {
+    "id": 1,
+    "conseil": "Portez toujours votre ceinture de sécurité : Cela peut vous protéger en cas d'accident.",
+    "vocals": [
+      {
+        "id": 74,
+        "vocal": "Portez toujours votre ceinture de sécurité.m4a",
+        "langue": {
+          "id": 1,
+          "label": "bm"
+        }
+      }
+    ],
     "infractions": []
   }
 ]
