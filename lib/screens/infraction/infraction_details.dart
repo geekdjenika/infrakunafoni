@@ -10,8 +10,8 @@ import 'package:just_audio/just_audio.dart';
 import '../../constants.dart';
 
 class DetailsInfracion extends StatefulWidget {
-  const DetailsInfracion({Key? key, required this.amendes, required this.infraction, required this.categorie, required this.numero}) : super(key: key);
-  final List<Amende> amendes;
+  const DetailsInfracion({Key? key, required this.amende, required this.infraction, required this.categorie, required this.numero}) : super(key: key);
+  final Amende amende;
   final Infraction infraction;
   final int numero;
   final Categorie categorie;
@@ -113,7 +113,7 @@ class _DetailsInfracionState extends State<DetailsInfracion> {
                               SizedBox(height: MediaQuery.of(context).size.height * 0.01,),
                               GestureDetector(
                                 onTap: () async {
-                                  await _player.setAsset('assets/aud/${amendes[0].vocals?[0].vocal}');
+                                  await _player.setAsset('assets/aud/${widget.amende.vocals?[0].vocal}');
                                   _player.play();
                                 },
                                 child: Container(
@@ -134,7 +134,7 @@ class _DetailsInfracionState extends State<DetailsInfracion> {
                                           style: soustitregras(background),
                                         ),
                                         Text(
-                                          '${amendes[0].montant!.montant} ${amendes[0].montant!.devise}',
+                                          '${widget.amende.montant!.montant} ${amendes[0].montant!.devise}',
                                           style: titre(Colors.pink),
                                         ),
                                       ],
